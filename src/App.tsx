@@ -74,12 +74,13 @@ function App() {
       fileUrl: '/files/BT1_Chuong1_LuuDucAnh.docx',
       fileName: 'BT1_Chuong1_LuuDucAnh.docx',
       fileType: 'docx',
+      skills: ['Windows 11', 'Quản trị tệp tin', 'Bảo mật hệ thống', 'Phân cấp dữ liệu'],
       images: ['/images/bt1_1.png', '/images/bt1_2.png'],
       imageDescriptions: [
         'Ảnh 1: Cấu trúc thư mục "ThucHanh_LuuDucAnh" được phân cấp khoa học và quản lý trực quan trên Windows File Explorer.',
         'Ảnh 2: Quá trình thao tác tạo mới, sao chép và di chuyển tệp tin GhiChuQuanTrong.txt vào thư mục con TaiLieu.'
       ],
-      detailedSummary: 'Quá trình thực hành được bắt đầu bằng việc làm quen với các thao tác cốt lõi trên hệ điều hành Windows 11. Tác giả đã khởi tạo thư mục chuyên môn học thuật "ThucHanh_LuuDucAnh" tại ổ đĩa làm việc để lưu trữ đồng bộ. Tiến hành tạo tệp tin ghi chú ban đầu "GhiChu.txt" nhằm ghi chép nhanh, sau đó đổi tên thành "GhiChuQuanTrong.txt" để chuẩn hóa quản lý tài liệu. Việc di chuyển tệp tin được thực hiện an toàn qua chức năng Cut/Paste vào thư mục con "TaiLieu". Cuối cùng, tác giả thực hành cơ chế xóa tệp tin qua Recycle Bin và nâng cao bằng lệnh Shift + Delete để xóa vĩnh viễn, giải phóng bộ nhớ hệ thống một cách an toàn và bảo mật.'
+      detailedSummary: 'Quá trình thực hành được bắt đầu bằng việc làm quen với các thao tác cốt lõi trên hệ điều hành Windows 11. Tôi đã khởi tạo thư mục chuyên môn học thuật "ThucHanh_LuuDucAnh" tại ổ đĩa làm việc để lưu trữ đồng bộ. Tiến hành tạo tệp tin ghi chú ban đầu "GhiChu.txt" nhằm ghi chép nhanh, sau đó đổi tên thành "GhiChuQuanTrong.txt" để chuẩn hóa quản lý tài liệu. Việc di chuyển tệp tin được thực hiện an toàn qua chức năng Cut/Paste vào thư mục con "TaiLieu". Cuối cùng, tôi thực hành cơ chế xóa tệp tin qua Recycle Bin và nâng cao bằng lệnh Shift + Delete để xóa vĩnh viễn, giải phóng bộ nhớ hệ thống một cách an toàn và bảo mật.'
     },
     {
       id: 'bt2',
@@ -91,12 +92,13 @@ function App() {
       fileUrl: '/files/BT2_Chuong2_LuuDucAnh.docx',
       fileName: 'BT2_Chuong2_LuuDucAnh.docx',
       fileType: 'docx',
+      skills: ['Google Scholar', 'Boolean Query', 'Elicit AI', 'Thẩm định học thuật y khoa'],
       images: ['/images/bt2_1.png', '/images/bt2_2.png'],
       imageDescriptions: [
         'Ảnh 1: Xây dựng biểu thức truy vấn chuyên môn nâng cao với các toán tử Boolean logic trên Google Scholar.',
         'Ảnh 2: Bảng thẩm định chi tiết 11 nguồn tài liệu y khoa học thuật với xếp hạng độ tin cậy khoa học và năm xuất bản.'
       ],
-      detailedSummary: 'Để xây dựng báo cáo thẩm định thông tin y tế học thuật, tác giả đã ứng dụng các công cụ tìm kiếm khoa học nâng cao như Google Scholar và Elicit. Bằng cách thiết lập biểu thức Boolean phức tạp kết hợp các toán tử logic "AND", "OR" và ngoặc kép, tác giả đã lọc sạch và tiếp cận được các nghiên cứu chất lượng cao về "Ứng dụng AI trong chẩn đoán y khoa". Quá trình phân tích bao gồm việc đánh giá chi tiết 11 tài liệu y học hàng đầu (gồm sách chuyên khảo "Deep Medicine" của Eric Topol, các nghiên cứu trên Nature Medicine và The Lancet). Mỗi nguồn tài liệu đều được chấm điểm nghiêm ngặt qua 5 tiêu chí chuẩn hóa: uy tín tác giả, vị thế nhà xuất bản, phương pháp nghiên cứu thực nghiệm, tần suất trích dẫn khoa học và tính thời sự cập nhật.'
+      detailedSummary: 'Để xây dựng báo cáo thẩm định thông tin y tế học thuật, tôi đã ứng dụng các công cụ tìm kiếm khoa học nâng cao như Google Scholar và Elicit. Bằng cách thiết lập biểu thức Boolean phức tạp kết hợp các toán tử logic "AND", "OR" và ngoặc kép, tôi đã lọc sạch và tiếp cận được các nghiên cứu chất lượng cao về "Ứng dụng AI trong chẩn đoán y khoa". Quá trình phân tích bao gồm việc đánh giá chi tiết 11 tài liệu y học hàng đầu (gồm sách chuyên khảo "Deep Medicine" của Eric Topol, các nghiên cứu trên Nature Medicine và The Lancet). Mỗi nguồn tài liệu đều được chấm điểm nghiêm ngặt qua 5 tiêu chí chuẩn hóa: uy tín tác giả, vị thế nhà xuất bản, phương pháp nghiên cứu thực nghiệm, tần suất trích dẫn khoa học và tính thời sự cập nhật.'
     },
     {
       id: 'bt3',
@@ -108,12 +110,13 @@ function App() {
       fileUrl: '/files/BT2_Chuong3_LuuDucAnh.docx',
       fileName: 'BT2_Chuong3_LuuDucAnh.docx',
       fileType: 'docx',
+      skills: ['Prompt Engineering', 'CLEAR / CRAC', 'Google Gemini', 'Chain of Thought (CoT)'],
       images: ['/images/bt3_1.png', '/images/bt3_2.png'],
       imageDescriptions: [
         'Ảnh 1: Soạn thảo và thử nghiệm cấu trúc Prompt nâng cao áp dụng tiêu chuẩn CLEAR/CRAC trên mô hình Google Gemini.',
         'Ảnh 2: Phân tích kết quả đầu ra, so sánh độ chuẩn xác và tính sư phạm của các cấp độ Prompt trong giải thích ANN.'
       ],
-      detailedSummary: 'Bài tập tập trung vào việc nghiên cứu và ứng dụng Kỹ nghệ Prompt (Prompt Engineering) để khai thác hiệu quả tối đa từ mô hình ngôn ngữ lớn (Gemini). Tác giả đã thiết kế hệ thống prompt 3 mức độ (Cơ bản, Cải tiến, Nâng cao) áp dụng triệt để mô hình CLEAR/CRAC. Các tác vụ bao gồm: tóm tắt dữ liệu lớn (đặc tính 5Vs), giải thích cơ chế Mạng nơ-ron nhân tạo (ANN) bằng phương pháp suy luận chuỗi tư duy (Chain-of-Thought) kết hợp hình ảnh ẩn dụ sinh động, và tạo bộ câu hỏi trắc nghiệm tin học có phân hóa độ khó bằng kỹ thuật Few-shot. Kết quả cho thấy các prompt nâng cao giúp AI phản hồi chính xác, cấu trúc rõ ràng, loại bỏ hoàn toàn các lỗi ảo giác thông tin và đáp ứng đúng tiêu chuẩn học thuật.'
+      detailedSummary: 'Bài tập tập trung vào việc nghiên cứu và ứng dụng Kỹ nghệ Prompt (Prompt Engineering) để khai thác hiệu quả tối đa từ mô hình ngôn ngữ lớn (Gemini). Tôi đã thiết kế hệ thống prompt 3 mức độ (Cơ bản, Cải tiến, Nâng cao) áp dụng triệt để mô hình CLEAR/CRAC. Các tác vụ bao gồm: tóm tắt dữ liệu lớn (đặc tính 5Vs), giải thích cơ chế Mạng nơ-ron nhân tạo (ANN) bằng phương pháp suy luận chuỗi tư duy (Chain-of-Thought) kết hợp hình ảnh ẩn dụ sinh động, và tạo bộ câu hỏi trắc nghiệm tin học có phân hóa độ khó bằng kỹ thuật Few-shot. Kết quả cho thấy các prompt nâng cao giúp AI phản hồi chính xác, cấu trúc rõ ràng, loại bỏ hoàn toàn các lỗi ảo giác thông tin và đáp ứng đúng tiêu chuẩn học thuật.'
     },
     {
       id: 'bt4',
@@ -125,12 +128,13 @@ function App() {
       fileUrl: '/files/BT3_Chuong4_LuuDucAnh.pdf',
       fileName: 'BT3_Chuong4_LuuDucAnh.pdf',
       fileType: 'pdf',
+      skills: ['Kanban Trello', 'Cộng tác Zoom', 'Google Cloud Workspace', 'Bảo mật 2FA & Lưu trữ'],
       images: ['/images/bt4_1.png', '/images/bt4_2.png'],
       imageDescriptions: [
         'Ảnh 1: Không gian cộng tác dự án nhóm trực quan trên bảng Kanban Trello với phân công nhiệm vụ và Due date.',
         'Ảnh 2: Biên bản thảo luận họp trực tuyến qua Zoom và quy trình phân quyền bảo mật dữ liệu lưu trữ đám mây Google Drive.'
       ],
-      detailedSummary: 'Nhằm tổ chức xây dựng kịch bản và sản xuất video thuyết trình về "Ứng dụng AI trong quản lý rối loạn lipid máu" cho nhóm VNU1001_E252023, tác giả đã thiết lập một không gian cộng tác số đám mây toàn diện. Tiến độ công việc được quản lý trực quan trên bảng Kanban Trello với các nhãn phân loại, due date và danh mục công việc chi tiết. Nhóm đã thực hiện các buổi họp trực tuyến hiệu quả qua Zoom, tận dụng tối đa tính năng chia sẻ màn hình và phòng thảo luận phụ (Breakout Rooms). Kịch bản được đồng soạn thảo trực tiếp trên Google Docs với chế độ gợi ý đóng góp ý kiến (Suggesting) và lưu vết lịch sử phiên bản. Toàn bộ tài nguyên số được phân loại khoa học và đồng bộ trên Google Drive, áp dụng bảo mật xác thực hai lớp (2FA) để bảo vệ dữ liệu.'
+      detailedSummary: 'Nhằm tổ chức xây dựng kịch bản và sản xuất video thuyết trình về "Ứng dụng AI trong quản lý rối loạn lipid máu" cho nhóm VNU1001_E252023, tôi đã thiết lập một không gian cộng tác số đám mây toàn diện. Tiến độ công việc được quản lý trực quan trên bảng Kanban Trello với các nhãn phân loại, due date và danh mục công việc chi tiết. Nhóm đã thực hiện các buổi họp trực tuyến hiệu quả qua Zoom, tận dụng tối đa tính năng chia sẻ màn hình và phòng thảo luận phụ (Breakout Rooms). Kịch bản được đồng soạn thảo trực tiếp trên Google Docs with chế độ gợi ý đóng góp ý kiến (Suggesting) và lưu vết lịch sử phiên bản. Toàn bộ tài nguyên số được phân loại khoa học và đồng bộ trên Google Drive, áp dụng bảo mật xác thực hai lớp (2FA) để bảo vệ dữ liệu.'
     },
     {
       id: 'bt5',
@@ -142,12 +146,13 @@ function App() {
       fileUrl: '/files/BT2_Chuong5_LuuDucAnh.docx',
       fileName: 'BT2_Chuong5_LuuDucAnh.docx',
       fileType: 'docx',
+      skills: ['Canva AI', 'Generative Imagery AI', 'Google Gemini', 'Truyền thông môi trường số'],
       images: ['/images/bt5_1.png', '/images/bt5_2.png'],
       imageDescriptions: [
         'Ảnh 1: Ấn phẩm thiết kế Infographic "Sống Xanh" trên Canva được tối ưu hóa độ tương phản và phân bố cục trực quan.',
         'Ảnh 2: Giao diện bài đăng Blog truyền thông được tích hợp hình ảnh không gian tương lai sinh động tạo bởi AI Banana.'
       ],
-      detailedSummary: 'Tác giả đã lên kế hoạch và triển khai chiến dịch truyền thông y học số mang tên "Sống Xanh trong Kỷ nguyên Số". Quy trình sáng tạo nội dung áp dụng mô hình lặp kết hợp 3 công cụ AI đột phá: Google Gemini hỗ trợ biên soạn bài blog 1000 từ phân tích chuyên sâu về "dấu chân carbon điện tử" và lượng nước tiêu hao để huấn luyện AI; công cụ tạo ảnh nghệ thuật Nano Banana thiết kế hình ảnh không gian làm việc tương lai hài hòa với thiên nhiên; và Canva AI tối ưu hóa bố cục Infographic truyền thông. Bài viết được lồng ghép các địa chỉ thu gom rác thải điện tử miễn phí thực tế tại Hà Nội và TP.HCM cùng các ứng dụng môi trường bền vững như Ecosia, Grac giúp nâng cao tính thực tiễn và tác động xã hội.'
+      detailedSummary: 'Tôi đã lên kế hoạch và triển khai chiến dịch truyền thông y học số mang tên "Sống Xanh trong Kỷ nguyên Số". Quy trình sáng tạo nội dung áp dụng mô hình lặp kết hợp 3 công cụ AI đột phá: Google Gemini hỗ trợ biên soạn bài blog 1000 từ phân tích chuyên sâu về "dấu chân carbon điện tử" và lượng nước tiêu hao để huấn luyện AI; công cụ tạo ảnh nghệ thuật Nano Banana thiết kế hình ảnh không gian làm việc tương lai hài hòa với thiên nhiên; và Canva AI tối ưu hóa bố cục Infographic truyền thông. Bài viết được lồng ghép các địa chỉ thu gom rác thải điện tử miễn phí thực tế tại Hà Nội và TP.HCM cùng các ứng dụng môi trường bền vững như Ecosia, Grac giúp nâng cao tính thực tiễn và tác động xã hội.'
     },
     {
       id: 'bt6',
@@ -159,12 +164,13 @@ function App() {
       fileUrl: '/files/BT4_Chuong6_LuuDucAnh.docx',
       fileName: 'BT4_Chuong6_LuuDucAnh.docx',
       fileType: 'docx',
+      skills: ['Perplexity CoT', 'Liêm chính y đức số', 'Xử lý ảo giác AI', 'Zotero & Mendeley'],
       images: ['/images/bt6_1.png', '/images/bt6_2.png'],
       imageDescriptions: [
         'Ảnh 1: Tiến trình tra cứu và đối soát chéo phác đồ lâm sàng điều trị bệnh AS của Bộ Y tế bằng AI Perplexity.',
         'Ảnh 2: Tác phẩm Infographic quy chuẩn "7 Chữ Vàng cho Dược sĩ tương lai" và danh mục quản lý nguồn trích dẫn Zotero.'
       ],
-      detailedSummary: 'Bài tập giải quyết một ca lâm sàng thực tế phức tạp: Bệnh nhân nữ 38 tuổi được chẩn đoán Viêm cột sống dính khớp (AS). Tác giả đã ứng dụng mô hình Perplexity AI theo kỹ thuật Chain-of-Thought để tra cứu các hướng dẫn điều trị quốc tế chuẩn y khoa từ EULAR 2022 và ACR 2019, đối chiếu trực tiếp với hướng dẫn của Bộ Y tế Việt Nam. Qua đó phân tích độ an toàn của thuốc sinh học ức chế TNF đối với bệnh nhân nữ trong độ tuổi sinh sản. Đặc biệt, tác giả đã thực hiện quy trình kiểm chứng chéo nghiêm ngặt để phát hiện và hiệu đính các lỗi ảo giác nguy hiểm của AI (như dịch sai thuật ngữ, lỗi ký tự tiếng Trung). Từ kinh nghiệm này, tác giả đã đúc kết bộ nguyên tắc đạo đức "7 Chữ Vàng cho Dược sĩ tương lai" và chuẩn hóa danh mục tài liệu trích dẫn khoa học bằng phần mềm Mendeley/Zotero.'
+      detailedSummary: 'Bài tập giải quyết một ca lâm sàng thực tế phức tạp: Bệnh nhân nữ 38 tuổi được chẩn đoán Viêm cột sống dính khớp (AS). Tôi đã ứng dụng mô hình Perplexity AI theo kỹ thuật Chain-of-Thought để tra cứu các hướng dẫn điều trị quốc tế chuẩn y khoa từ EULAR 2022 và ACR 2019, đối chiếu trực tiếp với hướng dẫn của Bộ Y tế Việt Nam. Qua đó phân tích độ an toàn của thuốc sinh học ức chế TNF đối với bệnh nhân nữ trong độ tuổi sinh sản. Đặc biệt, tôi đã thực hiện quy trình kiểm chứng chéo nghiêm ngặt để phát hiện và hiệu đính các lỗi ảo giác nguy hiểm của AI (như dịch sai thuật ngữ, lỗi ký tự tiếng Trung). Từ kinh nghiệm này, tôi đã đúc kết bộ nguyên tắc đạo đức "7 Chữ Vàng cho Dược sĩ tương lai" và chuẩn hóa danh mục tài liệu trích dẫn khoa học bằng phần mềm Mendeley/Zotero.'
     }
   ];
 
@@ -176,20 +182,32 @@ function App() {
     }
   };
 
+  const getBadgeStyleClass = (skillIndex: number) => {
+    const classes = ['badge-indigo', 'badge-teal', 'badge-violet', 'badge-amber', 'badge-rose', 'badge-emerald'];
+    return `skill-badge ${classes[skillIndex % classes.length]}`;
+  };
+
   return (
-    <div className="flex min-h-screen bg-white text-[#212121]">
+    <div className="flex min-h-screen gradient-bg-elegant text-[#1f2937]">
       {/* 1. Desktop Persistent Left Sidebar Navigation */}
-      <aside className="hidden xl:flex flex-col w-[260px] bg-white border-r border-[#00000015] h-screen sticky top-0 py-8 justify-between shrink-0 z-30">
+      <aside className="hidden xl:flex flex-col w-[280px] glass-panel-indigo border-r border-indigo-100/30 h-screen sticky top-0 py-8 justify-between shrink-0 z-30 shadow-xl shadow-indigo-100/10">
         <div className="flex flex-col">
           {/* Sidebar Header Brand Logo */}
-          <div className="px-6 pb-6 border-b border-[#00000008]">
-            <span className="text-[#6f7498] text-base font-bold tracking-tight block">
-              PORTFOLIO KỸ NĂNG SỐ
-            </span>
-            <span className="text-xs font-semibold text-[#555555] uppercase tracking-wider block mt-1">
+          <div className="px-6 pb-6 border-b border-indigo-100/30">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 to-teal-500 flex items-center justify-center text-white font-extrabold shadow-md shadow-indigo-200">
+                DS
+              </span>
+              <span className="text-indigo-900 text-base font-extrabold tracking-tight block font-sans">
+                PORTFOLIO SỐ
+              </span>
+            </div>
+            <span className="text-xs font-bold text-indigo-700 uppercase tracking-widest block pl-0.5">
               LƯU ĐỨC ANH
             </span>
-            <span className="text-[10px] text-gray-400 block">Sinh viên Dược K47 • VNU-UMP</span>
+            <span className="text-[10px] text-indigo-950/60 font-semibold block mt-1 pl-0.5">
+              Sinh viên Dược K47 • VNU-UMP
+            </span>
           </div>
 
           {/* Sidebar Navigation Tree */}
@@ -198,30 +216,30 @@ function App() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`sidebar-link flex items-center gap-2.5 px-4 py-2.5 rounded-r-full text-xs sm:text-sm font-medium ${
+                className={`sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                   currentSection === link.id ? 'active' : ''
                 }`}
               >
-                {link.id === 'gioi-thieu' && <GraduationCap className="w-4 h-4" />}
-                {link.id === 'du-an' && <FileText className="w-4 h-4" />}
-                {link.id === 'tong-ket' && <BookOpen className="w-4 h-4" />}
+                {link.id === 'gioi-thieu' && <GraduationCap className="w-4.5 h-4.5 text-indigo-500" />}
+                {link.id === 'du-an' && <FileText className="w-4.5 h-4.5 text-indigo-500" />}
+                {link.id === 'tong-ket' && <BookOpen className="w-4.5 h-4.5 text-indigo-500" />}
                 {link.label}
               </a>
             ))}
 
             {/* Nested Project Structure inside sidebar */}
-            <div className="mt-3 pl-4 border-l border-[#00000008] ml-5 flex flex-col gap-1">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400 block py-1.5 px-2">
-                Danh sách bài tập
+            <div className="mt-4 pl-3 border-l border-indigo-100/50 ml-6 flex flex-col gap-1.5">
+              <span className="text-[9px] uppercase font-bold tracking-widest text-indigo-800/40 block py-1 px-2">
+                Bài tập thực hành
               </span>
               {portfolioProjects.map((proj, idx) => (
                 <button
                   key={proj.id}
                   onClick={() => handleSidebarProjectClick(idx)}
-                  className={`text-left text-xs font-medium py-1.5 px-2 rounded-r-md transition-colors ${
+                  className={`text-left text-xs font-semibold py-2 px-2.5 rounded-lg transition-all ${
                     activeTab === idx 
-                      ? 'text-[#6f7498] bg-[#6f7498]/5 font-semibold' 
-                      : 'text-gray-500 hover:text-[#6f7498] hover:bg-gray-50'
+                      ? 'text-indigo-700 bg-indigo-50/70 font-extrabold border-r-2 border-indigo-500 shadow-sm' 
+                      : 'text-slate-500 hover:text-indigo-600 hover:bg-white/40'
                   }`}
                 >
                   Bài {idx + 1}: {proj.label.split(':')[1]?.trim() || proj.label}
@@ -232,19 +250,30 @@ function App() {
         </div>
 
         {/* Sidebar Footer Details */}
-        <div className="px-6 pt-4 border-t border-[#00000008] text-[11px] text-gray-500 space-y-1">
-          <p className="font-semibold text-gray-700">Liên hệ hỗ trợ:</p>
-          <p>SĐT: +84 832 581 837</p>
-          <p className="truncate">luuducanhhl@gmail.com</p>
+        <div className="px-6 pt-4 border-t border-indigo-100/30 text-[11px] text-slate-500 space-y-2 bg-indigo-50/20 rounded-b-2xl mx-3">
+          <p className="font-extrabold text-indigo-900 tracking-wide uppercase text-[9px]">Liên hệ hỗ trợ:</p>
+          <div className="flex items-center gap-1.5 text-slate-600">
+            <span className="text-indigo-400 font-bold">SĐT:</span>
+            <span>+84 832 581 837</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-slate-600">
+            <Mail className="w-3 h-3 text-indigo-400 shrink-0" />
+            <a href="mailto:22100187@vnu.edu.vn" className="truncate font-semibold text-indigo-600 hover:underline">
+              22100187@vnu.edu.vn
+            </a>
+          </div>
         </div>
       </aside>
 
       {/* Main Right Scrollable Layout */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* 2. Top Navigation Bar (Shown on Mobile/Tablet, hides nav on desktop) */}
-        <header className="sticky top-0 z-40 bg-white border-b border-[#00000010] px-4 sm:px-6 py-4 flex items-center justify-between xl:justify-end xl:bg-white/95 xl:backdrop-blur-sm">
+        <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-indigo-100/30 px-4 sm:px-6 py-4 flex items-center justify-between xl:justify-end">
           <div className="flex items-center gap-2 xl:hidden">
-            <span className="text-[#6f7498] font-bold text-sm sm:text-base tracking-tight">
+            <span className="w-7 h-7 rounded-lg bg-gradient-to-tr from-indigo-500 to-teal-500 flex items-center justify-center text-white font-extrabold text-xs shadow-md">
+              DS
+            </span>
+            <span className="text-indigo-900 font-extrabold text-sm sm:text-base tracking-tight font-sans">
               PORTFOLIO • LƯU ĐỨC ANH
             </span>
           </div>
@@ -255,7 +284,7 @@ function App() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`nav-top-link text-xs sm:text-sm font-medium py-1 transition-colors ${
+                className={`nav-top-link text-xs sm:text-sm font-bold py-1 transition-all ${
                   currentSection === link.id ? 'active' : ''
                 }`}
               >
@@ -266,19 +295,19 @@ function App() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => window.open('mailto:luuducanhhl@gmail.com')}
-              className="bg-[#6f7498] hover:bg-[#5b6082] text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors flex items-center gap-1.5 shadow-sm"
+              onClick={() => window.open('mailto:22100187@vnu.edu.vn')}
+              className="gradient-button text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 active:scale-95 cursor-pointer shadow-md"
             >
-              <Mail className="w-3.5 h-3.5" /> Liên hệ
+              <Mail className="w-3.5 h-3.5" /> Gửi VNU Gmail
             </button>
 
             {/* Mobile Hamburger menu toggle */}
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              className="xl:hidden flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+              className="xl:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             >
-              {menuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {menuOpen ? <X className="w-4.5 h-4.5" /> : <Menu className="w-4.5 h-4.5" />}
             </button>
           </div>
         </header>
@@ -286,7 +315,7 @@ function App() {
         {/* Mobile menu drawer overlay */}
         {menuOpen && (
           <div
-            className="xl:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-xs transition-opacity duration-300"
+            className="xl:hidden fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300"
             onClick={() => setMenuOpen(false)}
           />
         )}
@@ -298,13 +327,18 @@ function App() {
           }`}
         >
           <div className="flex flex-col h-full pt-16 px-6 pb-6">
-            <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-              <span className="text-[#6f7498] font-bold text-sm">PORTFOLIO</span>
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div className="flex items-center gap-2">
+                <span className="w-7 h-7 rounded-lg bg-gradient-to-tr from-indigo-500 to-teal-500 flex items-center justify-center text-white font-extrabold text-xs shadow-md">
+                  DS
+                </span>
+                <span className="text-indigo-900 font-extrabold text-sm">PORTFOLIO</span>
+              </div>
               <button 
                 onClick={() => setMenuOpen(false)} 
-                className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500"
+                className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4.5 h-4.5" />
               </button>
             </div>
             
@@ -314,8 +348,8 @@ function App() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`text-sm font-semibold text-gray-700 py-3 border-b border-gray-50 flex items-center gap-2 ${
-                    currentSection === link.id ? 'text-[#6f7498] border-b-2 border-[#6f7498]/40' : ''
+                  className={`text-sm font-bold text-slate-700 py-3 border-b border-slate-50 flex items-center gap-2 ${
+                    currentSection === link.id ? 'text-indigo-600 border-b-2 border-indigo-500/40' : ''
                   }`}
                 >
                   {link.label}
@@ -323,65 +357,71 @@ function App() {
               ))}
             </nav>
 
-            <div className="mt-auto pt-6 border-t border-gray-100 text-xs text-gray-500 space-y-1">
-              <p className="font-semibold text-gray-700">Lưu Đức Anh</p>
-              <p>Trường Đại học Y Dược, ĐHQGHN</p>
-              <p>SĐT: +84 832 581 837</p>
-              <p>Email: luuducanhhl@gmail.com</p>
+            <div className="mt-auto pt-6 border-t border-slate-100 text-xs text-slate-500 space-y-2 bg-indigo-50/10 p-4 rounded-xl">
+              <p className="font-extrabold text-indigo-900 text-xs uppercase tracking-wide">Lưu Đức Anh</p>
+              <p className="font-semibold text-slate-600">Trường Đại học Y Dược, ĐHQGHN</p>
+              <p className="text-slate-600">SĐT: +84 832 581 837</p>
+              <p className="text-indigo-600 font-bold truncate">Gmail: 22100187@vnu.edu.vn</p>
             </div>
           </div>
         </div>
 
         {/* 3. Header Banner (Aristotle Banner with Boomerang Background inside) */}
-        <section className="relative h-[250px] sm:h-[310px] md:h-[350px] w-full overflow-hidden flex items-center justify-center bg-[#212121]">
+        <section className="relative h-[260px] sm:h-[320px] md:h-[360px] w-full overflow-hidden flex items-center justify-center dark-gradient-banner">
           {/* Boomerang loop background inside header banner */}
           <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 w-full h-full" />
           {/* Aristotle Google Sites dark semi-transparent banner overlay */}
-          <div className="absolute inset-0 bg-[#212121]/55 banner-overlay z-10" />
+          <div className="absolute inset-0 bg-[#0f172a]/65 z-10" />
 
           {/* Banner Contents */}
           <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl">
-            <h2 className="text-white text-[15px] sm:text-[18px] md:text-[22px] font-medium tracking-wider uppercase drop-shadow-md">
-              Hành Trình Tri Trải Nghiệm & Kỹ Năng Số Học Thuật
+            <h2 className="text-white text-[13px] sm:text-[16px] md:text-[18px] font-bold tracking-widest uppercase drop-shadow-md text-glow bg-gradient-to-r from-teal-300 to-indigo-300 bg-clip-text text-transparent">
+              Hành Trình Trải Nghiệm & Kỹ Năng Số Học Thuật
             </h2>
             
             {/* The main title */}
-            <h1 className="text-white text-[28px] sm:text-[38px] md:text-[45px] font-bold leading-tight uppercase mt-2 drop-shadow-lg tracking-tight">
+            <h1 className="text-white text-[32px] sm:text-[42px] md:text-[52px] font-black leading-none uppercase mt-3 drop-shadow-lg tracking-tight font-sans">
               Lưu Đức Anh
             </h1>
 
-            <p className="text-white/90 text-xs sm:text-sm md:text-base mt-2 max-w-2xl mx-auto font-medium drop-shadow-sm">
+            <p className="text-indigo-100 text-xs sm:text-sm md:text-base mt-3 max-w-2xl mx-auto font-semibold drop-shadow-sm">
               Sinh viên Dược năm 4 • VNU University of Medicine and Pharmacy
             </p>
 
             {/* Highlight Accent Line below title */}
-            <div className="mt-4 border-b-8 border-[#858cb8] w-24 mx-auto rounded-full drop-shadow-md" />
+            <div className="mt-5 bg-gradient-to-r from-indigo-500 via-teal-400 to-indigo-500 h-2 w-32 mx-auto rounded-full shadow-lg shadow-indigo-500/30" />
           </div>
         </section>
 
-        {/* 4. Page: Lời mở đầu (Giới thiệu) - White Background */}
-        <section id="gioi-thieu" className="py-12 sm:py-16 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full">
-          <div className="text-center mb-10">
+        {/* 4. Page: Lời mở đầu (Giới thiệu) - Elegant colorful background */}
+        <section id="gioi-thieu" className="py-16 sm:py-20 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full relative">
+          {/* Decorative Background Glowing Orbs */}
+          <div className="absolute top-10 left-10 w-48 h-48 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-48 h-48 bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="text-center mb-12">
             <h3 className="academic-section-title uppercase">
               Lời Mở Đầu
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch relative z-10">
             {/* Left side text intro */}
-            <div className="md:col-span-7 space-y-4">
-              <p className="text-[#212121] text-sm sm:text-base leading-relaxed text-justify">
-                Chào mừng bạn đến với <strong>Portfolio Kỹ năng số</strong> của tôi. Đây là nơi lưu trữ, phản ánh toàn bộ hành trình học tập, trải nghiệm và tích lũy năng lực số thông qua chuỗi bài tập thực tế về công nghệ, quản trị dữ liệu và trí tuệ nhân tạo.
-              </p>
-              <p className="text-[#212121] text-sm sm:text-base leading-relaxed text-justify">
-                Trong kỷ nguyên y tế thông minh, năng lực số không chỉ còn là công cụ hỗ trợ mà đã trở thành năng lực cốt lõi giúp các Dược sĩ tương lai kết nối hiệu quả giữa y học học thuật thực chứng với thực tiễn chăm sóc sức khỏe lâm sàng.
-              </p>
+            <div className="md:col-span-7 space-y-5 flex flex-col justify-between">
+              <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-indigo-100/30 shadow-md space-y-4">
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed text-justify font-medium">
+                  Chào mừng bạn đến với <strong>Portfolio Kỹ năng số</strong> của tôi. Đây là nơi lưu trữ, phản ánh toàn bộ hành trình học tập, trải nghiệm và tích lũy năng lực số thông qua chuỗi bài tập thực tế về công nghệ, quản trị dữ liệu và trí tuệ nhân tạo.
+                </p>
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed text-justify font-medium">
+                  Trong kỷ nguyên y tế thông minh, năng lực số không chỉ còn là công cụ hỗ trợ mà đã trở thành năng lực cốt lõi giúp các Dược sĩ tương lai kết nối hiệu quả giữa y học học thuật thực chứng với thực tiễn chăm sóc sức khỏe lâm sàng.
+                </p>
+              </div>
               
-              <div className="p-4 bg-gray-50 border border-gray-100 rounded-xl space-y-2 mt-4">
-                <span className="text-xs font-bold text-[#6f7498] uppercase tracking-wider block">
+              <div className="p-5 bg-gradient-to-r from-indigo-50/80 to-teal-50/80 border border-indigo-100/50 rounded-2xl space-y-2 shadow-xs">
+                <span className="text-xs font-black text-indigo-900 uppercase tracking-widest block font-sans">
                   Mục Tiêu Portfolio
                 </span>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold">
                   Minh chứng năng lực công nghệ đã được chuẩn hóa thông qua 6 module chuyên môn học thuật; lưu trữ các sản phẩm số cá nhân giúp dễ dàng chia sẻ, cộng tác khoa học và định hướng chuyển đổi số y tế toàn diện.
                 </p>
               </div>
@@ -390,40 +430,40 @@ function App() {
             {/* Right side academic cards grid */}
             <div className="md:col-span-5 flex flex-col gap-4">
               {/* Profile Card 1 */}
-              <div className="bg-white border border-[#00000008] rounded-xl p-5 shadow-xs hover:border-[#6f7498]/30 transition-all">
-                <div className="flex items-center gap-3 text-[#6f7498] font-bold text-sm mb-2">
-                  <span className="w-8 h-8 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-4.5 h-4.5" />
+              <div className="glass-panel hover-lift rounded-2xl p-5 border border-indigo-100/20 shadow-sm flex flex-col justify-between">
+                <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm mb-2 font-sans">
+                  <span className="w-8 h-8 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                    <GraduationCap className="w-5 h-5 text-indigo-600" />
                   </span>
                   Bản thân & Chuyên ngành
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                   <strong>LƯU ĐỨC ANH</strong>, sinh viên Dược năm cuối tại Trường Đại học Y Dược, Đại học Quốc gia Hà Nội (VNU-UMP).
                 </p>
               </div>
 
               {/* Profile Card 2 */}
-              <div className="bg-white border border-[#00000008] rounded-xl p-5 shadow-xs hover:border-[#6f7498]/30 transition-all">
-                <div className="flex items-center gap-3 text-[#6f7498] font-bold text-sm mb-2">
-                  <span className="w-8 h-8 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                    <Layers className="w-4.5 h-4.5" />
+              <div className="glass-panel hover-lift rounded-2xl p-5 border border-indigo-100/20 shadow-sm flex flex-col justify-between">
+                <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm mb-2 font-sans">
+                  <span className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                    <Layers className="w-5 h-5 text-teal-600" />
                   </span>
                   Lĩnh vực quan tâm
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                   Y học số, trí tuệ nhân tạo (AI/Machine Learning) trong sàng lọc & thiết kế dược chất, tự động hóa lâm sàng bệnh viện.
                 </p>
               </div>
 
               {/* Profile Card 3 */}
-              <div className="bg-white border border-[#00000008] rounded-xl p-5 shadow-xs hover:border-[#6f7498]/30 transition-all">
-                <div className="flex items-center gap-3 text-[#6f7498] font-bold text-sm mb-2">
-                  <span className="w-8 h-8 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                    <CheckSquare className="w-4.5 h-4.5" />
+              <div className="glass-panel hover-lift rounded-2xl p-5 border border-indigo-100/20 shadow-sm flex flex-col justify-between">
+                <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm mb-2 font-sans">
+                  <span className="w-8 h-8 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                    <CheckSquare className="w-5 h-5 text-purple-600" />
                   </span>
                   Kỹ năng cốt lõi
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                   Lưu trữ khoa học, truy vấn dữ liệu y học nâng cao, Prompt CLEAR/CRAC, cộng tác trực tuyến trực quan, sáng tạo nội dung số AI.
                 </p>
               </div>
@@ -431,46 +471,46 @@ function App() {
           </div>
         </section>
 
-        {/* 5. Page: Bài tập thực hành (Dự án) - Alternating Light Gray-Blue Background */}
-        <section id="du-an" className="py-12 sm:py-16 px-4 sm:px-8 md:px-12 bg-[#e8f0f0]">
+        {/* 5. Page: Bài tập thực hành (Dự án) - Beautiful gradient backdrop */}
+        <section id="du-an" className="py-16 sm:py-20 px-4 sm:px-8 md:px-12 bg-gradient-to-b from-[#eef2ff] via-[#f5f8f8] to-slate-50">
           <div className="max-w-5xl mx-auto w-full">
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <h3 className="academic-section-title uppercase">
                 Bài Tập Thực Hành
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto mt-2">
-                Hệ thống 6 bài tập lớn rèn luyện năng lực số chuẩn y khoa được thực hiện chi tiết theo quy trình nghiên cứu học thuật
+              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto mt-3 font-semibold">
+                Hệ thống 6 bài tập lớn rèn luyện năng lực số chuẩn y khoa được thực hiện chi tiết theo quy trình nghiên cứu học thuật.
               </p>
             </div>
 
             {/* Dashboard Container */}
-            <div className="bg-white rounded-2xl border border-black/10 shadow-sm overflow-hidden flex flex-col md:flex-row min-h-[500px]">
+            <div className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
               {/* Left Selector Sidebar */}
-              <div className="w-full md:w-[240px] bg-gray-50 border-r border-gray-100 flex flex-col shrink-0">
-                <div className="p-4 border-b border-gray-100 bg-[#6f7498]/5">
-                  <span className="text-xs font-bold text-[#6f7498] uppercase tracking-wider block">
+              <div className="w-full md:w-[260px] bg-slate-50/50 border-r border-indigo-100/20 flex flex-col shrink-0">
+                <div className="p-5 border-b border-indigo-100/20 bg-indigo-50/20">
+                  <span className="text-xs font-black text-indigo-950 uppercase tracking-widest block font-sans">
                     Danh Sách Bài Học
                   </span>
                 </div>
                 
-                <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible p-2 md:p-3 gap-1">
+                <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible p-3 gap-2">
                   {portfolioProjects.map((proj, idx) => (
                     <button
                       key={proj.id}
                       onClick={() => setActiveTab(idx)}
-                      className={`text-left w-full shrink-0 md:shrink flex items-center gap-2 px-4 py-3 rounded-lg text-xs font-semibold transition-all ${
+                      className={`text-left w-full shrink-0 md:shrink flex items-center gap-3 px-4 py-3.5 rounded-xl text-xs font-bold transition-all active:scale-[0.98] ${
                         activeTab === idx
-                          ? 'bg-[#6f7498] text-white shadow-sm'
-                          : 'text-[#555555] hover:text-[#6f7498] hover:bg-white'
+                          ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-200'
+                          : 'text-slate-600 hover:text-indigo-700 hover:bg-white bg-white/40'
                       }`}
                     >
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] shrink-0 ${
-                        activeTab === idx ? 'bg-white text-[#6f7498]' : 'bg-gray-200 text-gray-600'
+                      <span className={`w-5.5 h-5.5 rounded-lg flex items-center justify-center text-[10px] font-extrabold shrink-0 ${
+                        activeTab === idx ? 'bg-white text-indigo-700' : 'bg-slate-200 text-slate-700'
                       }`}>
                         {idx + 1}
                       </span>
                       <span className="truncate">{proj.label.split(':')[0]}</span>
-                      <ChevronRight className={`w-3.5 h-3.5 ml-auto hidden md:block ${
+                      <ChevronRight className={`w-4 h-4 ml-auto hidden md:block ${
                         activeTab === idx ? 'opacity-100' : 'opacity-30'
                       }`} />
                     </button>
@@ -479,36 +519,52 @@ function App() {
               </div>
 
               {/* Right Detail Pane */}
-              <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between bg-white">
+              <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative">
                 <div className="space-y-6">
                   {/* Title of exercise */}
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-[#858cb8] tracking-widest block mb-1">
-                      Bài Tập Số {activeTab + 1} • Giáo Trình Chuẩn VNU-UMP
-                    </span>
-                    <h4 className="text-gray-900 text-lg sm:text-xl md:text-2xl font-bold font-sans leading-tight">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="text-[9px] uppercase font-black text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-indigo-100/50">
+                        Bài Tập Số {activeTab + 1}
+                      </span>
+                      <span className="text-[9px] uppercase font-black text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-teal-100/50">
+                        Giáo Trình VNU-UMP
+                      </span>
+                    </div>
+                    <h4 className="text-slate-900 text-xl sm:text-2xl font-black font-sans leading-tight">
                       {portfolioProjects[activeTab].fullName}
                     </h4>
                   </div>
 
+                  {/* Core skills badges */}
+                  {portfolioProjects[activeTab].skills && (
+                    <div className="flex flex-wrap gap-2 pt-1 border-b border-slate-100 pb-4">
+                      {portfolioProjects[activeTab].skills.map((skill, skillIdx) => (
+                        <span key={skillIdx} className={getBadgeStyleClass(skillIdx)}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
                   {/* Objective (Mục tiêu) */}
                   <div className="space-y-2">
-                    <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
+                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
                       Mục tiêu bài tập
                     </h5>
-                    <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-justify">
+                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify font-medium">
                       {portfolioProjects[activeTab].objective}
                     </p>
                   </div>
 
                   {/* Detailed Summary (Tóm tắt quá trình thực hiện chuyên sâu) */}
                   {portfolioProjects[activeTab].detailedSummary && (
-                    <div className="space-y-2 bg-[#6f7498]/5 p-4 sm:p-5 border-l-4 border-[#6f7498] rounded-r-xl">
-                      <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider">
+                    <div className="space-y-2 bg-gradient-to-r from-indigo-50/70 to-indigo-50/10 p-5 border-l-4 border-indigo-600 rounded-r-2xl shadow-xs">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-widest font-sans">
                         Tóm tắt quá trình thực hiện
                       </h5>
-                      <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-justify italic font-medium">
+                      <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify italic font-semibold">
                         "{portfolioProjects[activeTab].detailedSummary}"
                       </p>
                     </div>
@@ -516,57 +572,57 @@ function App() {
 
                   {/* Implementation Process (Quy trình thực hiện) */}
                   <div className="space-y-2">
-                    <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
+                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
                       Quy trình thực hiện chi tiết
                     </h5>
-                    <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-justify bg-gray-50/50 p-4 border border-gray-100 rounded-xl">
+                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
                       {portfolioProjects[activeTab].process}
                     </p>
                   </div>
 
                   {/* Product Output Details */}
                   <div className="space-y-2 pt-1">
-                    <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
+                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
                       Sản phẩm đầu ra khoa học
                     </h5>
-                    <div className="flex items-start gap-2.5 text-xs sm:text-sm text-green-700 bg-green-50/80 p-3 rounded-lg border border-green-100">
-                      <CheckCircle2 className="w-4.5 h-4.5 shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-bold">Đã lưu trữ:</span> {portfolioProjects[activeTab].product}
+                    <div className="flex items-start gap-3 text-xs sm:text-sm text-emerald-800 bg-emerald-50/80 p-4 rounded-xl border border-emerald-100/50 shadow-xs">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <div className="font-semibold">
+                        <span className="font-black text-emerald-950">Đã lưu trữ:</span> {portfolioProjects[activeTab].product}
                       </div>
                     </div>
                   </div>
 
                   {/* Evidence Screenshots (Hình ảnh minh chứng thực tế) */}
                   {portfolioProjects[activeTab].images && (
-                    <div className="space-y-3 pt-2">
-                      <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
-                        <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
+                    <div className="space-y-3 pt-3">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
                         Hình ảnh minh chứng thực tế (Nhấp để phóng to)
                       </h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {portfolioProjects[activeTab].images.map((img, imgIdx) => (
                           <div 
                             key={imgIdx} 
                             onClick={() => setSelectedImage(img)}
-                            className="group relative cursor-zoom-in bg-gray-50 border border-gray-200/60 rounded-xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#6f7498]/40 transition-all duration-300"
+                            className="group relative cursor-zoom-in bg-slate-50 border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-indigo-400 transition-all duration-300 hover-lift"
                           >
-                            <div className="aspect-video w-full overflow-hidden bg-gray-100 relative">
+                            <div className="aspect-video w-full overflow-hidden bg-slate-100 relative">
                               <img 
                                 src={img} 
                                 alt={portfolioProjects[activeTab].imageDescriptions?.[imgIdx]} 
                                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                               />
-                              <div className="absolute inset-0 bg-[#212121]/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                                <span className="bg-white/95 text-gray-800 text-xs font-bold py-1.5 px-3 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
-                                  <Eye className="w-3.5 h-3.5" /> Xem chi tiết
+                              <div className="absolute inset-0 bg-[#0f172a]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                <span className="bg-white/95 text-slate-800 text-xs font-extrabold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md backdrop-blur-xs">
+                                  <Eye className="w-4 h-4 text-indigo-600" /> Xem chi tiết
                                 </span>
                               </div>
                             </div>
-                            <div className="p-3 bg-white border-t border-gray-100">
-                              <p className="text-[11px] sm:text-xs text-gray-600 font-medium leading-relaxed">
+                            <div className="p-4 bg-white border-t border-slate-100">
+                              <p className="text-[11px] sm:text-xs text-slate-600 font-semibold leading-relaxed text-justify">
                                 {portfolioProjects[activeTab].imageDescriptions?.[imgIdx]}
                               </p>
                             </div>
@@ -578,31 +634,31 @@ function App() {
                 </div>
 
                 {/* Call-to-action details */}
-                <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between flex-wrap gap-4 w-full">
-                  <span className="text-[11px] text-gray-400 font-medium md:max-w-[40%]">
+                <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-5 w-full">
+                  <span className="text-[11px] text-slate-400 font-bold md:max-w-[40%] leading-relaxed">
                     * Mọi báo cáo và hình ảnh đều được trích dẫn trực tiếp từ sản phẩm gốc của sinh viên Lưu Đức Anh.
                   </span>
                   
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
                     {portfolioProjects[activeTab].fileUrl && (
                       <a
                         href={portfolioProjects[activeTab].fileUrl}
                         download={portfolioProjects[activeTab].fileName}
-                        className="bg-[#6f7498] hover:bg-[#5b6082] text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 border border-transparent active:scale-95 cursor-pointer"
+                        className="gradient-button text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl transition-all inline-flex items-center gap-2 active:scale-95 cursor-pointer shadow-md"
                       >
-                        <FileDown className="w-4 h-4" /> Tải xuống báo cáo gốc (.{portfolioProjects[activeTab].fileType})
+                        <FileDown className="w-4.5 h-4.5 shrink-0" /> Tải xuống báo cáo (.{portfolioProjects[activeTab].fileType})
                       </a>
                     )}
 
                     <button
                       onClick={() =>
                         window.open(
-                          `mailto:luuducanhhl@gmail.com?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
+                          `mailto:22100187@vnu.edu.vn?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
                         )
                       }
-                      className="text-gray-500 hover:text-[#6f7498] border border-gray-200 bg-white hover:bg-gray-50 text-xs sm:text-sm font-semibold px-4 py-3 rounded-xl shadow-2xs transition-all inline-flex items-center gap-1.5 cursor-pointer"
+                      className="outline-button text-indigo-700 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 cursor-pointer"
                     >
-                      <Mail className="w-4 h-4" /> Liên hệ phản biện
+                      <Mail className="w-4.5 h-4.5 text-indigo-500 shrink-0" /> Liên hệ VNU Gmail
                     </button>
                   </div>
                 </div>
@@ -611,76 +667,82 @@ function App() {
           </div>
         </section>
 
-        {/* 6. Page: Tổng kết & Suy ngẫm - White Background */}
-        <section id="tong-ket" className="py-12 sm:py-16 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full">
-          <div className="text-center mb-10">
+        {/* 6. Page: Tổng kết & Suy ngẫm - Elegant white layout with neon badges */}
+        <section id="tong-ket" className="py-16 sm:py-20 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-violet-400/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="text-center mb-12">
             <h3 className="academic-section-title uppercase">
               Tổng Kết & Suy Ngẫm
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 max-w-xl mx-auto mt-2">
-              Đúc kết chặng đường rèn luyện và xây dựng tư duy "Dược sĩ số" vững vàng
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-3 font-semibold">
+              Đúc kết chặng đường rèn luyện và xây dựng tư duy "Dược sĩ số" vững vàng.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {/* Column 1: Gains */}
-            <div className="bg-white border border-[#00000010] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 text-[#6f7498] font-bold text-sm border-b border-gray-100 pb-3">
-                <span className="w-7 h-7 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                  <CheckSquare className="w-4 h-4" />
+            <div className="glass-panel hover-lift rounded-2xl p-6 shadow-sm border border-slate-100 space-y-4 flex flex-col justify-between">
+              <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm border-b border-slate-100 pb-3 font-sans">
+                <span className="w-8 h-8 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                  <CheckSquare className="w-5 h-5 text-indigo-600" />
                 </span>
                 Kỹ Năng Số Đạt Được
               </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify font-medium">
                 Tôi đã hoàn thiện kỹ năng quản lý tệp tin hệ điều hành; khai thác và thẩm định chất lượng nguồn thông tin y khoa qua Google Scholar, Elicit; làm chủ kỹ nghệ prompt CLEAR/CRAC cho GenAI; cộng tác trực tuyến trực quan qua Trello, Google Docs và Zoom; thiết kế nội dung y học số AI thông qua Canva, Nano Banana; thẩm định các ca lâm sàng nâng cao với sự trợ giúp chọn lọc của Perplexity và Zotero/Mendeley.
               </p>
             </div>
 
             {/* Column 2: Self growth */}
-            <div className="bg-white border border-[#00000010] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 text-[#6f7498] font-bold text-sm border-b border-gray-100 pb-3">
-                <span className="w-7 h-7 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                  <Layers className="w-4 h-4" />
+            <div className="glass-panel hover-lift rounded-2xl p-6 shadow-sm border border-slate-100 space-y-4 flex flex-col justify-between">
+              <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm border-b border-slate-100 pb-3 font-sans">
+                <span className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                  <Layers className="w-5 h-5 text-teal-600" />
                 </span>
                 Sự Phát Triển Bản Thân
               </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify font-medium">
                 Hành trình này đã nâng tầm tư duy của tôi vượt lên trên một sinh viên Dược lâm sàng truyền thống. Tôi nhận thức rõ ranh giới và cách tích hợp công nghệ số vào chăm sóc sức khỏe. Việc ứng dụng công nghệ trực tuyến giúp nâng cao hiệu suất cộng tác nghiên cứu, gạt bỏ rào cản địa lý và đẩy mạnh tốc độ xử lý dữ liệu học tập đáng kể.
               </p>
             </div>
 
             {/* Column 3: Challenges & Resolution */}
-            <div className="bg-white border border-[#00000010] rounded-2xl p-6 shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 text-[#6f7498] font-bold text-sm border-b border-gray-100 pb-3">
-                <span className="w-7 h-7 rounded-full bg-[#6f7498]/10 flex items-center justify-center shrink-0">
-                  <AlertTriangle className="w-4 h-4" />
+            <div className="glass-panel hover-lift rounded-2xl p-6 shadow-sm border border-slate-100 space-y-4 flex flex-col justify-between">
+              <div className="flex items-center gap-3 text-indigo-900 font-extrabold text-sm border-b border-slate-100 pb-3 font-sans">
+                <span className="w-8 h-8 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0 shadow-inner">
+                  <AlertTriangle className="w-5 h-5 text-purple-600" />
                 </span>
                 Thách Thức & Giải Pháp
               </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify font-medium">
                 Thách thức lớn nhất là nhận diện lỗi ảo giác y khoa (lỗi dịch thuật, ký tự ngoại lai "口服") từ AI tạo sinh. Tôi đã xây dựng và áp dụng bộ nguyên lý <strong>"7 Chữ Vàng cho Dược sĩ tương lai"</strong>: Sức khỏe trên hết - Minh bạch - Kiểm chứng chéo - Bảo mật - Cầm lái tư duy - Cập nhật liên tục - Sử dụng chọn lọc để luôn đảm bảo tính an toàn học thuật cao nhất.
               </p>
             </div>
           </div>
 
           {/* Action row at bottom of conclusion */}
-          <div className="mt-12 bg-gray-50 border border-gray-100 p-6 rounded-2xl text-center space-y-4">
-            <span className="text-[#6f7498] text-xs font-bold uppercase tracking-wider block">
+          <div className="mt-12 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-950 p-8 rounded-3xl shadow-xl text-center space-y-4 relative overflow-hidden">
+            {/* Background absolute glowing blob */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl" />
+
+            <span className="text-teal-400 text-xs font-black uppercase tracking-widest block font-sans">
               Dược Sĩ Số VNU-UMP • Lộ Trình Phát Triển 2026
             </span>
-            <p className="text-xs sm:text-sm text-gray-600 max-w-xl mx-auto leading-relaxed">
+            <p className="text-indigo-100 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed font-semibold">
               Trang bị tư duy công nghệ bền vững, kỹ năng cộng tác thông minh, sẵn sàng hành trang bước vào giai đoạn chuyển đổi số toàn diện của ngành y tế nước nhà.
             </p>
-            <div className="pt-2 flex justify-center gap-4">
+            <div className="pt-3 flex justify-center gap-4 flex-wrap sm:flex-nowrap">
               <a
                 href="#du-an"
-                className="bg-[#6f7498] hover:bg-[#5b6082] text-white text-xs font-bold px-6 py-2.5 rounded-full transition-all shadow-xs"
+                className="gradient-button text-white text-xs font-bold px-6 py-3 rounded-full transition-all shadow-md active:scale-95"
               >
                 Khám phá 6 Bài học số
               </a>
               <a
                 href="#gioi-thieu"
-                className="text-gray-500 hover:text-[#6f7498] text-xs font-bold py-2.5 px-4 rounded-full transition-all border border-gray-200 bg-white"
+                className="text-white hover:text-indigo-200 text-xs font-bold py-3 px-6 rounded-full transition-all border border-indigo-700/50 bg-indigo-900/40 backdrop-blur-xs"
               >
                 Quay lại đầu trang
               </a>
@@ -689,19 +751,19 @@ function App() {
         </section>
 
         {/* 7. Academic Footer */}
-        <footer className="bg-gray-100 border-t border-gray-200 py-8 px-6 text-center text-[#555555]">
-          <div className="max-w-5xl mx-auto space-y-3">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#6f7498]">
+        <footer className="bg-slate-950 border-t border-slate-900 py-12 px-6 text-center text-slate-400 relative">
+          <div className="max-w-5xl mx-auto space-y-4">
+            <p className="text-sm font-black uppercase tracking-widest text-indigo-400 font-sans">
               Lưu Đức Anh • Dược Sĩ Số Tương Lai
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-400 font-semibold max-w-xl mx-auto">
               Sinh viên Dược năm cuối (K47) • Trường Đại học Y Dược, Đại học Quốc gia Hà Nội
             </p>
-            <p className="text-[11px] text-gray-400">
-              SĐT: +84 832 581 837 | Email: luuducanhhl@gmail.com | Địa chỉ học tập: VNU-UMP, Cầu Giấy, Hà Nội
+            <p className="text-xs text-slate-500 max-w-2xl mx-auto font-medium">
+              SĐT: +84 832 581 837 &nbsp;|&nbsp; VNU Gmail: <a href="mailto:22100187@vnu.edu.vn" className="text-indigo-400 font-bold hover:underline">22100187@vnu.edu.vn</a> &nbsp;|&nbsp; Địa chỉ học tập: VNU-UMP, Cầu Giấy, Hà Nội
             </p>
-            <div className="pt-2 text-[10px] text-gray-400 border-t border-gray-200/50 max-w-xs mx-auto">
-              © 2026 Lưu Đức Anh. Redesigned to replicate clean, light academic layout.
+            <div className="pt-6 text-[10px] text-slate-600 border-t border-slate-900/60 max-w-xs mx-auto font-bold">
+              © 2026 Lưu Đức Anh. Redesigned with dynamic, colorful premium aesthetics.
             </div>
           </div>
         </footer>
@@ -709,32 +771,32 @@ function App() {
         {/* 8. Fullscreen Lightbox Modal */}
         {selectedImage && (
           <div 
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+            className="fixed inset-0 z-50 bg-slate-950/98 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
             onClick={() => setSelectedImage(null)}
           >
             <button 
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 transition-colors focus:outline-none z-55 cursor-pointer"
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-xl p-2.5 transition-colors focus:outline-none z-55 cursor-pointer"
               aria-label="Close lightbox"
             >
               <X className="w-6 h-6" />
             </button>
             
             <div 
-              className="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center gap-4"
+              className="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center gap-4 animate-in fade-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               <img 
                 src={selectedImage} 
                 alt="Evidence Fullscreen View" 
-                className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/10"
+                className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-white/10"
               />
               {(() => {
                 const currentProj = portfolioProjects[activeTab];
                 const imgIndex = currentProj.images ? currentProj.images.indexOf(selectedImage) : -1;
                 const desc = (imgIndex !== -1 && currentProj.imageDescriptions) ? currentProj.imageDescriptions[imgIndex] : '';
                 return desc ? (
-                  <div className="bg-black/60 text-white/95 text-xs sm:text-sm py-2 px-4 rounded-full max-w-2xl text-center backdrop-blur-sm shadow-md">
+                  <div className="bg-slate-900/80 text-white/95 text-xs sm:text-sm py-2.5 px-5 rounded-xl max-w-2xl text-center backdrop-blur-md shadow-md border border-white/5 font-semibold leading-relaxed">
                     {desc}
                   </div>
                 ) : null;
