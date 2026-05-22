@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
 html {
   scroll-behavior: smooth;
@@ -9,8 +13,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f3f4f6;
+  font-family: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
   color: #1f2937;
   overflow-x: hidden;
 }
@@ -46,6 +50,57 @@ body {
   --glass-border: rgba(99, 102, 241, 0.08);
 }
 
+/* Technical Grid Pattern - Motionsites.ai style */
+.grid-bg-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+/* Floating Gradient Orbs - Motionsites.ai style */
+@keyframes float-orb-1 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(50px, -70px) scale(1.15); }
+  66% { transform: translate(-30px, 40px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float-orb-2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-60px, 60px) scale(0.85); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.14;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb-indigo {
+  background: #4f46e5;
+  animation: float-orb-1 25s infinite alternate ease-in-out;
+}
+
+.orb-teal {
+  background: #14b8a6;
+  animation: float-orb-2 30s infinite alternate ease-in-out;
+}
+
+.orb-violet {
+  background: #a855f7;
+  animation: float-orb-1 28s infinite alternate-reverse ease-in-out;
+}
+
+.orb-pink {
+  background: #ec4899;
+  animation: float-orb-2 35s infinite alternate-reverse ease-in-out;
+}
+
 /* Gradient Background */
 .gradient-bg-elegant {
   background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 40%, #e6fcf5 100%);
@@ -57,15 +112,15 @@ body {
 
 /* Custom premium glass panel */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .glass-panel-indigo {
-  background: rgba(245, 243, 255, 0.75);
+  background: rgba(245, 243, 255, 0.78);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(99, 102, 241, 0.12);
@@ -87,9 +142,9 @@ body {
 
 /* Custom badges */
 .skill-badge {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 0.7rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
+  font-size: 0.68rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 0.35rem 0.75rem;
@@ -153,8 +208,8 @@ body {
 
 /* Glowing elegant button */
 .gradient-button {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
   letter-spacing: 0.2px;
   background: linear-gradient(135deg, #4f46e5 0%, #0d9488 100%);
   box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(13, 148, 136, 0.15);
@@ -173,8 +228,8 @@ body {
 
 /* Secondary Button outline style */
 .outline-button {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 700;
   border: 1.5px solid rgba(79, 70, 229, 0.15);
   background: rgba(255, 255, 255, 0.6);
   transition: all 0.2s ease-in-out;
@@ -187,9 +242,9 @@ body {
   transform: translateY(-1px);
 }
 
-/* Headings */
+/* Headings - Perfect uppercase Vietnamese support */
 .academic-section-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
   background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -217,8 +272,8 @@ body {
 
 /* Sidebar item active state */
 .sidebar-link {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
   color: #4b5563;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -240,8 +295,8 @@ body {
 
 /* Top nav link style */
 .nav-top-link {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
   color: #4b5563;
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -261,4 +316,5 @@ body {
   background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
   border-radius: 9999px;
 }
+
 

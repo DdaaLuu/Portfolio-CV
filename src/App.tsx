@@ -134,7 +134,7 @@ function App() {
         'Ảnh 1: Không gian cộng tác dự án nhóm trực quan trên bảng Kanban Trello với phân công nhiệm vụ và Due date.',
         'Ảnh 2: Biên bản thảo luận họp trực tuyến qua Zoom và quy trình phân quyền bảo mật dữ liệu lưu trữ đám mây Google Drive.'
       ],
-      detailedSummary: 'Nhằm tổ chức xây dựng kịch bản và sản xuất video thuyết trình về "Ứng dụng AI trong quản lý rối loạn lipid máu" cho nhóm VNU1001_E252023, tôi đã thiết lập một không gian cộng tác số đám mây toàn diện. Tiến độ công việc được quản lý trực quan trên bảng Kanban Trello với các nhãn phân loại, due date và danh mục công việc chi tiết. Nhóm đã thực hiện các buổi họp trực tuyến hiệu quả qua Zoom, tận dụng tối đa tính năng chia sẻ màn hình và phòng thảo luận phụ (Breakout Rooms). Kịch bản được đồng soạn thảo trực tiếp trên Google Docs with chế độ gợi ý đóng góp ý kiến (Suggesting) và lưu vết lịch sử phiên bản. Toàn bộ tài nguyên số được phân loại khoa học và đồng bộ trên Google Drive, áp dụng bảo mật xác thực hai lớp (2FA) để bảo vệ dữ liệu.'
+      detailedSummary: 'Nhằm tổ chức xây dựng kịch bản và sản xuất video thuyết trình về "Ứng dụng AI trong quản lý rối loạn lipid máu" cho nhóm VNU1001_E252023, tôi đã thiết lập một không gian cộng tác số đám mây toàn diện. Tiến độ công việc được quản lý trực quan trên bảng Kanban Trello với các nhãn phân loại, due date và danh mục công việc chi tiết. Nhóm đã thực hiện các buổi họp trực tuyến hiệu quả qua Zoom, tận dụng tối đa tính năng chia sẻ màn hình và phòng thảo luận phụ (Breakout Rooms). Kịch bản được đồng soạn thảo trực tiếp trên Google Docs với chế độ gợi ý đóng góp ý kiến (Suggesting) và lưu vết lịch sử phiên bản. Toàn bộ tài nguyên số được phân loại khoa học và đồng bộ trên Google Drive, áp dụng bảo mật xác thực hai lớp (2FA) để bảo vệ dữ liệu.'
     },
     {
       id: 'bt5',
@@ -188,7 +188,17 @@ function App() {
   };
 
   return (
-    <div className="flex min-h-screen gradient-bg-elegant text-[#1f2937]">
+    <div className="flex min-h-screen gradient-bg-elegant text-[#1f2937] relative overflow-hidden">
+      {/* Motionsites.ai Inspired Background Elements - Fixed to viewport */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 grid-bg-pattern" />
+        
+        <div className="absolute top-[10%] left-[-15%] sm:left-[5%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] floating-orb orb-indigo opacity-20" />
+        <div className="absolute top-[40%] right-[-15%] sm:right-[5%] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] floating-orb orb-teal opacity-20" />
+        <div className="absolute bottom-[20%] left-[-15%] sm:left-[10%] w-[380px] sm:w-[550px] h-[380px] sm:h-[550px] floating-orb orb-violet opacity-15" />
+        <div className="absolute bottom-[5%] right-[-10%] sm:right-[5%] w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] floating-orb orb-pink opacity-15" />
+      </div>
+
       {/* 1. Desktop Persistent Left Sidebar Navigation */}
       <aside className="hidden xl:flex flex-col w-[280px] glass-panel-indigo border-r border-indigo-100/30 h-screen sticky top-0 py-8 justify-between shrink-0 z-30 shadow-xl shadow-indigo-100/10">
         <div className="flex flex-col">
@@ -266,7 +276,7 @@ function App() {
       </aside>
 
       {/* Main Right Scrollable Layout */}
-      <div className="flex-1 min-w-0 flex flex-col">
+      <div className="flex-1 min-w-0 flex flex-col relative z-10">
         {/* 2. Top Navigation Bar (Shown on Mobile/Tablet, hides nav on desktop) */}
         <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-indigo-100/30 px-4 sm:px-6 py-4 flex items-center justify-between xl:justify-end">
           <div className="flex items-center gap-2 xl:hidden">
@@ -375,7 +385,7 @@ function App() {
 
           {/* Banner Contents */}
           <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl">
-            <h2 className="text-white text-[13px] sm:text-[16px] md:text-[18px] font-bold tracking-widest uppercase drop-shadow-md text-glow bg-gradient-to-r from-teal-300 to-indigo-300 bg-clip-text text-transparent">
+            <h2 className="text-white text-[13px] sm:text-[16px] md:text-[18px] font-bold tracking-widest uppercase drop-shadow-md text-glow bg-gradient-to-r from-teal-300 to-indigo-300 bg-clip-text text-transparent font-sans">
               Hành Trình Trải Nghiệm & Kỹ Năng Số Học Thuật
             </h2>
             
@@ -395,10 +405,6 @@ function App() {
 
         {/* 4. Page: Lời mở đầu (Giới thiệu) - Elegant colorful background */}
         <section id="gioi-thieu" className="py-16 sm:py-20 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full relative">
-          {/* Decorative Background Glowing Orbs */}
-          <div className="absolute top-10 left-10 w-48 h-48 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-48 h-48 bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />
-
           <div className="text-center mb-12">
             <h3 className="academic-section-title uppercase">
               Lời Mở Đầu
@@ -471,14 +477,14 @@ function App() {
           </div>
         </section>
 
-        {/* 5. Page: Bài tập thực hành (Dự án) - Beautiful gradient backdrop */}
-        <section id="du-an" className="py-16 sm:py-20 px-4 sm:px-8 md:px-12 bg-gradient-to-b from-[#eef2ff] via-[#f5f8f8] to-slate-50">
+        {/* 5. Page: Bài tập thực hành (Dự án) - Transparent backdrop to show glowing orbs */}
+        <section id="du-an" className="py-16 sm:py-20 px-4 sm:px-8 md:px-12 bg-transparent relative z-10">
           <div className="max-w-5xl mx-auto w-full">
             <div className="text-center mb-12">
               <h3 className="academic-section-title uppercase">
                 Bài Tập Thực Hành
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto mt-3 font-semibold">
+              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto mt-3 font-semibold font-sans">
                 Hệ thống 6 bài tập lớn rèn luyện năng lực số chuẩn y khoa được thực hiện chi tiết theo quy trình nghiên cứu học thuật.
               </p>
             </div>
@@ -493,12 +499,12 @@ function App() {
                   </span>
                 </div>
                 
-                <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible p-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-col p-3 gap-2">
                   {portfolioProjects.map((proj, idx) => (
                     <button
                       key={proj.id}
-                      onClick={() => setActiveTab(idx)}
-                      className={`text-left w-full shrink-0 md:shrink flex items-center gap-3 px-4 py-3.5 rounded-xl text-xs font-bold transition-all active:scale-[0.98] ${
+                      onClick={() => handleSidebarProjectClick(idx)}
+                      className={`text-left w-full md:shrink flex items-center gap-3 px-3 py-3 rounded-xl text-xs font-bold transition-all active:scale-[0.98] ${
                         activeTab === idx
                           ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-200'
                           : 'text-slate-600 hover:text-indigo-700 hover:bg-white bg-white/40'
@@ -509,7 +515,7 @@ function App() {
                       }`}>
                         {idx + 1}
                       </span>
-                      <span className="truncate">{proj.label.split(':')[0]}</span>
+                      <span className="truncate font-sans">{proj.label.split(':')[0]}</span>
                       <ChevronRight className={`w-4 h-4 ml-auto hidden md:block ${
                         activeTab === idx ? 'opacity-100' : 'opacity-30'
                       }`} />
@@ -576,7 +582,7 @@ function App() {
                       <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
                       Quy trình thực hiện chi tiết
                     </h5>
-                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl font-medium">
                       {portfolioProjects[activeTab].process}
                     </p>
                   </div>
@@ -633,8 +639,45 @@ function App() {
                   )}
                 </div>
 
+                {/* Previous & Next Assignment navigation buttons for enhanced mobile UX (starting from Bài 2) */}
+                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-4 w-full flex-wrap sm:flex-nowrap">
+                  {activeTab > 0 ? (
+                    <button
+                      onClick={() => {
+                        setActiveTab(activeTab - 1);
+                        document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
+                    >
+                      <ChevronRight className="w-4.5 h-4.5 rotate-180 shrink-0 text-indigo-500 animate-pulse" />
+                      <div className="truncate">
+                        <span className="text-[9px] uppercase block tracking-widest text-indigo-400 font-black">Bài trước đó</span>
+                        Bài {activeTab}: {portfolioProjects[activeTab - 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab - 1].label}
+                      </div>
+                    </button>
+                  ) : (
+                    <div className="hidden sm:block" /> /* Empty spacer for layout */
+                  )}
+
+                  {activeTab < 5 && (
+                    <button
+                      onClick={() => {
+                        setActiveTab(activeTab + 1);
+                        document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
+                    >
+                      <div className="truncate flex-1">
+                        <span className="text-[9px] uppercase block tracking-widest text-teal-200 font-black">Bài tiếp theo</span>
+                        Bài {activeTab + 2}: {portfolioProjects[activeTab + 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab + 1].label}
+                      </div>
+                      <ChevronRight className="w-4.5 h-4.5 shrink-0 text-white/90 animate-pulse" />
+                    </button>
+                  )}
+                </div>
+
                 {/* Call-to-action details */}
-                <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-5 w-full">
+                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-5 w-full">
                   <span className="text-[11px] text-slate-400 font-bold md:max-w-[40%] leading-relaxed">
                     * Mọi báo cáo và hình ảnh đều được trích dẫn trực tiếp từ sản phẩm gốc của sinh viên Lưu Đức Anh.
                   </span>
@@ -668,14 +711,12 @@ function App() {
         </section>
 
         {/* 6. Page: Tổng kết & Suy ngẫm - Elegant white layout with neon badges */}
-        <section id="tong-ket" className="py-16 sm:py-20 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-violet-400/5 rounded-full blur-3xl pointer-events-none" />
-
+        <section id="tong-ket" className="py-16 sm:py-20 px-6 sm:px-10 md:px-16 max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-12">
             <h3 className="academic-section-title uppercase">
               Tổng Kết & Suy Ngẫm
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-3 font-semibold">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-3 font-semibold font-sans">
               Đúc kết chặng đường rèn luyện và xây dựng tư duy "Dược sĩ số" vững vàng.
             </p>
           </div>
@@ -724,8 +765,8 @@ function App() {
           {/* Action row at bottom of conclusion */}
           <div className="mt-12 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-950 p-8 rounded-3xl shadow-xl text-center space-y-4 relative overflow-hidden">
             {/* Background absolute glowing blob */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl" />
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl" />
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-400/20 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl animate-pulse" />
 
             <span className="text-teal-400 text-xs font-black uppercase tracking-widest block font-sans">
               Dược Sĩ Số VNU-UMP • Lộ Trình Phát Triển 2026
@@ -733,7 +774,7 @@ function App() {
             <p className="text-indigo-100 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed font-semibold">
               Trang bị tư duy công nghệ bền vững, kỹ năng cộng tác thông minh, sẵn sàng hành trang bước vào giai đoạn chuyển đổi số toàn diện của ngành y tế nước nhà.
             </p>
-            <div className="pt-3 flex justify-center gap-4 flex-wrap sm:flex-nowrap">
+            <div className="pt-3 flex justify-center gap-4 flex-wrap sm:flex-nowrap relative z-10">
               <a
                 href="#du-an"
                 className="gradient-button text-white text-xs font-bold px-6 py-3 rounded-full transition-all shadow-md active:scale-95"
@@ -751,18 +792,18 @@ function App() {
         </section>
 
         {/* 7. Academic Footer */}
-        <footer className="bg-slate-950 border-t border-slate-900 py-12 px-6 text-center text-slate-400 relative">
+        <footer className="bg-slate-950 border-t border-slate-900 py-12 px-6 text-center text-slate-400 relative z-10">
           <div className="max-w-5xl mx-auto space-y-4">
             <p className="text-sm font-black uppercase tracking-widest text-indigo-400 font-sans">
               Lưu Đức Anh • Dược Sĩ Số Tương Lai
             </p>
-            <p className="text-xs text-slate-400 font-semibold max-w-xl mx-auto">
+            <p className="text-xs text-slate-400 font-semibold max-w-xl mx-auto font-sans">
               Sinh viên Dược năm cuối (K47) • Trường Đại học Y Dược, Đại học Quốc gia Hà Nội
             </p>
             <p className="text-xs text-slate-500 max-w-2xl mx-auto font-medium">
               SĐT: +84 832 581 837 &nbsp;|&nbsp; VNU Gmail: <a href="mailto:22100187@vnu.edu.vn" className="text-indigo-400 font-bold hover:underline">22100187@vnu.edu.vn</a> &nbsp;|&nbsp; Địa chỉ học tập: VNU-UMP, Cầu Giấy, Hà Nội
             </p>
-            <div className="pt-6 text-[10px] text-slate-600 border-t border-slate-900/60 max-w-xs mx-auto font-bold">
+            <div className="pt-6 text-[10px] text-slate-600 border-t border-slate-900/60 max-w-xs mx-auto font-bold font-sans">
               © 2026 Lưu Đức Anh. Redesigned with dynamic, colorful premium aesthetics.
             </div>
           </div>
