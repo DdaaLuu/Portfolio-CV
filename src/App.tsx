@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle } from 'lucide-react';
+import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown } from 'lucide-react';
 import BoomerangVideoBg from './BoomerangVideoBg';
 
 const BG_VIDEO =
@@ -9,6 +9,18 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [currentSection, setCurrentSection] = useState('gioi-thieu');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Keyboard listener for Escape key to close lightbox modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -58,7 +70,16 @@ function App() {
       fullName: 'Bài tập 1 - Chương 1: Quản trị Hệ điều hành & Thao tác Tệp tin',
       objective: 'Làm chủ giao diện Windows và File Explorer, thiết lập và chuẩn hóa thư mục lưu trữ số học chuẩn "ThucHanh_LuuDucAnh" và quản lý vòng đời tệp tin khoa học.',
       process: 'Mở File Explorer, thiết lập cấu trúc thư mục học thuật "ThucHanh_LuuDucAnh". Tạo tệp tin văn bản GhiChu.txt, đổi tên thành GhiChuQuanTrong.txt, di chuyển tệp tin bằng Cut & Paste hoặc Copy & Paste vào thư mục con TaiLieu. Quản lý xóa tệp tin qua Recycle Bin và thực hiện xóa vĩnh viễn (Shift + Delete) không qua thùng rác.',
-      product: 'Thư mục chuẩn học tập "ThucHanh_LuuDucAnh" & Tệp tin GhiChuQuanTrong.txt'
+      product: 'Thư mục chuẩn học tập "ThucHanh_LuuDucAnh" & Tệp tin GhiChuQuanTrong.txt',
+      fileUrl: '/files/BT1_Chuong1_LuuDucAnh.docx',
+      fileName: 'BT1_Chuong1_LuuDucAnh.docx',
+      fileType: 'docx',
+      images: ['/images/bt1_1.png', '/images/bt1_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Cấu trúc thư mục "ThucHanh_LuuDucAnh" được phân cấp khoa học và quản lý trực quan trên Windows File Explorer.',
+        'Ảnh 2: Quá trình thao tác tạo mới, sao chép và di chuyển tệp tin GhiChuQuanTrong.txt vào thư mục con TaiLieu.'
+      ],
+      detailedSummary: 'Quá trình thực hành được bắt đầu bằng việc làm quen với các thao tác cốt lõi trên hệ điều hành Windows 11. Tác giả đã khởi tạo thư mục chuyên môn học thuật "ThucHanh_LuuDucAnh" tại ổ đĩa làm việc để lưu trữ đồng bộ. Tiến hành tạo tệp tin ghi chú ban đầu "GhiChu.txt" nhằm ghi chép nhanh, sau đó đổi tên thành "GhiChuQuanTrong.txt" để chuẩn hóa quản lý tài liệu. Việc di chuyển tệp tin được thực hiện an toàn qua chức năng Cut/Paste vào thư mục con "TaiLieu". Cuối cùng, tác giả thực hành cơ chế xóa tệp tin qua Recycle Bin và nâng cao bằng lệnh Shift + Delete để xóa vĩnh viễn, giải phóng bộ nhớ hệ thống một cách an toàn và bảo mật.'
     },
     {
       id: 'bt2',
@@ -66,7 +87,16 @@ function App() {
       fullName: 'Bài tập 2 - Chương 2: Khai thác và Đánh giá Thông tin Học thuật Y khoa',
       objective: 'Ứng dụng các công cụ tìm kiếm học thuật nâng cao (Google Scholar, Elicit, Microsoft Academic) để tìm kiếm và đánh giá độ tin cậy của các tài liệu nghiên cứu về "Ứng dụng AI trong hỗ trợ chẩn đoán bệnh".',
       process: 'Xây dựng biểu thức Boolean truy vấn chuyên nghiệp ("Artificial Intelligence in healthcare" AND "AI in medical diagnosis" AND "Machine learning in medical imaging"). Thực hiện khảo sát, phân tích và thẩm định 11 tài liệu bao gồm sách chuyên khảo "Deep Medicine" của Eric Topol, các bài báo trên Nature Medicine, The Lancet Digital Health, JMIR và chính sách Y tế số của WHO. Đánh giá độ tin cậy dựa trên 5 tiêu chí: Uy tín tác giả, Nhà xuất bản khoa học, Phương pháp nghiên cứu thực nghiệm, Số lượng trích dẫn và Tính cập nhật (2017-2024).',
-      product: 'Báo cáo thẩm định y khoa & Bảng đánh giá độ tin cậy 11 nguồn tài liệu học thuật (Excel/PDF)'
+      product: 'Báo cáo thẩm định y khoa & Bảng đánh giá độ tin cậy 11 nguồn tài liệu học thuật (Excel/PDF)',
+      fileUrl: '/files/BT2_Chuong2_LuuDucAnh.docx',
+      fileName: 'BT2_Chuong2_LuuDucAnh.docx',
+      fileType: 'docx',
+      images: ['/images/bt2_1.png', '/images/bt2_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Xây dựng biểu thức truy vấn chuyên môn nâng cao với các toán tử Boolean logic trên Google Scholar.',
+        'Ảnh 2: Bảng thẩm định chi tiết 11 nguồn tài liệu y khoa học thuật với xếp hạng độ tin cậy khoa học và năm xuất bản.'
+      ],
+      detailedSummary: 'Để xây dựng báo cáo thẩm định thông tin y tế học thuật, tác giả đã ứng dụng các công cụ tìm kiếm khoa học nâng cao như Google Scholar và Elicit. Bằng cách thiết lập biểu thức Boolean phức tạp kết hợp các toán tử logic "AND", "OR" và ngoặc kép, tác giả đã lọc sạch và tiếp cận được các nghiên cứu chất lượng cao về "Ứng dụng AI trong chẩn đoán y khoa". Quá trình phân tích bao gồm việc đánh giá chi tiết 11 tài liệu y học hàng đầu (gồm sách chuyên khảo "Deep Medicine" của Eric Topol, các nghiên cứu trên Nature Medicine và The Lancet). Mỗi nguồn tài liệu đều được chấm điểm nghiêm ngặt qua 5 tiêu chí chuẩn hóa: uy tín tác giả, vị thế nhà xuất bản, phương pháp nghiên cứu thực nghiệm, tần suất trích dẫn khoa học và tính thời sự cập nhật.'
     },
     {
       id: 'bt3',
@@ -74,7 +104,16 @@ function App() {
       fullName: 'Bài tập 2 - Chương 3: Tối ưu hóa tương tác với AI qua Kỹ nghệ Prompt',
       objective: 'Xây dựng và so sánh hiệu quả hệ thống prompt 3 mức độ (Cơ bản, Cải tiến, Nâng cao) áp dụng mô hình CLEAR/CRAC để tối ưu hóa năng lực hỗ trợ của mô hình ngôn ngữ lớn (Gemini) trong các tác vụ học tập và nghiên cứu.',
       process: 'Thiết kế hệ thống prompt cho 3 tác vụ cốt lõi: (1) Tóm tắt Big Data (đặc tính 5Vs, gán vai trò chuyên gia phân tích dữ liệu, xuất bảng 2 cột cho SV năm nhất); (2) Giải thích Mạng nơ-ron nhân tạo (ANN) (gán vai trò giảng viên CNTT, dùng ẩn dụ cách bộ não nhận diện quả táo qua 3 bước CoT); (3) Tạo bộ 5 câu hỏi trắc nghiệm phân hóa độ khó về Máy tính & Thiết bị ngoại vi (định dạng Few-shot, có đáp án và giải thích sư phạm chi tiết). So sánh chất lượng đầu ra giữa các cấp độ prompt.',
-      product: 'Hệ thống Prompt tối ưu y học số & Bảng so sánh hiệu quả 3 cấp độ (Gemini)'
+      product: 'Hệ thống Prompt tối ưu y học số & Bảng so sánh hiệu quả 3 cấp độ (Gemini)',
+      fileUrl: '/files/BT2_Chuong3_LuuDucAnh.docx',
+      fileName: 'BT2_Chuong3_LuuDucAnh.docx',
+      fileType: 'docx',
+      images: ['/images/bt3_1.png', '/images/bt3_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Soạn thảo và thử nghiệm cấu trúc Prompt nâng cao áp dụng tiêu chuẩn CLEAR/CRAC trên mô hình Google Gemini.',
+        'Ảnh 2: Phân tích kết quả đầu ra, so sánh độ chuẩn xác và tính sư phạm của các cấp độ Prompt trong giải thích ANN.'
+      ],
+      detailedSummary: 'Bài tập tập trung vào việc nghiên cứu và ứng dụng Kỹ nghệ Prompt (Prompt Engineering) để khai thác hiệu quả tối đa từ mô hình ngôn ngữ lớn (Gemini). Tác giả đã thiết kế hệ thống prompt 3 mức độ (Cơ bản, Cải tiến, Nâng cao) áp dụng triệt để mô hình CLEAR/CRAC. Các tác vụ bao gồm: tóm tắt dữ liệu lớn (đặc tính 5Vs), giải thích cơ chế Mạng nơ-ron nhân tạo (ANN) bằng phương pháp suy luận chuỗi tư duy (Chain-of-Thought) kết hợp hình ảnh ẩn dụ sinh động, và tạo bộ câu hỏi trắc nghiệm tin học có phân hóa độ khó bằng kỹ thuật Few-shot. Kết quả cho thấy các prompt nâng cao giúp AI phản hồi chính xác, cấu trúc rõ ràng, loại bỏ hoàn toàn các lỗi ảo giác thông tin và đáp ứng đúng tiêu chuẩn học thuật.'
     },
     {
       id: 'bt4',
@@ -82,7 +121,16 @@ function App() {
       fullName: 'Bài tập 3 - Chương 4: Hợp tác dự án trực tuyến trong Môi trường Số',
       objective: 'Ứng dụng các công cụ đám mây cộng tác (Trello, Zoom, Google Docs, Google Drive) để lên kế hoạch, phân công công việc và quản lý tiến độ dự án nhóm VNU1001_E252023 xây dựng video thuyết trình "Ứng dụng AI và Học máy trong quản lý rối loạn lipid máu & hội chứng chuyển hóa".',
       process: 'Thiết lập không gian làm việc số: (1) Quản lý dự án trực quan qua bảng Kanban Trello (Due dates, Checklists, Comments); (2) Thảo luận nhóm đồng bộ qua Zoom (chia sẻ Screen Sharing, vẽ Whiteboard, họp nhóm phụ qua Breakout Rooms, lên lịch bằng AI Companion); (3) Đồng soạn thảo kịch bản trên Google Docs (chế độ Suggesting, Comments, Version History, tích hợp trợ lý Gemini); (4) Đồng bộ tài nguyên phân cấp trên Google Drive theo quy tắc đặt tên nhất quán (Tên phân loại_Nội dung file), kích hoạt xác thực bảo mật 2 yếu tố (2FA).',
-      product: 'Không gian làm việc Kanban Trello, Thư mục chia sẻ Google Drive & Biên bản họp nhóm số hóa'
+      product: 'Không gian làm việc Kanban Trello, Thư mục chia sẻ Google Drive & Biên bản họp nhóm số hóa',
+      fileUrl: '/files/BT3_Chuong4_LuuDucAnh.pdf',
+      fileName: 'BT3_Chuong4_LuuDucAnh.pdf',
+      fileType: 'pdf',
+      images: ['/images/bt4_1.png', '/images/bt4_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Không gian cộng tác dự án nhóm trực quan trên bảng Kanban Trello với phân công nhiệm vụ và Due date.',
+        'Ảnh 2: Biên bản thảo luận họp trực tuyến qua Zoom và quy trình phân quyền bảo mật dữ liệu lưu trữ đám mây Google Drive.'
+      ],
+      detailedSummary: 'Nhằm tổ chức xây dựng kịch bản và sản xuất video thuyết trình về "Ứng dụng AI trong quản lý rối loạn lipid máu" cho nhóm VNU1001_E252023, tác giả đã thiết lập một không gian cộng tác số đám mây toàn diện. Tiến độ công việc được quản lý trực quan trên bảng Kanban Trello với các nhãn phân loại, due date và danh mục công việc chi tiết. Nhóm đã thực hiện các buổi họp trực tuyến hiệu quả qua Zoom, tận dụng tối đa tính năng chia sẻ màn hình và phòng thảo luận phụ (Breakout Rooms). Kịch bản được đồng soạn thảo trực tiếp trên Google Docs với chế độ gợi ý đóng góp ý kiến (Suggesting) và lưu vết lịch sử phiên bản. Toàn bộ tài nguyên số được phân loại khoa học và đồng bộ trên Google Drive, áp dụng bảo mật xác thực hai lớp (2FA) để bảo vệ dữ liệu.'
     },
     {
       id: 'bt5',
@@ -90,7 +138,16 @@ function App() {
       fullName: 'Bài tập 2 - Chương 5: Sáng tạo và Thiết kế Nội dung số Y học với AI',
       objective: 'Xây dựng chiến dịch truyền thông "Sống Xanh trong Kỷ nguyên Số" nhằm nâng cao nhận thức sinh viên về dấu chân carbon điện tử (digital footprint) và rác thải công nghệ (e-waste).',
       process: 'Thiết lập quy trình sáng tạo lặp (iterative workflow) phối hợp 3 công cụ AI tạo sinh: (1) Google Gemini soạn thảo bài blog 1000 từ, kiểm chứng số liệu khí thải GPU huấn luyện và tạo video AI (Sora 2 tiêu tốn 1 kWh & 4 lít nước), kết hợp dữ liệu e-waste Việt Nam (250.000 tấn năm 2025, quy định EPR); (2) Nano Banana tạo ảnh nghệ thuật chủ đề "Futuristic workspace giao thoa thiên nhiên"; (3) Canva AI gợi ý layout Infographic, chuyển đổi màu sắc chủ đạo xanh lá đậm - trắng. Bổ sung bối cảnh thực tế các điểm thu gom rác điện tử miễn phí tại Hà Nội (17 Trung Yên 3, 45 Nghĩa Tân) & TP.HCM (82 Bà Huyện Thanh Quan, Grac, Momo Heo đất, Ecosia).',
-      product: 'Bài viết Blog truyền thông "Sống Xanh" & Infographic Canva hiệu đính màu sắc'
+      product: 'Bài viết Blog truyền thông "Sống Xanh" & Infographic Canva hiệu đính màu sắc',
+      fileUrl: '/files/BT2_Chuong5_LuuDucAnh.docx',
+      fileName: 'BT2_Chuong5_LuuDucAnh.docx',
+      fileType: 'docx',
+      images: ['/images/bt5_1.png', '/images/bt5_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Ấn phẩm thiết kế Infographic "Sống Xanh" trên Canva được tối ưu hóa độ tương phản và phân bố cục trực quan.',
+        'Ảnh 2: Giao diện bài đăng Blog truyền thông được tích hợp hình ảnh không gian tương lai sinh động tạo bởi AI Banana.'
+      ],
+      detailedSummary: 'Tác giả đã lên kế hoạch và triển khai chiến dịch truyền thông y học số mang tên "Sống Xanh trong Kỷ nguyên Số". Quy trình sáng tạo nội dung áp dụng mô hình lặp kết hợp 3 công cụ AI đột phá: Google Gemini hỗ trợ biên soạn bài blog 1000 từ phân tích chuyên sâu về "dấu chân carbon điện tử" và lượng nước tiêu hao để huấn luyện AI; công cụ tạo ảnh nghệ thuật Nano Banana thiết kế hình ảnh không gian làm việc tương lai hài hòa với thiên nhiên; và Canva AI tối ưu hóa bố cục Infographic truyền thông. Bài viết được lồng ghép các địa chỉ thu gom rác thải điện tử miễn phí thực tế tại Hà Nội và TP.HCM cùng các ứng dụng môi trường bền vững như Ecosia, Grac giúp nâng cao tính thực tiễn và tác động xã hội.'
     },
     {
       id: 'bt6',
@@ -98,7 +155,16 @@ function App() {
       fullName: 'Bài tập 4 - Chương 6: Bảo mật dữ liệu & Liêm chính học thuật Y Dược số',
       objective: 'Nghiên cứu chính sách học thuật của VNU và quy tắc đạo đức y học thực tiễn lâm sàng để xây dựng năng lực sử dụng AI có trách nhiệm, giải quyết tình huống bệnh nhân nữ 38 tuổi chẩn đoán Viêm cột sống dính khớp (AS).',
       process: 'Sử dụng Perplexity AI truy vấn bằng kỹ thuật Chain-of-Thought tìm kiếm hướng dẫn điều trị từ EULAR 2022, ACR 2019 và đối soát hướng dẫn Bộ Y tế Việt Nam 2014 (QĐ 361/QĐ-BYT). Phân tích độ an toàn của thuốc ức chế TNF (TNF inhibitors) đối với phụ nữ mang thai/cho con bú. Phát hiện và hiệu đính lỗi ảo giác nghiêm trọng của AI (ký tự ngoại lai tiếng Trung "口服" trong dịch thuật lâm sàng, lỗi dịch thuật Infographic: sáu harvan, ảo giấc...). Thiết lập bộ nguyên tắc "7 Chữ Vàng cho Dược sĩ tương lai" (Sức khỏe bệnh nhân là trên hết, Minh bạch nguồn gốc, Kiểm chứng chéo, Bảo mật dữ liệu, Cầm lái tư duy, Cập nhật liên tục, Sử dụng chọn lọc).',
-      product: 'Bản phân tích ca bệnh AS, Danh mục trích dẫn Zotero/Mendeley & Infographic Dược sĩ số'
+      product: 'Bản phân tích ca bệnh AS, Danh mục trích dẫn Zotero/Mendeley & Infographic Dược sĩ số',
+      fileUrl: '/files/BT4_Chuong6_LuuDucAnh.docx',
+      fileName: 'BT4_Chuong6_LuuDucAnh.docx',
+      fileType: 'docx',
+      images: ['/images/bt6_1.png', '/images/bt6_2.png'],
+      imageDescriptions: [
+        'Ảnh 1: Tiến trình tra cứu và đối soát chéo phác đồ lâm sàng điều trị bệnh AS của Bộ Y tế bằng AI Perplexity.',
+        'Ảnh 2: Tác phẩm Infographic quy chuẩn "7 Chữ Vàng cho Dược sĩ tương lai" và danh mục quản lý nguồn trích dẫn Zotero.'
+      ],
+      detailedSummary: 'Bài tập giải quyết một ca lâm sàng thực tế phức tạp: Bệnh nhân nữ 38 tuổi được chẩn đoán Viêm cột sống dính khớp (AS). Tác giả đã ứng dụng mô hình Perplexity AI theo kỹ thuật Chain-of-Thought để tra cứu các hướng dẫn điều trị quốc tế chuẩn y khoa từ EULAR 2022 và ACR 2019, đối chiếu trực tiếp với hướng dẫn của Bộ Y tế Việt Nam. Qua đó phân tích độ an toàn của thuốc sinh học ức chế TNF đối với bệnh nhân nữ trong độ tuổi sinh sản. Đặc biệt, tác giả đã thực hiện quy trình kiểm chứng chéo nghiêm ngặt để phát hiện và hiệu đính các lỗi ảo giác nguy hiểm của AI (như dịch sai thuật ngữ, lỗi ký tự tiếng Trung). Từ kinh nghiệm này, tác giả đã đúc kết bộ nguyên tắc đạo đức "7 Chữ Vàng cho Dược sĩ tương lai" và chuẩn hóa danh mục tài liệu trích dẫn khoa học bằng phần mềm Mendeley/Zotero.'
     }
   ];
 
@@ -436,6 +502,18 @@ function App() {
                     </p>
                   </div>
 
+                  {/* Detailed Summary (Tóm tắt quá trình thực hiện chuyên sâu) */}
+                  {portfolioProjects[activeTab].detailedSummary && (
+                    <div className="space-y-2 bg-[#6f7498]/5 p-4 sm:p-5 border-l-4 border-[#6f7498] rounded-r-xl">
+                      <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider">
+                        Tóm tắt quá trình thực hiện
+                      </h5>
+                      <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-justify italic font-medium">
+                        "{portfolioProjects[activeTab].detailedSummary}"
+                      </p>
+                    </div>
+                  )}
+
                   {/* Implementation Process (Quy trình thực hiện) */}
                   <div className="space-y-2">
                     <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
@@ -448,36 +526,85 @@ function App() {
                   </div>
 
                   {/* Product Output Details */}
-                  <div className="space-y-2 pt-2">
+                  <div className="space-y-2 pt-1">
                     <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
                       <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
                       Sản phẩm đầu ra khoa học
                     </h5>
                     <div className="flex items-start gap-2.5 text-xs sm:text-sm text-green-700 bg-green-50/80 p-3 rounded-lg border border-green-100">
-                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4.5 h-4.5 shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold">Đã lưu trữ:</span> {portfolioProjects[activeTab].product}
                       </div>
                     </div>
                   </div>
+
+                  {/* Evidence Screenshots (Hình ảnh minh chứng thực tế) */}
+                  {portfolioProjects[activeTab].images && (
+                    <div className="space-y-3 pt-2">
+                      <h5 className="text-[#6f7498] text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span className="w-1.5 h-3 bg-[#858cb8] rounded-full inline-block" />
+                        Hình ảnh minh chứng thực tế (Nhấp để phóng to)
+                      </h5>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {portfolioProjects[activeTab].images.map((img, imgIdx) => (
+                          <div 
+                            key={imgIdx} 
+                            onClick={() => setSelectedImage(img)}
+                            className="group relative cursor-zoom-in bg-gray-50 border border-gray-200/60 rounded-xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#6f7498]/40 transition-all duration-300"
+                          >
+                            <div className="aspect-video w-full overflow-hidden bg-gray-100 relative">
+                              <img 
+                                src={img} 
+                                alt={portfolioProjects[activeTab].imageDescriptions?.[imgIdx]} 
+                                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                              />
+                              <div className="absolute inset-0 bg-[#212121]/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                <span className="bg-white/95 text-gray-800 text-xs font-bold py-1.5 px-3 rounded-full flex items-center gap-1 shadow-sm backdrop-blur-xs">
+                                  <Eye className="w-3.5 h-3.5" /> Xem chi tiết
+                                </span>
+                              </div>
+                            </div>
+                            <div className="p-3 bg-white border-t border-gray-100">
+                              <p className="text-[11px] sm:text-xs text-gray-600 font-medium leading-relaxed">
+                                {portfolioProjects[activeTab].imageDescriptions?.[imgIdx]}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Call-to-action details */}
-                <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between flex-wrap gap-4">
-                  <span className="text-[11px] text-gray-400 font-medium">
-                    *Mọi sản phẩm của Lưu Đức Anh đều tuân thủ Liêm chính học thuật VNU.
+                <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between flex-wrap gap-4 w-full">
+                  <span className="text-[11px] text-gray-400 font-medium md:max-w-[40%]">
+                    * Mọi báo cáo và hình ảnh đều được trích dẫn trực tiếp từ sản phẩm gốc của sinh viên Lưu Đức Anh.
                   </span>
                   
-                  <button
-                    onClick={() =>
-                      window.open(
-                        `mailto:luuducanhhl@gmail.com?subject=Yêu cầu xem sản phẩm: ${portfolioProjects[activeTab].label}`
-                      )
-                    }
-                    className="bg-[#6f7498] hover:bg-[#5b6082] text-white text-xs font-bold px-5 py-2.5 rounded-lg shadow-xs transition-all inline-flex items-center gap-2"
-                  >
-                    <Mail className="w-4 h-4" /> Yêu cầu gửi tệp sản phẩm
-                  </button>
+                  <div className="flex items-center gap-3">
+                    {portfolioProjects[activeTab].fileUrl && (
+                      <a
+                        href={portfolioProjects[activeTab].fileUrl}
+                        download={portfolioProjects[activeTab].fileName}
+                        className="bg-[#6f7498] hover:bg-[#5b6082] text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 border border-transparent active:scale-95 cursor-pointer"
+                      >
+                        <FileDown className="w-4 h-4" /> Tải xuống báo cáo gốc (.{portfolioProjects[activeTab].fileType})
+                      </a>
+                    )}
+
+                    <button
+                      onClick={() =>
+                        window.open(
+                          `mailto:luuducanhhl@gmail.com?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
+                        )
+                      }
+                      className="text-gray-500 hover:text-[#6f7498] border border-gray-200 bg-white hover:bg-gray-50 text-xs sm:text-sm font-semibold px-4 py-3 rounded-xl shadow-2xs transition-all inline-flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <Mail className="w-4 h-4" /> Liên hệ phản biện
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -578,6 +705,43 @@ function App() {
             </div>
           </div>
         </footer>
+
+        {/* 8. Fullscreen Lightbox Modal */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-2.5 transition-colors focus:outline-none z-55 cursor-pointer"
+              aria-label="Close lightbox"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div 
+              className="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center gap-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={selectedImage} 
+                alt="Evidence Fullscreen View" 
+                className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/10"
+              />
+              {(() => {
+                const currentProj = portfolioProjects[activeTab];
+                const imgIndex = currentProj.images ? currentProj.images.indexOf(selectedImage) : -1;
+                const desc = (imgIndex !== -1 && currentProj.imageDescriptions) ? currentProj.imageDescriptions[imgIndex] : '';
+                return desc ? (
+                  <div className="bg-black/60 text-white/95 text-xs sm:text-sm py-2 px-4 rounded-full max-w-2xl text-center backdrop-blur-sm shadow-md">
+                    {desc}
+                  </div>
+                ) : null;
+              })()}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
