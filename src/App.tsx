@@ -189,14 +189,15 @@ function App() {
 
   return (
     <div className="flex min-h-screen gradient-bg-elegant text-[#1f2937] relative overflow-hidden">
-      {/* Motionsites.ai Inspired Background Elements - Fixed to viewport */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 grid-bg-pattern" />
-        
-        <div className="absolute top-[10%] left-[-15%] sm:left-[5%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] floating-orb orb-indigo opacity-20" />
-        <div className="absolute top-[40%] right-[-15%] sm:right-[5%] w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] floating-orb orb-teal opacity-20" />
-        <div className="absolute bottom-[20%] left-[-15%] sm:left-[10%] w-[380px] sm:w-[550px] h-[380px] sm:h-[550px] floating-orb orb-violet opacity-15" />
-        <div className="absolute bottom-[5%] right-[-10%] sm:right-[5%] w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] floating-orb orb-pink opacity-15" />
+      {/* Fixed Background Image - Elegant, Lightweight & High Performance */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <img 
+          src="/images/bg_nature.png" 
+          alt="Positano Amalfi Coast Background" 
+          className="w-full h-full object-cover opacity-20 filter saturate-75"
+        />
+        {/* Soft color overlay to harmonize with the Indigo/Teal theme */}
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/40 via-white/80 to-teal-50/40" />
       </div>
 
       {/* 1. Desktop Persistent Left Sidebar Navigation */}
