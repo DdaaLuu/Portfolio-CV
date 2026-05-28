@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown } from 'lucide-react';
-import BoomerangVideoBg from './BoomerangVideoBg';
-
-const BG_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -377,10 +373,14 @@ function App() {
           </div>
         </div>
 
-        {/* 3. Header Banner (Aristotle Banner with Boomerang Background inside) */}
+        {/* 3. Header Banner (Aristotle Banner with Static Background inside) */}
         <section className="relative h-[260px] sm:h-[320px] md:h-[360px] w-full overflow-hidden flex items-center justify-center dark-gradient-banner">
-          {/* Boomerang loop background inside header banner */}
-          <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 w-full h-full" />
+          {/* Static nature background inside header banner */}
+          <img 
+            src="/images/banner_bg.png" 
+            alt="Misty Valley Bridge Banner Background" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           {/* Aristotle Google Sites dark semi-transparent banner overlay */}
           <div className="absolute inset-0 bg-[#0f172a]/65 z-10" />
 
