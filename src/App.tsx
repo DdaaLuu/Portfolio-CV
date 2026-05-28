@@ -273,7 +273,7 @@ function App() {
           </div>
           <div className="flex items-center gap-1.5 text-slate-600">
             <Mail className="w-3 h-3 text-indigo-400 shrink-0" />
-            <a href="mailto:22100187@vnu.edu.vn" className="truncate font-semibold text-indigo-600 hover:underline">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=22100187@vnu.edu.vn" target="_blank" rel="noopener noreferrer" className="truncate font-semibold text-indigo-600 hover:underline">
               22100187@vnu.edu.vn
             </a>
           </div>
@@ -310,7 +310,7 @@ function App() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => window.open('mailto:22100187@vnu.edu.vn')}
+              onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=22100187@vnu.edu.vn', '_blank')}
               className="gradient-button text-white text-xs font-bold px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 active:scale-95 cursor-pointer shadow-md"
             >
               <Mail className="w-3.5 h-3.5" /> Gửi VNU Gmail
@@ -809,7 +809,8 @@ function App() {
                       <button
                         onClick={() =>
                           window.open(
-                            `mailto:22100187@vnu.edu.vn?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
+                            `https://mail.google.com/mail/?view=cm&fs=1&to=22100187@vnu.edu.vn&su=Trao đổi về: ${portfolioProjects[activeTab].label}`,
+                            '_blank'
                           )
                         }
                         className="outline-button text-indigo-700 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 cursor-pointer"
@@ -915,7 +916,7 @@ function App() {
               Sinh viên Dược năm cuối (K47) • Trường Đại học Y Dược, Đại học Quốc gia Hà Nội
             </p>
             <p className="text-xs text-slate-500 max-w-2xl mx-auto font-medium">
-              SĐT: +84 832 581 837 &nbsp;|&nbsp; VNU Gmail: <a href="mailto:22100187@vnu.edu.vn" className="text-indigo-400 font-bold hover:underline">22100187@vnu.edu.vn</a> &nbsp;|&nbsp; Địa chỉ học tập: VNU-UMP, Cầu Giấy, Hà Nội
+              SĐT: +84 832 581 837 &nbsp;|&nbsp; VNU Gmail: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=22100187@vnu.edu.vn" target="_blank" rel="noopener noreferrer" className="text-indigo-400 font-bold hover:underline">22100187@vnu.edu.vn</a> &nbsp;|&nbsp; Địa chỉ học tập: VNU-UMP, Cầu Giấy, Hà Nội
             </p>
             <div className="pt-6 text-[10px] text-slate-600 border-t border-slate-900/60 max-w-xs mx-auto font-bold font-sans">
               © 2026 Lưu Đức Anh. Redesigned with dynamic, colorful premium aesthetics.
