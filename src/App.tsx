@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown } from 'lucide-react';
+import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown, LayoutGrid, Columns } from 'lucide-react';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [currentSection, setCurrentSection] = useState('gioi-thieu');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'dashboard' | 'gallery'>('gallery');
 
   // Keyboard listener for Escape key to close lightbox modal
   useEffect(() => {
@@ -62,6 +63,7 @@ function App() {
   const portfolioProjects = [
     {
       id: 'bt1',
+      coverImage: '/images/cover_bt1.png',
       label: 'Bài 1: Quản trị Hệ điều hành & Tệp tin',
       fullName: 'Bài tập 1 - Chương 1: Quản trị Hệ điều hành & Thao tác Tệp tin',
       objective: 'Làm chủ giao diện Windows và File Explorer, thiết lập và chuẩn hóa thư mục lưu trữ số học chuẩn "ThucHanh_LuuDucAnh" và quản lý vòng đời tệp tin khoa học.',
@@ -80,6 +82,7 @@ function App() {
     },
     {
       id: 'bt2',
+      coverImage: '/images/cover_bt2.png',
       label: 'Bài 2: Khai thác thông tin y khoa',
       fullName: 'Bài tập 2 - Chương 2: Khai thác và Đánh giá Thông tin Học thuật Y khoa',
       objective: 'Ứng dụng các công cụ tìm kiếm học thuật nâng cao (Google Scholar, Elicit, Microsoft Academic) để tìm kiếm và đánh giá độ tin cậy của các tài liệu nghiên cứu về "Ứng dụng AI trong hỗ trợ chẩn đoán bệnh".',
@@ -98,6 +101,7 @@ function App() {
     },
     {
       id: 'bt3',
+      coverImage: '/images/cover_bt3.png',
       label: 'Bài 3: Tối ưu tương tác AI (Prompt)',
       fullName: 'Bài tập 2 - Chương 3: Tối ưu hóa tương tác với AI qua Kỹ nghệ Prompt',
       objective: 'Xây dựng và so sánh hiệu quả hệ thống prompt 3 mức độ (Cơ bản, Cải tiến, Nâng cao) áp dụng mô hình CLEAR/CRAC để tối ưu hóa năng lực hỗ trợ của mô hình ngôn ngữ lớn (Gemini) trong các tác vụ học tập và nghiên cứu.',
@@ -116,6 +120,7 @@ function App() {
     },
     {
       id: 'bt4',
+      coverImage: '/images/cover_bt4.png',
       label: 'Bài 4: Giao tiếp & Hợp tác đám mây',
       fullName: 'Bài tập 3 - Chương 4: Hợp tác dự án trực tuyến trong Môi trường Số',
       objective: 'Ứng dụng các công cụ đám mây cộng tác (Trello, Zoom, Google Docs, Google Drive) để lên kế hoạch, phân công công việc và quản lý tiến độ dự án nhóm VNU1001_E252023 xây dựng video thuyết trình "Ứng dụng AI và Học máy trong quản lý rối loạn lipid máu & hội chứng chuyển hóa".',
@@ -134,6 +139,7 @@ function App() {
     },
     {
       id: 'bt5',
+      coverImage: '/images/cover_bt5.png',
       label: 'Bài 5: Sáng tạo nội dung số y học',
       fullName: 'Bài tập 2 - Chương 5: Sáng tạo và Thiết kế Nội dung số Y học với AI',
       objective: 'Xây dựng chiến dịch truyền thông "Sống Xanh trong Kỷ nguyên Số" nhằm nâng cao nhận thức sinh viên về dấu chân carbon điện tử (digital footprint) và rác thải công nghệ (e-waste).',
@@ -152,6 +158,7 @@ function App() {
     },
     {
       id: 'bt6',
+      coverImage: '/images/cover_bt6.png',
       label: 'Bài 6: An toàn số & Đạo đức AI',
       fullName: 'Bài tập 4 - Chương 6: Bảo mật dữ liệu & Liêm chính học thuật Y Dược số',
       objective: 'Nghiên cứu chính sách học thuật của VNU và quy tắc đạo đức y học thực tiễn lâm sàng để xây dựng năng lực sử dụng AI có trách nhiệm, giải quyết tình huống bệnh nhân nữ 38 tuổi chẩn đoán Viêm cột sống dính khớp (AS).',
@@ -172,6 +179,7 @@ function App() {
 
   const handleSidebarProjectClick = (index: number) => {
     setActiveTab(index);
+    setViewMode('dashboard');
     const el = document.getElementById('du-an');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -490,224 +498,329 @@ function App() {
               </p>
             </div>
 
-            {/* Dashboard Container */}
-            <div className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
-              {/* Left Selector Sidebar */}
-              <div className="w-full md:w-[260px] bg-slate-50/50 border-r border-indigo-100/20 flex flex-col shrink-0">
-                <div className="p-5 border-b border-indigo-100/20 bg-indigo-50/20">
-                  <span className="text-xs font-black text-indigo-950 uppercase tracking-widest block font-sans">
-                    Danh Sách Bài Học
-                  </span>
-                </div>
-                
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-col p-3 gap-2">
-                  {portfolioProjects.map((proj, idx) => (
-                    <button
-                      key={proj.id}
-                      onClick={() => handleSidebarProjectClick(idx)}
-                      className={`text-left w-full md:shrink flex items-center gap-3 px-3 py-3 rounded-xl text-xs font-bold transition-all active:scale-[0.98] ${
-                        activeTab === idx
-                          ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-200'
-                          : 'text-slate-600 hover:text-indigo-700 hover:bg-white bg-white/40'
-                      }`}
-                    >
-                      <span className={`w-5.5 h-5.5 rounded-lg flex items-center justify-center text-[10px] font-extrabold shrink-0 ${
-                        activeTab === idx ? 'bg-white text-indigo-700' : 'bg-slate-200 text-slate-700'
-                      }`}>
-                        {idx + 1}
-                      </span>
-                      <span className="truncate font-sans">{proj.label.split(':')[0]}</span>
-                      <ChevronRight className={`w-4 h-4 ml-auto hidden md:block ${
-                        activeTab === idx ? 'opacity-100' : 'opacity-30'
-                      }`} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Detail Pane */}
-              <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative">
-                <div className="space-y-6">
-                  {/* Title of exercise */}
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="text-[9px] uppercase font-black text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-indigo-100/50">
-                        Bài Tập Số {activeTab + 1}
-                      </span>
-                      <span className="text-[9px] uppercase font-black text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-teal-100/50">
-                        Giáo Trình VNU-UMP
-                      </span>
-                    </div>
-                    <h4 className="text-slate-900 text-xl sm:text-2xl font-black font-sans leading-tight">
-                      {portfolioProjects[activeTab].fullName}
-                    </h4>
-                  </div>
-
-                  {/* Core skills badges */}
-                  {portfolioProjects[activeTab].skills && (
-                    <div className="flex flex-wrap gap-2 pt-1 border-b border-slate-100 pb-4">
-                      {portfolioProjects[activeTab].skills.map((skill, skillIdx) => (
-                        <span key={skillIdx} className={getBadgeStyleClass(skillIdx)}>
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Objective (Mục tiêu) */}
-                  <div className="space-y-2">
-                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
-                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
-                      Mục tiêu bài tập
-                    </h5>
-                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify font-medium">
-                      {portfolioProjects[activeTab].objective}
-                    </p>
-                  </div>
-
-                  {/* Detailed Summary (Tóm tắt quá trình thực hiện chuyên sâu) */}
-                  {portfolioProjects[activeTab].detailedSummary && (
-                    <div className="space-y-2 bg-gradient-to-r from-indigo-50/70 to-indigo-50/10 p-5 border-l-4 border-indigo-600 rounded-r-2xl shadow-xs">
-                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-widest font-sans">
-                        Tóm tắt quá trình thực hiện
-                      </h5>
-                      <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify italic font-semibold">
-                        "{portfolioProjects[activeTab].detailedSummary}"
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Implementation Process (Quy trình thực hiện) */}
-                  <div className="space-y-2">
-                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
-                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
-                      Quy trình thực hiện chi tiết
-                    </h5>
-                    <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl font-medium">
-                      {portfolioProjects[activeTab].process}
-                    </p>
-                  </div>
-
-                  {/* Product Output Details */}
-                  <div className="space-y-2 pt-1">
-                    <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
-                      <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
-                      Sản phẩm đầu ra khoa học
-                    </h5>
-                    <div className="flex items-start gap-3 text-xs sm:text-sm text-emerald-800 bg-emerald-50/80 p-4 rounded-xl border border-emerald-100/50 shadow-xs">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <div className="font-semibold">
-                        <span className="font-black text-emerald-950">Đã lưu trữ:</span> {portfolioProjects[activeTab].product}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Evidence Screenshots (Hình ảnh minh chứng thực tế) */}
-                  {portfolioProjects[activeTab].images && (
-                    <div className="space-y-3 pt-3">
-                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
-                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
-                        Hình ảnh minh chứng thực tế (Nhấp để phóng to)
-                      </h5>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        {portfolioProjects[activeTab].images.map((img, imgIdx) => (
-                          <div 
-                            key={imgIdx} 
-                            onClick={() => setSelectedImage(img)}
-                            className="group relative cursor-zoom-in bg-slate-50 border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-indigo-400 transition-all duration-300 hover-lift"
-                          >
-                            <div className="aspect-video w-full overflow-hidden bg-slate-100 relative">
-                              <img 
-                                src={img} 
-                                alt={portfolioProjects[activeTab].imageDescriptions?.[imgIdx]} 
-                                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                              />
-                              <div className="absolute inset-0 bg-[#0f172a]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                                <span className="bg-white/95 text-slate-800 text-xs font-extrabold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md backdrop-blur-xs">
-                                  <Eye className="w-4 h-4 text-indigo-600" /> Xem chi tiết
-                                </span>
-                              </div>
-                            </div>
-                            <div className="p-4 bg-white border-t border-slate-100">
-                              <p className="text-[11px] sm:text-xs text-slate-600 font-semibold leading-relaxed text-justify">
-                                {portfolioProjects[activeTab].imageDescriptions?.[imgIdx]}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Previous & Next Assignment navigation buttons for enhanced mobile UX (starting from Bài 2) */}
-                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-4 w-full flex-wrap sm:flex-nowrap">
-                  {activeTab > 0 ? (
-                    <button
-                      onClick={() => {
-                        setActiveTab(activeTab - 1);
-                        document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
-                    >
-                      <ChevronRight className="w-4.5 h-4.5 rotate-180 shrink-0 text-indigo-500 animate-pulse" />
-                      <div className="truncate">
-                        <span className="text-[9px] uppercase block tracking-widest text-indigo-400 font-black">Bài trước đó</span>
-                        Bài {activeTab}: {portfolioProjects[activeTab - 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab - 1].label}
-                      </div>
-                    </button>
-                  ) : (
-                    <div className="hidden sm:block" /> /* Empty spacer for layout */
-                  )}
-
-                  {activeTab < 5 && (
-                    <button
-                      onClick={() => {
-                        setActiveTab(activeTab + 1);
-                        document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
-                    >
-                      <div className="truncate flex-1">
-                        <span className="text-[9px] uppercase block tracking-widest text-teal-200 font-black">Bài tiếp theo</span>
-                        Bài {activeTab + 2}: {portfolioProjects[activeTab + 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab + 1].label}
-                      </div>
-                      <ChevronRight className="w-4.5 h-4.5 shrink-0 text-white/90 animate-pulse" />
-                    </button>
-                  )}
-                </div>
-
-                {/* Call-to-action details */}
-                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-5 w-full">
-                  <span className="text-[11px] text-slate-400 font-bold md:max-w-[40%] leading-relaxed">
-                    * Mọi báo cáo và hình ảnh đều được trích dẫn trực tiếp từ sản phẩm gốc của sinh viên Lưu Đức Anh.
-                  </span>
-                  
-                  <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
-                    {portfolioProjects[activeTab].fileUrl && (
-                      <a
-                        href={portfolioProjects[activeTab].fileUrl}
-                        download={portfolioProjects[activeTab].fileName}
-                        className="gradient-button text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl transition-all inline-flex items-center gap-2 active:scale-95 cursor-pointer shadow-md"
-                      >
-                        <FileDown className="w-4.5 h-4.5 shrink-0" /> Tải xuống báo cáo (.{portfolioProjects[activeTab].fileType})
-                      </a>
-                    )}
-
-                    <button
-                      onClick={() =>
-                        window.open(
-                          `mailto:22100187@vnu.edu.vn?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
-                        )
-                      }
-                      className="outline-button text-indigo-700 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 cursor-pointer"
-                    >
-                      <Mail className="w-4.5 h-4.5 text-indigo-500 shrink-0" /> Liên hệ VNU Gmail
-                    </button>
-                  </div>
-                </div>
+            {/* View Mode Switcher */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-white/70 backdrop-blur-md p-1.5 rounded-2xl border border-indigo-100/30 inline-flex items-center gap-1.5 shadow-sm">
+                <button
+                  onClick={() => setViewMode('gallery')}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    viewMode === 'gallery'
+                      ? 'bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-md'
+                      : 'text-slate-500 hover:text-indigo-600 hover:bg-slate-50/50'
+                  }`}
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                  Chế độ Gallery (Notion)
+                </button>
+                <button
+                  onClick={() => setViewMode('dashboard')}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    viewMode === 'dashboard'
+                      ? 'bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-md'
+                      : 'text-slate-500 hover:text-indigo-600 hover:bg-slate-50/50'
+                  }`}
+                >
+                  <Columns className="w-4 h-4" />
+                  Chế độ Dashboard (Phân tích)
+                </button>
               </div>
             </div>
+
+            {viewMode === 'gallery' ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {portfolioProjects.map((proj, idx) => (
+                  <div
+                    key={proj.id}
+                    className="glass-panel hover-lift rounded-2xl border border-indigo-100/30 overflow-hidden flex flex-col justify-between h-full shadow-md hover:border-indigo-300 transition-all duration-300"
+                  >
+                    <div>
+                      {/* Cover Image */}
+                      <div className="h-44 w-full overflow-hidden bg-slate-100 relative group border-b border-indigo-50/20">
+                        <img
+                          src={proj.coverImage}
+                          alt={proj.label}
+                          className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span className="text-[9px] uppercase font-black text-indigo-700 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-lg tracking-widest font-sans border border-indigo-100/30 shadow-sm">
+                            Bài {idx + 1}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-5 space-y-3">
+                        <h4 className="text-slate-900 text-base font-black font-sans leading-snug line-clamp-2">
+                          {proj.fullName}
+                        </h4>
+                        
+                        {/* Skills badges */}
+                        <div className="flex flex-wrap gap-1">
+                          {proj.skills.slice(0, 3).map((skill, sIdx) => (
+                            <span key={sIdx} className={getBadgeStyleClass(sIdx) + " text-[9px] px-2 py-0.5"}>
+                              {skill}
+                            </span>
+                          ))}
+                          {proj.skills.length > 3 && (
+                            <span className="text-[9px] uppercase font-extrabold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
+                              +{proj.skills.length - 3}
+                            </span>
+                          )}
+                        </div>
+
+                        <p className="text-slate-600 text-xs leading-relaxed text-justify line-clamp-3 font-semibold">
+                          {proj.objective}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Card Actions */}
+                    <div className="px-5 pb-5 pt-3 border-t border-slate-100 flex items-center justify-between gap-3 bg-slate-50/50 rounded-b-2xl">
+                      <button
+                        onClick={() => {
+                          setActiveTab(idx);
+                          setViewMode('dashboard');
+                          setTimeout(() => {
+                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                          }, 100);
+                        }}
+                        className="text-xs font-extrabold text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 cursor-pointer"
+                      >
+                        <Eye className="w-3.5 h-3.5" /> Xem chi tiết
+                      </button>
+                      
+                      {proj.fileUrl && (
+                        <a
+                          href={proj.fileUrl}
+                          download={proj.fileName}
+                          className="text-[10px] uppercase font-bold text-teal-600 hover:text-teal-800 transition-colors flex items-center gap-1 font-sans"
+                        >
+                          <FileDown className="w-3.5 h-3.5" /> Tải báo cáo
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
+                {/* Left Selector Sidebar */}
+                <div className="w-full md:w-[260px] bg-slate-50/50 border-r border-indigo-100/20 flex flex-col shrink-0">
+                  <div className="p-5 border-b border-indigo-100/20 bg-indigo-50/20">
+                    <span className="text-xs font-black text-indigo-950 uppercase tracking-widest block font-sans">
+                      Danh Sách Bài Học
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-col p-3 gap-2">
+                    {portfolioProjects.map((proj, idx) => (
+                      <button
+                        key={proj.id}
+                        onClick={() => handleSidebarProjectClick(idx)}
+                        className={`text-left w-full md:shrink flex items-center gap-3 px-3 py-3 rounded-xl text-xs font-bold transition-all active:scale-[0.98] ${
+                          activeTab === idx
+                            ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-200'
+                            : 'text-slate-600 hover:text-indigo-700 hover:bg-white bg-white/40'
+                        }`}
+                      >
+                        <span className={`w-5.5 h-5.5 rounded-lg flex items-center justify-center text-[10px] font-extrabold shrink-0 ${
+                          activeTab === idx ? 'bg-white text-indigo-700' : 'bg-slate-200 text-slate-700'
+                        }`}>
+                          {idx + 1}
+                        </span>
+                        <span className="truncate font-sans">{proj.label.split(':')[0]}</span>
+                        <ChevronRight className={`w-4 h-4 ml-auto hidden md:block ${
+                          activeTab === idx ? 'opacity-100' : 'opacity-30'
+                        }`} />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Detail Pane */}
+                <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative">
+                  <div className="space-y-6">
+                    {/* Title of exercise */}
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="text-[9px] uppercase font-black text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-indigo-100/50">
+                          Bài Tập Số {activeTab + 1}
+                        </span>
+                        <span className="text-[9px] uppercase font-black text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-teal-100/50">
+                          Giáo Trình VNU-UMP
+                        </span>
+                      </div>
+                      <h4 className="text-slate-900 text-xl sm:text-2xl font-black font-sans leading-tight">
+                        {portfolioProjects[activeTab].fullName}
+                      </h4>
+                    </div>
+
+                    {/* Core skills badges */}
+                    {portfolioProjects[activeTab].skills && (
+                      <div className="flex flex-wrap gap-2 pt-1 border-b border-slate-100 pb-4">
+                        {portfolioProjects[activeTab].skills.map((skill, skillIdx) => (
+                          <span key={skillIdx} className={getBadgeStyleClass(skillIdx)}>
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Objective (Mục tiêu) */}
+                    <div className="space-y-2">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
+                        Mục tiêu bài tập
+                      </h5>
+                      <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify font-medium">
+                        {portfolioProjects[activeTab].objective}
+                      </p>
+                    </div>
+
+                    {/* Detailed Summary (Tóm tắt quá trình thực hiện chuyên sâu) */}
+                    {portfolioProjects[activeTab].detailedSummary && (
+                      <div className="space-y-2 bg-gradient-to-r from-indigo-50/70 to-indigo-50/10 p-5 border-l-4 border-indigo-600 rounded-r-2xl shadow-xs">
+                        <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-widest font-sans">
+                          Tóm tắt quá trình thực hiện
+                        </h5>
+                        <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify italic font-semibold">
+                          "{portfolioProjects[activeTab].detailedSummary}"
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Implementation Process (Quy trình thực hiện) */}
+                    <div className="space-y-2">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
+                        Quy trình thực hiện chi tiết
+                      </h5>
+                      <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl font-medium">
+                        {portfolioProjects[activeTab].process}
+                      </p>
+                    </div>
+
+                    {/* Product Output Details */}
+                    <div className="space-y-2 pt-1">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
+                        Sản phẩm đầu ra khoa học
+                      </h5>
+                      <div className="flex items-start gap-3 text-xs sm:text-sm text-emerald-800 bg-emerald-50/80 p-4 rounded-xl border border-emerald-100/50 shadow-xs">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                        <div className="font-semibold">
+                          <span className="font-black text-emerald-950">Đã lưu trữ:</span> {portfolioProjects[activeTab].product}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Evidence Screenshots (Hình ảnh minh chứng thực tế) */}
+                    {portfolioProjects[activeTab].images && (
+                      <div className="space-y-3 pt-3">
+                        <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                          <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
+                          Hình ảnh minh chứng thực tế (Nhấp để phóng to)
+                        </h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          {portfolioProjects[activeTab].images.map((img, imgIdx) => (
+                            <div 
+                              key={imgIdx} 
+                              onClick={() => setSelectedImage(img)}
+                              className="group relative cursor-zoom-in bg-slate-50 border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-indigo-400 transition-all duration-300 hover-lift"
+                            >
+                              <div className="aspect-video w-full overflow-hidden bg-slate-100 relative">
+                                <img 
+                                  src={img} 
+                                  alt={portfolioProjects[activeTab].imageDescriptions?.[imgIdx]} 
+                                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-[#0f172a]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                  <span className="bg-white/95 text-slate-800 text-xs font-extrabold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md backdrop-blur-xs">
+                                    <Eye className="w-4 h-4 text-indigo-600" /> Xem chi tiết
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="p-4 bg-white border-t border-slate-100">
+                                <p className="text-[11px] sm:text-xs text-slate-600 font-semibold leading-relaxed text-justify">
+                                  {portfolioProjects[activeTab].imageDescriptions?.[imgIdx]}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Previous & Next Assignment navigation buttons for enhanced mobile UX (starting from Bài 2) */}
+                  <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between gap-4 w-full flex-wrap sm:flex-nowrap">
+                    {activeTab > 0 ? (
+                      <button
+                        onClick={() => {
+                          setActiveTab(activeTab - 1);
+                          document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
+                      >
+                        <ChevronRight className="w-4.5 h-4.5 rotate-180 shrink-0 text-indigo-500 animate-pulse" />
+                        <div className="truncate">
+                          <span className="text-[9px] uppercase block tracking-widest text-indigo-400 font-black">Bài trước đó</span>
+                          Bài {activeTab}: {portfolioProjects[activeTab - 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab - 1].label}
+                        </div>
+                      </button>
+                    ) : (
+                      <div className="hidden sm:block" /> /* Empty spacer for layout */
+                    )}
+
+                    {activeTab < 5 && (
+                      <button
+                        onClick={() => {
+                          setActiveTab(activeTab + 1);
+                          document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
+                      >
+                        <div className="truncate flex-1">
+                          <span className="text-[9px] uppercase block tracking-widest text-teal-200 font-black">Bài tiếp theo</span>
+                          Bài {activeTab + 2}: {portfolioProjects[activeTab + 1].label.split(':')[1]?.trim() || portfolioProjects[activeTab + 1].label}
+                        </div>
+                        <ChevronRight className="w-4.5 h-4.5 shrink-0 text-white/90 animate-pulse" />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Call-to-action details */}
+                  <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-5 w-full">
+                    <span className="text-[11px] text-slate-400 font-bold md:max-w-[40%] leading-relaxed">
+                      * Mọi báo cáo và hình ảnh đều được trích dẫn trực tiếp từ sản phẩm gốc của sinh viên Lưu Đức Anh.
+                    </span>
+                    
+                    <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
+                      {portfolioProjects[activeTab].fileUrl && (
+                        <a
+                          href={portfolioProjects[activeTab].fileUrl}
+                          download={portfolioProjects[activeTab].fileName}
+                          className="gradient-button text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl transition-all inline-flex items-center gap-2 active:scale-95 cursor-pointer shadow-md"
+                        >
+                          <FileDown className="w-4.5 h-4.5 shrink-0" /> Tải xuống báo cáo (.{portfolioProjects[activeTab].fileType})
+                        </a>
+                      )}
+
+                      <button
+                        onClick={() =>
+                          window.open(
+                            `mailto:22100187@vnu.edu.vn?subject=Trao đổi về: ${portfolioProjects[activeTab].label}`
+                          )
+                        }
+                        className="outline-button text-indigo-700 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-xl shadow-xs transition-all inline-flex items-center gap-2 cursor-pointer"
+                      >
+                        <Mail className="w-4.5 h-4.5 text-indigo-500 shrink-0" /> Liên hệ VNU Gmail
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
