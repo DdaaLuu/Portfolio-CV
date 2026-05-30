@@ -318,3 +318,20 @@ body {
 }
 
 
+/* Elegant zoom focus entrance animation */
+@keyframes focus-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.975) translateY(12px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-focus-zoom {
+  animation: focus-zoom-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

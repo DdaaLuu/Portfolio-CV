@@ -261,9 +261,9 @@ function App() {
       pane.scrollTop = 0;
     }
     
-    const el = document.getElementById('du-an');
+    const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -1043,7 +1043,9 @@ function App() {
                     setTimeout(() => {
                       const pane = document.getElementById('dashboard-detail-pane');
                       if (pane) pane.scrollTop = 0;
-                    }, 50);
+                      const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
                   }}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     viewMode === 'dashboard'
@@ -1115,7 +1117,8 @@ function App() {
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
-                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                            const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                           }, 100);
                         }}
                         className="text-xs font-extrabold text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 cursor-pointer"
@@ -1137,7 +1140,7 @@ function App() {
                 ))}
               </div>
             ) : (
-              <div className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
+              <div id="dashboard-view-container" className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
                 {/* Left Selector Sidebar */}
                 <div className="w-full md:w-[260px] bg-slate-50/50 border-r border-indigo-100/20 flex flex-col shrink-0">
                   <div className="p-5 border-b border-indigo-100/20 bg-indigo-50/20">
@@ -1176,7 +1179,7 @@ function App() {
                   id="dashboard-detail-pane"
                   className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative md:max-h-[720px] overflow-y-auto custom-scrollbar"
                 >
-                  <div className="space-y-6">
+                  <div key={activeTab} className="space-y-6 animate-focus-zoom">
                     {/* Title of exercise & Autoscroll Controller */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 pb-4 border-b border-slate-100">
                       <div className="space-y-1">
@@ -1308,7 +1311,8 @@ function App() {
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
-                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                            const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                           }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
@@ -1331,7 +1335,8 @@ function App() {
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
-                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                            const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                           }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
