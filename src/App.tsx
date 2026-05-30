@@ -191,6 +191,335 @@ function App() {
     return `skill-badge ${classes[skillIndex % classes.length]}`;
   };
 
+  const renderRubricPresentation = (tabIndex: number) => {
+    switch (tabIndex) {
+      case 0:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2 flex items-center gap-1.5">
+              📁 Sơ đồ Cấu trúc Thư mục và Quy tắc Đặt tên Tệp
+            </h6>
+            
+            {/* Tree View */}
+            <div className="bg-slate-900 text-slate-100 font-mono text-[11px] sm:text-xs p-4 rounded-xl shadow-inner leading-relaxed overflow-x-auto">
+              <div className="text-teal-400">📁 ThucHanh_LuuDucAnh/ &lt;-- Thư mục gốc học thuật</div>
+              <div className="pl-4 border-l border-slate-700 ml-2 mt-1">
+                <div className="text-yellow-400">📁 Chuong1_OS_Files/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 GhiChuQuanTrong.txt <span className="text-slate-500 font-semibold italic">(Thiết lập vòng đời tệp tin)</span>
+                </div>
+                
+                <div className="text-yellow-400 mt-1">📁 Chuong2_AcademicSearch/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 BT2_Chuong2_LuuDucAnh.pdf <span className="text-slate-500 font-semibold italic">(Thẩm định 11 tài liệu y khoa)</span>
+                </div>
+                
+                <div className="text-yellow-400 mt-1">📁 Chuong3_PromptAI/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 BT2_Chuong3_LuuDucAnh.pdf <span className="text-slate-500 font-semibold italic">(So sánh 3 cấp độ Prompt)</span>
+                </div>
+                
+                <div className="text-yellow-400 mt-1">📁 Chuong4_CloudCollaboration/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 BT3_Chuong4_LuuDucAnh.pdf <span className="text-slate-500 font-semibold italic">(Không gian Kanban Trello & Drive)</span>
+                </div>
+                
+                <div className="text-yellow-400 mt-1">📁 Chuong5_ContentCreation/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 BT2_Chuong5_LuuDucAnh.pdf <span className="text-slate-500 font-semibold italic">(Bài Blog Sống Xanh & Canva Infographic)</span>
+                </div>
+                
+                <div className="text-yellow-400 mt-1">📁 Chuong6_AIEthics/</div>
+                <div className="pl-6 border-l border-slate-700 ml-2 text-slate-300">
+                  📄 BT4_Chuong6_LuuDucAnh.pdf <span className="text-slate-500 font-semibold italic">(Bản phân tích ca lâm sàng AS & Mendeley)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Naming Rules */}
+            <div className="space-y-2 pt-2">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block font-sans">
+                Quy tắc đặt tên tệp tin chuẩn hóa:
+              </span>
+              <ul className="text-xs text-slate-600 space-y-1.5 list-disc pl-4 font-semibold leading-relaxed">
+                <li><strong className="text-slate-800">Quy tắc 1 (Không dấu):</strong> Thư mục gốc và thư mục con viết liền hoặc dùng dấu gạch dưới, không sử dụng dấu tiếng Việt và ký tự đặc biệt để đảm bảo tính tương thích hệ thống tuyệt đối.</li>
+                <li><strong className="text-slate-800">Quy tắc 2 (Nhất quán):</strong> Định dạng tên tệp tin sản phẩm luôn tuân thủ cấu trúc: <code className="bg-slate-100 px-1 py-0.5 rounded text-indigo-600 font-mono text-[10px]">BT[Số]_Chuong[Số]_[HọTên]</code>.</li>
+                <li><strong className="text-slate-800">Quy tắc 3 (Phân cấp):</strong> Phân chia tài nguyên rõ ràng theo từng chương đào tạo của VNU-UMP để dễ dàng quản trị, tìm kiếm và truy xuất.</li>
+              </ul>
+            </div>
+          </div>
+        );
+      case 1:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2">
+              🔍 Toán tử Tìm kiếm Học thuật & Bảng Thẩm định Nguồn Y khoa
+            </h6>
+            
+            {/* Boolean Query Box */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block font-sans">
+                Biểu thức Boolean truy vấn chuyên nghiệp (Boolean Query):
+              </span>
+              <div className="bg-indigo-50 border border-indigo-100 text-indigo-950 font-mono text-[10px] sm:text-xs p-3 rounded-lg leading-relaxed select-all">
+                ("Artificial Intelligence" OR "AI") AND "medical diagnosis" AND "machine learning" AND "medical imaging"
+              </div>
+            </div>
+
+            {/* Scholarly Evaluation Table */}
+            <div className="space-y-2 pt-2">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block font-sans">
+                Bảng thẩm định học thuật (Trích xuất 5 nguồn tiêu biểu trong số 11 nguồn):
+              </span>
+              <div className="overflow-x-auto rounded-xl border border-slate-200/50 bg-white">
+                <table className="w-full text-left border-collapse text-xs font-sans">
+                  <thead>
+                    <tr className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200/60">
+                      <th className="p-3">Tài liệu / Nguồn</th>
+                      <th className="p-3">Nhà xuất bản / Uy tín</th>
+                      <th className="p-3 text-center">Năm</th>
+                      <th className="p-3 text-center">Trích dẫn</th>
+                      <th className="p-3 text-center">Điểm tin cậy</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 text-slate-600 font-semibold">
+                    <tr>
+                      <td className="p-3 font-bold text-slate-900">Sách "Deep Medicine" (Eric Topol)</td>
+                      <td className="p-3">Basic Books / Chuyên gia đầu ngành</td>
+                      <td className="p-3 text-center">2019</td>
+                      <td className="p-3 text-center text-teal-600">2,400+</td>
+                      <td className="p-3 text-center text-indigo-600">9.5/10</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-slate-900">Nature Medicine (Esteva et al.)</td>
+                      <td className="p-3">Springer Nature / Tạp chí Q1 hàng đầu</td>
+                      <td className="p-3 text-center">2017</td>
+                      <td className="p-3 text-center text-teal-600">10,500+</td>
+                      <td className="p-3 text-center text-indigo-600">10.0/10</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-slate-900">The Lancet Digital Health</td>
+                      <td className="p-3">Elsevier / Thẩm định lâm sàng cực cao</td>
+                      <td className="p-3 text-center">2020</td>
+                      <td className="p-3 text-center text-teal-600">850+</td>
+                      <td className="p-3 text-center text-indigo-600">9.5/10</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-slate-900">WHO Digital Health Strategy</td>
+                      <td className="p-3">Tổ chức Y tế Thế giới / Chính thức</td>
+                      <td className="p-3 text-center">2021</td>
+                      <td className="p-3 text-center text-teal-600">Tài liệu gốc</td>
+                      <td className="p-3 text-center text-indigo-600">9.8/10</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-bold text-slate-900">JMIR Medical Informatics</td>
+                      <td className="p-3">JMIR Publications / Chuyên ngành Y số</td>
+                      <td className="p-3 text-center">2022</td>
+                      <td className="p-3 text-center text-teal-600">320+</td>
+                      <td className="p-3 text-center text-indigo-600">9.0/10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <span className="text-[10px] text-slate-400 italic block leading-relaxed mt-1">
+                * Toàn bộ 11 nguồn tài liệu được thẩm định nghiêm ngặt qua 5 tiêu chí: Uy tín tác giả, vị thế Nhà xuất bản khoa học, Phương pháp nghiên cứu thực nghiệm, Tần suất trích dẫn khoa học và Tính cập nhật.
+              </span>
+            </div>
+          </div>
+        );
+      case 2:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2">
+              💡 Bảng So sánh Kỹ nghệ Prompt & Kết quả Phản hồi từ AI
+            </h6>
+            
+            <div className="space-y-4">
+              {/* Task 1 */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2.5 shadow-xs">
+                <span className="text-xs font-black text-slate-800 uppercase tracking-wide block font-sans border-l-3 border-indigo-500 pl-2">
+                  Tác vụ 1: Tóm tắt 5Vs của Big Data y khoa
+                </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                  <div className="p-3 bg-rose-50/50 rounded-lg border border-rose-100/30">
+                    <span className="font-bold text-rose-800 block mb-1">Prompt Ban đầu (Chưa cải tiến):</span>
+                    <p className="text-slate-600 italic">"Hãy tóm tắt về Big Data cho tôi."</p>
+                  </div>
+                  <div className="p-3 bg-emerald-50/50 rounded-lg border border-emerald-100/30">
+                    <span className="font-bold text-emerald-800 block mb-1">Prompt Cải tiến (CLEAR/CRAC):</span>
+                    <p className="text-slate-700 font-semibold italic">"Với vai trò là Chuyên gia phân tích dữ liệu y tế lớn, hãy tóm tắt các đặc tính cốt lõi 5Vs của Big Data dưới dạng bảng 2 cột rõ ràng, dễ hiểu cho sinh viên năm nhất ngành Y Dược."</p>
+                  </div>
+                </div>
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-xs">
+                  <span className="font-bold text-slate-800 block mb-1">Kết quả vượt trội từ AI:</span>
+                  <p className="text-slate-600 text-justify leading-relaxed">AI xuất ra bảng 2 cột chi tiết định nghĩa chính xác 5 thuộc tính: Volume (Thể tích), Velocity (Tốc độ), Variety (Đa dạng), Veracity (Độ tin cậy), Value (Giá trị). Thông tin tập trung, trực quan, loại bỏ hoàn toàn các lỗi ảo giác và định hướng y học rõ ràng.</p>
+                </div>
+              </div>
+
+              {/* Task 2 */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2.5 shadow-xs">
+                <span className="text-xs font-black text-slate-800 uppercase tracking-wide block font-sans border-l-3 border-indigo-500 pl-2">
+                  Tác vụ 2: Giải thích Mạng nơ-ron nhân tạo (ANN)
+                </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                  <div className="p-3 bg-rose-50/50 rounded-lg border border-rose-100/30">
+                    <span className="font-bold text-rose-800 block mb-1">Prompt Ban đầu (Chưa cải tiến):</span>
+                    <p className="text-slate-600 italic">"Mạng nơ-ron nhân tạo là gì?"</p>
+                  </div>
+                  <div className="p-3 bg-emerald-50/50 rounded-lg border border-emerald-100/30">
+                    <span className="font-bold text-emerald-800 block mb-1">Prompt Cải tiến (Chain-of-Thought):</span>
+                    <p className="text-slate-700 font-semibold italic">"Hãy đóng vai giảng viên Công nghệ thông tin, giải thích cơ chế hoạt động của Mạng nơ-ron nhân tạo (ANN) thông qua ví dụ ẩn dụ cách bộ não nhận diện quả táo qua 3 bước suy luận Chain-of-Thought."</p>
+                  </div>
+                </div>
+                <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-xs">
+                  <span className="font-bold text-slate-800 block mb-1">Kết quả vượt trội từ AI:</span>
+                  <p className="text-slate-600 text-justify leading-relaxed">AI giải thích cấu trúc ANN bằng ẩn dụ quả táo (lớp đầu vào phân tích màu sắc/kích thước, lớp ẩn kết nối đặc trưng, lớp đầu ra đưa kết luận). Cách tiếp cận logic Chain-of-Thought giúp người học hiểu sâu nguyên lý cấu tạo mà không bị quá tải kiến thức kỹ thuật.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2">
+              🤝 Không gian Cộng tác Đám mây & Phân công Công việc Nhóm
+            </h6>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Trello */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2 shadow-xs hover-lift">
+                <span className="text-xs font-black text-indigo-950 uppercase tracking-wide block font-sans border-b border-slate-50 pb-1.5 flex items-center gap-1">
+                  📋 Kanban Trello
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed text-justify font-semibold">
+                  Thiết lập bảng làm việc cho 5 thành viên (Trưởng nhóm: Lưu Đức Anh). Sử dụng hệ thống nhãn dán phân loại màu sắc (Xanh: Đang tiến hành, Đỏ: Cần hoàn thành gấp, Xanh lá: Đã xong) kèm theo danh sách kiểm tra (checklists) và thời hạn hoàn thành (due-dates) nghiêm ngặt để kiểm soát vòng đời dự án.
+                </p>
+              </div>
+
+              {/* Zoom */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2 shadow-xs hover-lift">
+                <span className="text-xs font-black text-indigo-950 uppercase tracking-wide block font-sans border-b border-slate-50 pb-1.5 flex items-center gap-1">
+                  💬 Zoom Meetings
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed text-justify font-semibold">
+                  Tổ chức các cuộc họp thảo luận dự án nhóm chất lượng cao 90 phút. Sử dụng chức năng chia sẻ màn hình trực tiếp để duyệt slide thuyết trình y khoa, kích hoạt các phòng thảo luận nhóm phụ (Breakout Rooms) để phân chia cặp viết nội dung, và lưu biên bản họp tự động thông qua AI Companion.
+                </p>
+              </div>
+
+              {/* Google Docs */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2 shadow-xs hover-lift">
+                <span className="text-xs font-black text-indigo-950 uppercase tracking-wide block font-sans border-b border-slate-50 pb-1.5 flex items-center gap-1">
+                  📝 Google Docs
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed text-justify font-semibold">
+                  Đồng soạn thảo trực tiếp kịch bản video thuyết trình về Rối loạn lipid máu. Kích hoạt tính năng đóng góp ý kiến (Suggesting Mode) để chỉnh sửa chéo nội dung lâm sàng, bình luận góp ý (Comments) tại từng dòng và theo dõi chặt chẽ lịch sử phiên bản (Version History) để tránh mất mát dữ liệu nghiên cứu.
+                </p>
+              </div>
+
+              {/* Google Drive */}
+              <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2 shadow-xs hover-lift">
+                <span className="text-xs font-black text-indigo-950 uppercase tracking-wide block font-sans border-b border-slate-50 pb-1.5 flex items-center gap-1">
+                  ☁️ Google Drive
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed text-justify font-semibold">
+                  Khởi tạo không gian lưu trữ phân cấp khoa học cho dự án theo quy chuẩn đặt tên nhất quán. Thiết lập phân quyền truy cập thông minh cho các thành viên và kích hoạt xác thực hai yếu tố (2FA) bảo mật tuyệt đối để bảo vệ các tài liệu nghiên cứu y khoa quan trọng của nhóm.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      case 4:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2">
+              🌱 Sản phẩm Sáng tạo Truyền thông Y học & Thiết kế Canva
+            </h6>
+            
+            <div className="space-y-4">
+              {/* Blog Preview */}
+              <div className="bg-white p-5 rounded-xl border border-slate-100 space-y-3 shadow-xs">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                  <span className="text-[10px] uppercase font-black text-indigo-600 tracking-wider font-sans">
+                    Xem trước bài viết Blog hoàn thiện
+                  </span>
+                  <span className="text-[10px] text-slate-400 font-bold font-sans">Đăng tải: 2026</span>
+                </div>
+                <h5 className="text-slate-900 text-sm sm:text-base font-black font-sans leading-snug">
+                  Sống Xanh trong Kỷ nguyên Số: Nhìn nhận Dấu chân Carbon từ Trí tuệ Nhân tạo
+                </h5>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed text-justify font-semibold italic">
+                  "Trong thời đại công nghệ số bùng nổ, chúng ta say sưa với sức mạnh của AI mà quên mất rằng việc huấn luyện một mô hình ngôn ngữ lớn có thể tiêu thụ hàng triệu lít nước và phát thải lượng carbon khổng lồ. Ước tính, mỗi hình ảnh do trí tuệ nhân tạo Sora 2 tạo ra tiêu tốn 1 kWh năng lượng điện. Tại Việt Nam, rác thải công nghệ (e-waste) dự kiến sẽ vượt quá 250.000 tấn vào năm 2025 theo chuẩn quy định EPR. Với tư cách là những Dược sĩ số tương lai, chúng tôi kêu gọi cộng đồng sinh viên thực hành sống xanh số: Tắt các thiết bị ngoại vi khi không hoạt động, cài đặt bộ máy tìm kiếm Ecosia xanh, và mang rác thải điện tử đến các điểm thu gom miễn phí tại 17 Trung Yên 3 (Hà Nội) hoặc 82 Bà Huyện Thanh Quan (TP.HCM)..."
+                </p>
+              </div>
+
+              {/* Infographic Design Rules */}
+              <div className="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/30 space-y-2">
+                <span className="text-xs font-black text-indigo-900 uppercase tracking-wide block font-sans">
+                  📐 Tiêu chuẩn Thiết kế Canva Infographic đã ứng dụng:
+                </span>
+                <ul className="text-xs text-slate-700 space-y-1.5 list-disc pl-4 font-semibold leading-relaxed">
+                  <li><strong className="text-slate-900">Màu sắc (Color Palette):</strong> Sử dụng màu xanh lá đậm kết hợp với trắng làm chủ đạo để truyền tải thông điệp sinh thái tự nhiên và tăng độ tương phản đọc.</li>
+                  <li><strong className="text-slate-900">Trọng lượng thị giác (Visual Weight):</strong> Bố cục 3 phần rõ ràng, sử dụng các số liệu carbon kích thước lớn để thu hút ánh mắt người đọc ngay từ cái nhìn đầu tiên.</li>
+                  <li><strong className="text-slate-900">Nội dung Y học:</strong> Lồng ghép kiến thức chuyển đổi trách nhiệm mở rộng của nhà sản xuất (EPR) trong ngành dược để tăng giá trị thực tiễn.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 5:
+        return (
+          <div className="space-y-4 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+            <h6 className="text-xs font-black text-indigo-900 uppercase tracking-widest font-sans border-b border-indigo-100/50 pb-2">
+              ⚖️ Bộ nguyên tắc Đạo đức AI "7 Chữ Vàng" cho Dược sĩ Số tương lai
+            </h6>
+            
+            {/* 7 Gold Principles Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { num: "1", title: "SỨC KHỎE TRÊN HẾT", en: "Patient Health First", desc: "Đạo đức lâm sàng là trên hết. AI chỉ là công cụ hỗ trợ, quyết định cuối cùng phải đặt lợi ích sức khỏe và an toàn sinh mạng bệnh nhân làm trọng tâm." },
+                { num: "2", title: "MINH BẠCH NGUỒN GỐC", en: "Transparency", desc: "Luôn khai báo rõ ràng mức độ can thiệp của AI vào báo cáo chuyên môn. Trích dẫn nguồn tài liệu gốc đầy đủ bằng Zotero/Mendeley." },
+                { num: "3", title: "KIỂM CHỨNG CHÉO", en: "Cross-verification", desc: "Không bao giờ tin tưởng tuyệt đối vào kết quả AI. Bắt buộc đối soát chéo lâm sàng với hướng dẫn điều trị chính thức của Bộ Y tế Việt Nam (QĐ 361)." },
+                { num: "4", title: "BẢO MẬT DỮ LIỆU", en: "Data Privacy", desc: "Tuân thủ tuyệt đối quy định an toàn thông tin y khoa của bệnh nhân. Tránh đưa thông tin cá nhân hay bệnh án nhạy cảm lên các mô hình AI công cộng." },
+                { num: "5", title: "CẦM LÁI TƯ DUY", en: "Human-in-the-loop", desc: "Luôn làm chủ tư duy chuyên môn. Sử dụng tri thức cá nhân để thẩm định, phát hiện và hiệu đính các lỗi ảo giác nguy hiểm (như từ ngoại lai tiếng Trung)." },
+                { num: "6", title: "CẬP NHẬT LIÊN TỤC", en: "Continuous Learning", desc: "Liên tục học tập nâng cấp kỹ năng số và hướng dẫn điều trị y học mới nhất để làm chủ các công cụ hỗ trợ số hóa hiện đại." },
+                { num: "7", title: "SỬ DỤNG CHỌN LỌC", en: "Selective Adoption", desc: "Lựa chọn mô hình AI tối ưu cho từng tác vụ chuyên môn (ví dụ Perplexity cho tra cứu học thuật, Gemini cho thiết kế prompt)." }
+              ].map((rule) => (
+                <div key={rule.num} className="bg-white p-4 rounded-xl border border-slate-100 space-y-1.5 shadow-xs hover-lift">
+                  <div className="flex items-center gap-2">
+                    <span className="w-5.5 h-5.5 rounded-lg bg-gradient-to-tr from-indigo-600 to-teal-500 flex items-center justify-center text-white text-[10px] font-black shrink-0">
+                      {rule.num}
+                    </span>
+                    <span className="text-slate-900 text-xs font-black font-sans leading-tight">
+                      {rule.title}
+                    </span>
+                  </div>
+                  <span className="text-[9px] uppercase font-extrabold text-teal-600 tracking-wider block font-sans">
+                    {rule.en}
+                  </span>
+                  <p className="text-[11px] text-slate-500 leading-relaxed text-justify font-semibold">
+                    {rule.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Case Study alert */}
+            <div className="p-4 bg-amber-50 border border-amber-100 rounded-xl space-y-1 mt-2">
+              <span className="text-[10px] uppercase font-black text-amber-800 tracking-wider block font-sans">
+                ⚠️ Đối soát Ca lâm sàng Viêm cột sống dính khớp (AS):
+              </span>
+              <p className="text-xs text-amber-950 font-semibold leading-relaxed text-justify">
+                Đã ứng dụng phác đồ chuẩn y khoa đối chiếu trực tiếp giữa EULAR 2022 và Hướng dẫn Bộ Y tế Việt Nam. Phát hiện và xử lý thành công lỗi ảo giác lâm sàng nghiêm trọng của AI (chèn ký tự ngoại lai tiếng Trung "口服" trong phác đồ dịch thuật thuốc ức chế TNF sinh học), bảo đảm an toàn y học tuyệt đối.
+              </p>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex min-h-screen gradient-bg-elegant text-[#1f2937] relative overflow-hidden">
       {/* Fixed Background Image - Elegant, Lightweight & High Performance */}
@@ -698,6 +1027,15 @@ function App() {
                       <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify bg-slate-50/70 p-5 border border-slate-100 rounded-2xl font-medium">
                         {portfolioProjects[activeTab].process}
                       </p>
+                    </div>
+
+                    {/* Rubric Presentation Section */}
+                    <div className="space-y-2 pt-1">
+                      <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
+                        <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
+                        Trình bày chi tiết & Kết quả học thuật (Theo Rubric)
+                      </h5>
+                      {renderRubricPresentation(activeTab)}
                     </div>
 
                     {/* Product Output Details */}
