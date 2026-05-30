@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown, LayoutGrid, Columns } from 'lucide-react';
+import { Menu, X, GraduationCap, CheckSquare, Mail, Layers, FileText, CheckCircle2, ChevronRight, BookOpen, AlertTriangle, Eye, FileDown, LayoutGrid, Columns, Play, Pause } from 'lucide-react';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,6 +18,55 @@ function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  const [autoScrollActive, setAutoScrollActive] = useState(false);
+  const [autoScrollSpeed, setAutoScrollSpeed] = useState(1); // 1 = 1x, 2 = 1.5x, 3 = 2x
+
+  // Auto-scroll logic for dashboard details pane, strictly limited inside the exercises container
+  useEffect(() => {
+    if (!autoScrollActive) return;
+    
+    const container = document.getElementById('dashboard-detail-pane');
+    if (!container) return;
+    
+    let lastTime = performance.now();
+    let scrollAccumulator = container.scrollTop;
+    let animationFrameId: number;
+    
+    const scrollStep = (time: number) => {
+      const delta = time - lastTime;
+      lastTime = time;
+      
+      // Speed multiplier
+      const speedMultiplier = autoScrollSpeed === 1 ? 0.025 : autoScrollSpeed === 2 ? 0.05 : 0.08;
+      scrollAccumulator += delta * speedMultiplier;
+      
+      container.scrollTop = Math.floor(scrollAccumulator);
+      
+      // If we reach the bottom, turn off autoscroll
+      if (container.scrollTop + container.clientHeight >= container.scrollHeight - 3) {
+        setAutoScrollActive(false);
+        return;
+      }
+      
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
+    
+    const handleManualScroll = () => {
+      // Sync accumulator on manual scroll so we don't jump back when scrolling resumes
+      if (Math.abs(container.scrollTop - scrollAccumulator) > 10) {
+        scrollAccumulator = container.scrollTop;
+      }
+    };
+    
+    container.addEventListener('scroll', handleManualScroll);
+    animationFrameId = requestAnimationFrame(scrollStep);
+    
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      container.removeEventListener('scroll', handleManualScroll);
+    };
+  }, [autoScrollActive, autoScrollSpeed]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -180,6 +229,14 @@ function App() {
   const handleSidebarProjectClick = (index: number) => {
     setActiveTab(index);
     setViewMode('dashboard');
+    setAutoScrollActive(false); // Stop autoscrolling on tab change
+    
+    // Scroll the details pane back to top
+    const pane = document.getElementById('dashboard-detail-pane');
+    if (pane) {
+      pane.scrollTop = 0;
+    }
+    
     const el = document.getElementById('du-an');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -1080,22 +1137,62 @@ function App() {
                   </div>
                 </div>
 
-                {/* Right Detail Pane */}
-                <div className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative">
+                {/* Right Detail Pane - Max height and scrollable for clean dashboard styling */}
+                <div 
+                  id="dashboard-detail-pane"
+                  className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative md:max-h-[720px] overflow-y-auto scroll-smooth custom-scrollbar"
+                >
                   <div className="space-y-6">
-                    {/* Title of exercise */}
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className="text-[9px] uppercase font-black text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-indigo-100/50">
-                          Bài Tập Số {activeTab + 1}
-                        </span>
-                        <span className="text-[9px] uppercase font-black text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-teal-100/50">
-                          Giáo Trình VNU-UMP
-                        </span>
+                    {/* Title of exercise & Autoscroll Controller */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 pb-4 border-b border-slate-100">
+                      <div className="space-y-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[9px] uppercase font-black text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-indigo-100/50">
+                            Bài Tập Số {activeTab + 1}
+                          </span>
+                          <span className="text-[9px] uppercase font-black text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full tracking-widest font-sans border border-teal-100/50">
+                            Giáo Trình VNU-UMP
+                          </span>
+                        </div>
+                        <h4 className="text-slate-900 text-xl sm:text-2xl font-black font-sans leading-tight">
+                          {portfolioProjects[activeTab].fullName}
+                        </h4>
                       </div>
-                      <h4 className="text-slate-900 text-xl sm:text-2xl font-black font-sans leading-tight">
-                        {portfolioProjects[activeTab].fullName}
-                      </h4>
+                      
+                      {/* Autoscroll Toggle Control */}
+                      <div className="shrink-0 flex items-center gap-2 bg-slate-50 border border-slate-200/60 p-1.5 rounded-xl shadow-2xs self-start sm:self-auto">
+                        <button
+                          onClick={() => setAutoScrollActive(!autoScrollActive)}
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] sm:text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer active:scale-95 ${
+                            autoScrollActive
+                              ? 'bg-red-500 text-white shadow-xs animate-pulse'
+                              : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80'
+                          }`}
+                          title={autoScrollActive ? "Tạm dừng cuộn tự động" : "Bật cuộn tự động bài tập"}
+                        >
+                          {autoScrollActive ? (
+                            <>
+                              <Pause className="w-3 h-3 fill-current" />
+                              Dừng cuộn
+                            </>
+                          ) : (
+                            <>
+                              <Play className="w-3 h-3 fill-current" />
+                              Cuộn tự động
+                            </>
+                          )}
+                        </button>
+                        
+                        {autoScrollActive && (
+                          <button
+                            onClick={() => setAutoScrollSpeed(autoScrollSpeed === 1 ? 2 : autoScrollSpeed === 2 ? 3 : 1)}
+                            className="bg-white hover:bg-slate-100 text-indigo-700 border border-slate-200/80 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase transition-all cursor-pointer active:scale-95"
+                            title="Thay đổi tốc độ cuộn"
+                          >
+                            Tốc độ: {autoScrollSpeed === 1 ? '1x' : autoScrollSpeed === 2 ? '1.5x' : '2x'}
+                          </button>
+                        )}
+                      </div>
                     </div>
 
                     {/* Core skills badges */}
