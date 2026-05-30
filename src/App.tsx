@@ -263,7 +263,7 @@ function App() {
     
     const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -1044,7 +1044,7 @@ function App() {
                       const pane = document.getElementById('dashboard-detail-pane');
                       if (pane) pane.scrollTop = 0;
                       const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
-                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
                   }}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
@@ -1118,7 +1118,7 @@ function App() {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
                             const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
-                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                           }, 100);
                         }}
                         className="text-xs font-extrabold text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 cursor-pointer"
@@ -1140,7 +1140,7 @@ function App() {
                 ))}
               </div>
             ) : (
-              <div id="dashboard-view-container" className="glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
+              <div id="dashboard-view-container" className="scroll-mt-24 glass-panel rounded-3xl border border-indigo-100/30 shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[580px]">
                 {/* Left Selector Sidebar */}
                 <div className="w-full md:w-[260px] bg-slate-50/50 border-r border-indigo-100/20 flex flex-col shrink-0">
                   <div className="p-5 border-b border-indigo-100/20 bg-indigo-50/20">
@@ -1312,7 +1312,7 @@ function App() {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
                             const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
-                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                           }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
@@ -1336,7 +1336,7 @@ function App() {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
                             const el = document.getElementById('dashboard-view-container') || document.getElementById('du-an');
-                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                           }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
