@@ -195,103 +195,113 @@ function App() {
     const steps = [
       // Case 0 (Bài 1)
       [
-        "1. Mở File Explorer: Nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ.",
-        "2. Truy cập ổ đĩa/thư mục: Ở cột bên trái, nhấp vào This PC, sau đó nhấp đúp vào một ổ đĩa không phải ổ hệ thống (ví dụ: ổ D: hoặc E:). Nếu chỉ có ổ C:, hãy vào thư mục Documents.",
-        "3. Tạo thư mục mới: Nhấp chuột phải vào một khoảng trống -> chọn New -> Folder. Đặt tên thư mục là ThucHanh_LuuDucAnh. Nhấn Enter.",
-        "4. Vào thư mục vừa tạo: Nhấp đúp vào thư mục ThucHanh_LuuDucAnh.",
-        "5. Tạo tệp tin văn bản: Nhấp chuột phải vào khoảng trống -> New -> Text Document. Đặt tên là GhiChu.txt. Nhấn Enter.",
-        "6. Đổi tên tệp tin: Nhấp chuột phải vào tệp GhiChu.txt -> chọn Rename. Đổi tên thành GhiChuQuanTrong.txt. Nhấn Enter. (Minh chứng chi tiết tại Ảnh 2)",
-        "7. Tạo thư mục con: Trong thư mục ThucHanh_LuuDucAnh, nhấp chuột phải -> New -> Folder. Đặt tên là TaiLieu. (Minh chứng chi tiết tại Ảnh 1)",
-        "8. Sao chép tệp tin (Copy & Paste): Nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> chọn Copy (hoặc chọn tệp rồi nhấn Ctrl + C). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống bên trong -> chọn Paste (hoặc nhấn Ctrl + V). Bây giờ bạn có một bản sao của tệp trong thư mục TaiLieu.",
-        "9. Di chuyển tệp tin (Cut & Paste): Quay lại thư mục ThucHanh_LuuDucAnh. Tạo một tệp mới tên là DiChuyen.txt. Nhấp chuột phải vào tệp DiChuyen.txt -> chọn Cut (hoặc chọn tệp rồi nhấn Ctrl + X). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống -> chọn Paste (hoặc nhấn Ctrl + V). Tệp gốc đã biến mất khỏi vị trí cũ và chỉ còn ở vị trí mới.",
-        "10. Xóa tệp tin: Trong thư mục TaiLieu, nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> chọn Delete. Tệp sẽ được chuyển vào Thùng rác (Recycle Bin).",
-        "11. Xóa vĩnh viễn: Chọn tệp DiChuyen.txt, nhấn giữ phím Shift và nhấn phím Delete. Một cảnh báo sẽ hiện ra. Nếu đồng ý, tệp sẽ bị xóa vĩnh viễn mà không qua Thùng rác.",
-        "12. Khôi phục từ Thùng rác (Tùy chọn): Tìm biểu tượng Recycle Bin trên màn hình nền, nhấp đúp để mở. Tìm tệp GhiChuQuanTrong.txt đã xóa, nhấp chuột phải vào nó và chọn Restore. Tệp sẽ quay trở lại vị trí ban đầu."
+        { text: "1. Mở File Explorer: Nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ." },
+        { text: "2. Truy cập ổ đĩa/thư mục: Ở cột bên trái, nhấp vào This PC, sau đó nhấp đúp vào một ổ đĩa không phải ổ hệ thống (ví dụ: ổ D: hoặc E:). Nếu chỉ có ổ C:, hãy vào thư mục Documents." },
+        { text: "3. Tạo thư mục mới: Nhấp chuột phải vào một khoảng trống -> chọn New -> Folder. Đặt tên thư mục là ThucHanh_LuuDucAnh. Nhấn Enter.", image: "/images/bt1_1.png" },
+        { text: "4. Vào thư mục vừa tạo: Nhấp đúp vào thư mục ThucHanh_LuuDucAnh.", image: "/images/bt1_1.png" },
+        { text: "5. Tạo tệp tin văn bản: Nhấp chuột phải vào khoảng trống -> New -> Text Document. Đặt tên là GhiChu.txt. Nhấn Enter.", image: "/images/bt1_2.png" },
+        { text: "6. Đổi tên tệp tin: Nhấp chuột phải vào tệp GhiChu.txt -> chọn Rename. Đổi tên thành GhiChuQuanTrong.txt. Nhấn Enter. (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt1_2.png" },
+        { text: "7. Tạo thư mục con: Trong thư mục ThucHanh_LuuDucAnh, nhấp chuột phải -> New -> Folder. Đặt tên là TaiLieu. (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt1_1.png" },
+        { text: "8. Sao chép tệp tin (Copy & Paste): Nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> chọn Copy (hoặc chọn tệp rồi nhấn Ctrl + C). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống bên trong -> chọn Paste (hoặc nhấn Ctrl + V). Bây giờ bạn có một bản sao của tệp trong thư mục TaiLieu.", image: "/images/bt1_2.png" },
+        { text: "9. Di chuyển tệp tin (Cut & Paste): Quay lại thư mục ThucHanh_LuuDucAnh. Tạo một tệp mới tên là DiChuyen.txt. Nhấp chuột phải vào tệp DiChuyen.txt -> chọn Cut (hoặc chọn tệp rồi nhấn Ctrl + X). Nhấp đúp vào thư mục TaiLieu, nhấp chuột phải vào khoảng trống -> chọn Paste (hoặc nhấn Ctrl + V). Tệp gốc đã biến mất khỏi vị trí cũ và chỉ còn ở vị trí mới.", image: "/images/bt1_2.png" },
+        { text: "10. Xóa tệp tin: Trong thư mục TaiLieu, nhấp chuột phải vào tệp GhiChuQuanTrong.txt -> chọn Delete. Tệp sẽ được chuyển vào Thùng rác (Recycle Bin).", image: "/images/bt1_2.png" },
+        { text: "11. Xóa vĩnh viễn: Chọn tệp DiChuyen.txt, nhấn giữ phím Shift và nhấn phím Delete. Một cảnh báo sẽ hiện ra. Nếu đồng ý, tệp sẽ bị xóa vĩnh viễn mà không qua Thùng rác.", image: "/images/bt1_2.png" },
+        { text: "12. Khôi phục từ Thùng rác (Tùy chọn): Tìm biểu tượng Recycle Bin trên màn hình nền, nhấp đúp để mở. Tìm tệp GhiChuQuanTrong.txt đã xóa, nhấp chuột phải vào nó và chọn Restore. Tệp sẽ quay trở lại vị trí ban đầu.", image: "/images/bt1_2.png" }
       ],
       // Case 1 (Bài 2)
       [
-        "1. Khởi động trình duyệt web: Nhấp đúp mở Google Chrome hoặc Microsoft Edge trên màn hình máy tính.",
-        "2. Truy cập Google Scholar: Nhập địa chỉ scholar.google.com vào thanh địa chỉ và nhấn Enter để vào thư viện học thuật.",
-        "3. Xây dựng biểu thức tìm kiếm Boolean nâng cao: Kết hợp các toán tử logic để lọc sạch kết quả: ('Artificial Intelligence' OR 'AI') AND 'medical diagnosis' AND 'machine learning' AND 'medical imaging'. (Minh chứng chi tiết tại Ảnh 1)",
-        "4. Thực hiện lệnh truy vấn: Dán biểu thức Boolean vào thanh công cụ tìm kiếm và nhấn Enter.",
-        "5. Lọc kết quả theo thời gian cập nhật: Sử dụng thanh lọc thời gian ở menu bên trái để giới hạn các tài liệu nghiên cứu y khoa xuất bản từ năm 2017 đến năm 2024.",
-        "6. Khảo sát danh sách bài báo: Lướt qua hàng trăm kết quả, lọc ra các tạp chí y học chính thống có tầm ảnh hưởng lớn như Nature Medicine, The Lancet, JMIR và WHO.",
-        "7. Trích xuất thông tin học thuật: Ghi lại các siêu dữ liệu cần thiết của 11 bài viết gồm: Tác giả, Nhà xuất bản khoa học, Phương pháp thực nghiệm, Số lượng trích dẫn và Năm xuất bản.",
-        "8. Thiết lập bảng thẩm định độ tin cậy: Nhập danh sách 11 tài liệu vào bảng đánh giá. Chấm điểm độ tin cậy dựa trên 5 tiêu chí chuẩn hóa của VNU-UMP. (Minh chứng chi tiết tại Ảnh 2)",
-        "9. Tải tài liệu bản đầy đủ (PDF Full-text): Nhấp vào các liên kết PDF bên phải kết quả tìm kiếm để tải 11 tài liệu nghiên cứu gốc về thư mục lưu trữ.",
-        "10. Thiết lập bảng đối soát Excel: Xây dựng bảng tính Excel phân loại rõ ràng theo điểm số tin cậy giảm dần để đưa ra nhận xét khoa học chính xác.",
-        "11. Xuất tệp báo cáo PDF: Lưu bảng tính và kết luận thẩm định nguồn y khoa dưới dạng tài liệu PDF học thuật để nộp minh chứng bài tập."
+        { text: "1. Khởi động trình duyệt web: Nhấp đúp mở Google Chrome hoặc Microsoft Edge trên màn hình máy tính." },
+        { text: "2. Truy cập Google Scholar: Nhập địa chỉ scholar.google.com vào thanh địa chỉ và nhấn Enter để vào thư viện học thuật." },
+        { text: "3. Xây dựng biểu thức tìm kiếm Boolean nâng cao: Kết hợp các toán tử logic để lọc sạch kết quả: ('Artificial Intelligence' OR 'AI') AND 'medical diagnosis' AND 'machine learning' AND 'medical imaging'. (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt2_1.png" },
+        { text: "4. Thực hiện lệnh truy vấn: Dán biểu thức Boolean vào thanh công cụ tìm kiếm và nhấn Enter.", image: "/images/bt2_1.png" },
+        { text: "5. Lọc kết quả theo thời gian cập nhật: Sử dụng thanh lọc thời gian ở menu bên trái để giới hạn các tài liệu nghiên cứu y khoa xuất bản từ năm 2017 đến năm 2024.", image: "/images/bt2_1.png" },
+        { text: "6. Khảo sát danh sách bài báo: Lướt qua hàng trăm kết quả, lọc ra các tạp chí y học chính thống có tầm ảnh hưởng lớn như Nature Medicine, The Lancet, JMIR và WHO.", image: "/images/bt2_1.png" },
+        { text: "7. Trích xuất thông tin học thuật: Ghi lại các siêu dữ liệu cần thiết của 11 bài viết gồm: Tác giả, Nhà xuất bản khoa học, Phương pháp thực nghiệm, Số lượng trích dẫn và Năm xuất bản.", image: "/images/bt2_2.png" },
+        { text: "8. Thiết lập bảng thẩm định độ tin cậy: Nhập danh sách 11 tài liệu vào bảng đánh giá. Chấm điểm độ tin cậy dựa trên 5 tiêu chí chuẩn hóa của VNU-UMP. (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt2_2.png" },
+        { text: "9. Tải tài liệu bản đầy đủ (PDF Full-text): Nhấp vào các liên kết PDF bên phải kết quả tìm kiếm để tải 11 tài liệu nghiên cứu gốc về thư mục lưu trữ.", image: "/images/bt2_2.png" },
+        { text: "10. Thiết lập bảng đối soát Excel: Xây dựng bảng tính Excel phân loại rõ ràng theo điểm số tin cậy giảm dần để đưa ra nhận xét khoa học chính xác.", image: "/images/bt2_2.png" },
+        { text: "11. Xuất tệp báo cáo PDF: Lưu bảng tính và kết luận thẩm định nguồn y khoa dưới dạng tài liệu PDF học thuật để nộp minh chứng bài tập.", image: "/images/bt2_2.png" }
       ],
       // Case 2 (Bài 3)
       [
-        "1. Đăng nhập Google Gemini: Truy cập gemini.google.com và đăng nhập bằng tài khoản VNU hoặc cá nhân.",
-        "2. Khởi tạo tác vụ 1 (Tóm tắt Big Data): Nhập câu lệnh cơ bản: 'Hãy tóm tắt về Big Data cho tôi.' và phân tích phản hồi dài dòng, chung chung từ AI.",
-        "3. Tối ưu hóa câu lệnh y tế lớn (Tác vụ 1 cải tiến): Soạn thảo prompt CLEAR/CRAC gán vai trò: 'Với vai trò là Chuyên gia phân tích dữ liệu y tế lớn, hãy tóm tắt các đặc tính cốt lõi 5Vs của Big Data dưới dạng bảng 2 cột rõ ràng, dễ hiểu cho sinh viên năm nhất ngành Y Dược.' (Minh chứng chi tiết tại Ảnh 1)",
-        "4. Đối soát chất lượng phản hồi: Đánh giá bảng 5Vs từ Gemini cải tiến, ghi nhận tính cô đọng, dễ hiểu cho sinh viên y dược và loại bỏ ảo giác thông tin.",
-        "5. Khởi tạo tác vụ 2 (Giải thích ANN): Nhập prompt chưa tối ưu: 'Mạng nơ-ron nhân tạo là gì?'",
-        "6. Xây dựng Prompt chuỗi suy luận Chain-of-Thought (Tác vụ 2 cải tiến): Nhập câu lệnh hướng dẫn tư duy: 'Hãy đóng vai giảng viên Công nghệ thông tin, giải thích cơ chế hoạt động của Mạng nơ-ron nhân tạo (ANN) thông qua ví dụ ẩn dụ cách bộ não nhận diện quả táo qua 3 bước suy luận Chain-of-Thought.' (Minh chứng chi tiết tại Ảnh 2)",
-        "7. Khởi tạo tác vụ 3 (Trắc nghiệm ngoại vi): Nhập prompt ban đầu: 'Tạo 5 câu hỏi trắc nghiệm tin học.'",
-        "8. Áp dụng kỹ thuật Few-shot Prompting (Tác vụ 3 cải tiến): Cung cấp mẫu câu hỏi và đáp án mẫu chuẩn sư phạm để AI học và làm theo, đưa ra bộ câu hỏi phân hóa độ khó y tế kèm lời giải chi tiết.",
-        "9. Chụp ảnh màn hình minh chứng: Chụp lại các cặp hội thoại so sánh (Cơ bản vs Cải tiến) trên giao diện trò chuyện Google Gemini.",
-        "10. Xuất tệp tài liệu báo cáo: Tổng hợp bảng so sánh, phân tích sự khác biệt về cấu trúc phản hồi và xuất báo cáo PDF tối ưu kỹ nghệ prompt."
+        { text: "1. Đăng nhập Google Gemini: Truy cập gemini.google.com và đăng nhập bằng tài khoản VNU hoặc cá nhân." },
+        { text: "2. Khởi tạo tác vụ 1 (Tóm tắt Big Data): Nhập câu lệnh cơ bản: 'Hãy tóm tắt về Big Data cho tôi.' và phân tích phản hồi dài dòng, chung chung từ AI.", image: "/images/bt3_1.png" },
+        { text: "3. Tối ưu hóa câu lệnh y tế lớn (Tác vụ 1 cải tiến): Soạn thảo prompt CLEAR/CRAC gán vai trò: 'Với vai trò là Chuyên gia phân tích dữ liệu y tế lớn, hãy tóm tắt các đặc tính cốt lõi 5Vs của Big Data dưới dạng bảng 2 cột rõ ràng, dễ hiểu cho sinh viên năm nhất ngành Y Dược.' (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt3_1.png" },
+        { text: "4. Đối soát chất lượng phản hồi: Đánh giá bảng 5Vs từ Gemini cải tiến, ghi nhận tính cô đọng, dễ hiểu cho sinh viên y dược và loại bỏ ảo giác thông tin.", image: "/images/bt3_1.png" },
+        { text: "5. Khởi tạo tác vụ 2 (Giải thích ANN): Nhập prompt chưa tối ưu: 'Mạng nơ-ron nhân tạo là gì?'" },
+        { text: "6. Xây dựng Prompt chuỗi suy luận Chain-of-Thought (Tác vụ 2 cải tiến): Nhập câu lệnh hướng dẫn tư duy: 'Hãy đóng vai giảng viên Công nghệ thông tin, giải thích cơ chế hoạt động của Mạng nơ-ron nhân tạo (ANN) thông qua ví dụ ẩn dụ cách bộ não nhận diện quả táo qua 3 bước suy luận Chain-of-Thought.' (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt3_2.png" },
+        { text: "7. Khởi tạo tác vụ 3 (Trắc nghiệm ngoại vi): Nhập prompt ban đầu: 'Tạo 5 câu hỏi trắc nghiệm tin học.'" },
+        { text: "8. Áp dụng kỹ thuật Few-shot Prompting (Tác vụ 3 cải tiến): Cung cấp mẫu câu hỏi và đáp án mẫu chuẩn sư phạm để AI học và làm theo, đưa ra bộ câu hỏi phân hóa độ khó y tế kèm lời giải chi tiết.", image: "/images/bt3_2.png" },
+        { text: "9. Chụp ảnh màn hình minh chứng: Chụp lại các cặp hội thoại so sánh (Cơ bản vs Cải tiến) trên giao diện trò chuyện Google Gemini.", image: "/images/bt3_1.png" },
+        { text: "10. Xuất tệp tài liệu báo cáo: Tổng hợp bảng so sánh, phân tích sự khác biệt về cấu trúc phản hồi và xuất báo cáo PDF tối ưu kỹ nghệ prompt.", image: "/images/bt3_2.png" }
       ],
       // Case 3 (Bài 4)
       [
-        "1. Thành lập dự án nhóm: Nhóm VNU1001_E252023 xác định chủ đề nghiên cứu: 'Ứng dụng AI và Học máy trong quản lý rối loạn lipid máu & hội chứng chuyển hóa'.",
-        "2. Thiết lập bảng Kanban trên Trello: Tạo bảng làm việc chung, mời 5 thành viên nhóm tham gia.",
-        "3. Phân công nhiệm vụ và Due-date trên Trello: Thiết lập các danh sách: Cần làm (To Do), Đang làm (In Progress), Đang duyệt (Review), Đã xong (Done). Gán thẻ cho từng thành viên, đặt nhãn màu và checklists. (Minh chứng chi tiết tại Ảnh 1)",
-        "4. Lên lịch cuộc họp đồng bộ qua Zoom: Tạo liên kết cuộc họp Zoom học thuật định kỳ 90 phút.",
-        "5. Thảo luận đồng bộ và chia nhóm phụ: Bật Zoom Screen Sharing để duyệt slide PowerPoint y khoa, sử dụng Zoom Breakout Rooms chia cặp viết kịch bản, và tự động ghi biên bản họp bằng AI Companion.",
-        "6. Khởi tạo tài liệu Google Docs đồng cộng tác: Tạo tệp Docs, phân quyền chỉnh sửa cho các thành viên và tích hợp Gemini hỗ trợ ý tưởng.",
-        "7. Biên tập chéo bằng chế độ Suggesting & Comments: Bật chế độ Gợi ý đóng góp (Suggesting) để biên soạn chéo nội dung y học lâm sàng và sử dụng Comments trao đổi các điểm chưa đồng nhất.",
-        "8. Quản lý lịch sử phiên bản (Version History): Lưu vết các phiên bản kịch bản video y khoa lớn trong Google Docs để kiểm soát đóng góp của từng thành viên. (Minh chứng chi tiết tại Ảnh 2)",
-        "9. Tạo không gian lưu trữ tài nguyên Google Drive: Khởi tạo thư mục dùng chung nhóm, phân quyền thông minh (Viewer/Editor) cho từng thành viên.",
-        "10. Chuẩn hóa quy tắc đặt tên tệp tin số: Đặt tên tệp theo quy chuẩn nhất quán (ví dụ: KịchBản_Video_V1.pdf) để tối ưu hóa lưu trữ và truy cập nhanh.",
-        "11. Bảo mật tài khoản điện toán đám mây: Kích hoạt bảo mật xác thực hai lớp (2FA) trên toàn bộ tài khoản Google Drive để chống rò rỉ dữ liệu y học nhóm."
+        { text: "1. Thành lập dự án nhóm: Nhóm VNU1001_E252023 xác định chủ đề nghiên cứu: 'Ứng dụng AI và Học máy trong quản lý rối loạn lipid máu & hội chứng chuyển hóa'." },
+        { text: "2. Thiết lập bảng Kanban trên Trello: Tạo bảng làm việc chung, mời 5 thành viên nhóm tham gia.", image: "/images/bt4_1.png" },
+        { text: "3. Phân công nhiệm vụ và Due-date trên Trello: Thiết lập các danh sách: Cần làm (To Do), Đang làm (In Progress), Đang duyệt (Review), Đã xong (Done). Gán thẻ cho từng thành viên, đặt nhãn màu và checklists. (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt4_1.png" },
+        { text: "4. Lên lịch cuộc họp đồng bộ qua Zoom: Tạo liên kết cuộc họp Zoom học thuật định kỳ 90 phút.", image: "/images/bt4_2.png" },
+        { text: "5. Thảo luận đồng bộ và chia nhóm phụ: Bật Zoom Screen Sharing để duyệt slide PowerPoint y khoa, sử dụng Zoom Breakout Rooms chia cặp viết kịch bản, và tự động ghi biên bản họp bằng AI Companion.", image: "/images/bt4_2.png" },
+        { text: "6. Khởi tạo tài liệu Google Docs đồng cộng tác: Tạo tệp Docs, phân quyền chỉnh sửa cho các thành viên và tích hợp Gemini hỗ trợ ý tưởng.", image: "/images/bt4_2.png" },
+        { text: "7. Biên tập chéo bằng chế độ Suggesting & Comments: Bật chế độ Gợi ý đóng góp (Suggesting) để biên soạn chéo nội dung y học lâm sàng và sử dụng Comments trao đổi các điểm chưa đồng nhất.", image: "/images/bt4_2.png" },
+        { text: "8. Quản lý lịch sử phiên bản (Version History): Lưu vết các phiên bản kịch bản video y khoa lớn trong Google Docs để kiểm soát đóng góp của từng thành viên. (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt4_2.png" },
+        { text: "9. Tạo không gian lưu trữ tài nguyên Google Drive: Khởi tạo thư mục dùng chung nhóm, phân quyền thông minh (Viewer/Editor) cho từng thành viên.", image: "/images/bt4_2.png" },
+        { text: "10. Chuẩn hóa quy tắc đặt tên tệp tin số: Đặt tên tệp theo quy chuẩn nhất quán (ví dụ: KịchBản_Video_V1.pdf) để tối ưu hóa lưu trữ và truy cập nhanh.", image: "/images/bt4_2.png" },
+        { text: "11. Bảo mật tài khoản điện toán đám mây: Kích hoạt bảo mật xác thực hai lớp (2FA) trên toàn bộ tài khoản Google Drive để chống rò rỉ dữ liệu y học nhóm.", image: "/images/bt4_2.png" }
       ],
       // Case 4 (Bài 5)
       [
-        "1. Lên ý tưởng chiến dịch truyền thông y học: Xác định chủ đề: 'Sống Xanh trong Kỷ nguyên Số - Dấu chân carbon y học của AI'.",
-        "2. Nghiên cứu số liệu carbon AI: Sử dụng Gemini thu thập số liệu phát thải năng lượng huấn luyện mô hình và nước tiêu hao tạo video y khoa (Sora 2 tiêu thụ 1 kWh & 4 lít nước).",
-        "3. Đồng sáng tạo nội dung bài Blog 1000 từ: Phối hợp cùng AI Gemini soạn thảo bài viết chuyên sâu về lượng rác thải điện tử e-waste tại Việt Nam (250.000 tấn vào năm 2025) và các quy định EPR mới.",
-        "4. Tạo hình ảnh mỹ thuật minh họa bằng AI: Nhập mô tả trên công cụ Nano Banana để thiết kế bức họa mỹ thuật 'Futuristic workspace giao thoa thiên nhiên'. (Minh chứng chi tiết tại Ảnh 2)",
-        "5. Thiết kế Infographic truyền thông trên Canva: Khởi tạo tệp thiết kế Infographic có bố cục dọc tối ưu trên nền tảng Canva.",
-        "6. Áp dụng quy tắc màu sắc (Color Scheme): Thiết lập bảng màu xanh lá đậm - trắng làm màu chủ đạo để thể hiện rõ nét ý thức bảo vệ môi trường bền vững. (Minh chứng chi tiết tại Ảnh 1)",
-        "7. Tối ưu hóa độ tương phản (Contrast): Điều chỉnh màu chữ viết hoa nổi bật trên các khối nền để người đọc dễ dàng quét thông tin số liệu.",
-        "8. Định hướng trọng lượng thị giác (Visual Weight): Phân chia bố cục Infographic 3 phần cân đối: Số liệu phát thải AI -> Thực trạng e-waste Việt Nam -> Địa chỉ điểm thu gom miễn phí.",
-        "9. Lồng ghép địa chỉ thu gom rác điện tử miễn phí thực tế: Đưa các địa chỉ uy tín vào Infographic: 17 Trung Yên 3 (Hà Nội) hoặc 82 Bà Huyện Thanh Quan (TP.HCM).",
-        "10. Xuất bản và phân phối sản phẩm số: Tải xuống Infographic chất lượng cao (PNG) từ Canva, kết hợp bài viết blog và hình ảnh mỹ thuật AI Banana đăng tải truyền thông."
+        { text: "1. Lên ý tưởng chiến dịch truyền thông y học: Xác định chủ đề: 'Sống Xanh trong Kỷ nguyên Số - Dấu chân carbon y học của AI'." },
+        { text: "2. Nghiên cứu số liệu carbon AI: Sử dụng Gemini thu thập số liệu phát thải năng lượng huấn luyện mô hình và nước tiêu hao tạo video y khoa (Sora 2 tiêu thụ 1 kWh & 4 lít nước).", image: "/images/bt5_1.png" },
+        { text: "3. Đồng sáng tạo nội dung bài Blog 1000 từ: Phối hợp cùng AI Gemini soạn thảo bài viết chuyên sâu về lượng rác thải điện tử e-waste tại Việt Nam (250.000 tấn vào năm 2025) và các quy định EPR mới.", image: "/images/bt5_2.png" },
+        { text: "4. Tạo hình ảnh mỹ thuật minh họa bằng AI: Nhập mô tả trên công cụ Nano Banana để thiết kế bức họa mỹ thuật 'Futuristic workspace giao thoa thiên nhiên'. (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt5_2.png" },
+        { text: "5. Thiết kế Infographic truyền thông trên Canva: Khởi tạo tệp thiết kế Infographic có bố cục dọc tối ưu trên nền tảng Canva.", image: "/images/bt5_1.png" },
+        { text: "6. Áp dụng quy tắc màu sắc (Color Scheme): Thiết lập bảng màu xanh lá đậm - trắng làm màu chủ đạo để thể hiện rõ nét ý thức bảo vệ môi trường bền vững. (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt5_1.png" },
+        { text: "7. Tối ưu hóa độ tương phản (Contrast): Điều chỉnh màu chữ viết hoa nổi bật trên các khối nền để người đọc dễ dàng quét thông tin số liệu.", image: "/images/bt5_1.png" },
+        { text: "8. Định hướng trọng lượng thị giác (Visual Weight): Phân chia bố cục Infographic 3 phần cân đối: Số liệu phát thải AI -> Thực trạng e-waste Việt Nam -> Địa chỉ điểm thu gom miễn phí.", image: "/images/bt5_1.png" },
+        { text: "9. Lồng ghép địa chỉ thu gom rác điện tử miễn phí thực tế: Đưa các địa chỉ uy tín vào Infographic: 17 Trung Yên 3 (Hà Nội) hoặc 82 Bà Huyện Thanh Quan (TP.HCM).", image: "/images/bt5_1.png" },
+        { text: "10. Xuất bản và phân phối sản phẩm số: Tải xuống Infographic chất lượng cao (PNG) từ Canva, kết hợp bài viết blog và hình ảnh mỹ thuật AI Banana đăng tải truyền thông.", image: "/images/bt5_2.png" }
       ],
       // Case 5 (Bài 6)
       [
-        "1. Phân tích ca bệnh lâm sàng phức tạp: Tiếp nhận bệnh án bệnh nhân nữ 38 tuổi chẩn đoán Viêm cột sống dính khớp (AS).",
-        "2. Tra cứu phác đồ điều trị học thuật bằng AI: Sử dụng Perplexity AI theo kỹ thuật Chain-of-Thought tìm kiếm hướng dẫn điều trị chuẩn từ EULAR 2022 và ACR 2019. (Minh chứng chi tiết tại Ảnh 1)",
-        "3. Đối soát Hướng dẫn Bộ Y tế: Tra cứu và đối soát chéo trực tiếp với Quyết định 361/QĐ-BYT năm 2014 của Bộ Y tế Việt Nam về điều trị bệnh cột sống để bảo đảm tính pháp lý lâm sàng.",
-        "4. Phân tích tính an toàn của thuốc sinh học: Đánh giá độ an toàn của nhóm thuốc ức chế TNF đối với phụ nữ trong độ tuổi sinh sản muốn mang thai.",
-        "5. Phát hiện lỗi ảo giác lâm sàng nguy hiểm của AI: Thực hiện quy trình rà soát chéo thủ công để phát hiện lỗi chèn ký tự ngoại lai tiếng Trung '口服' do AI dịch thuật sai sót trong phác đồ thuốc tiêm sinh học.",
-        "6. Hiệu đính lỗi dịch thuật y khoa: Chỉnh sửa thuật ngữ dịch sai, loại bỏ ảo giác thông tin trên các ấn phẩm y khoa tin học.",
-        "7. Quản lý tài liệu trích dẫn khoa học: Sử dụng phần mềm Mendeley hoặc Zotero để nhập và định dạng nguồn tài liệu tham khảo theo quy chuẩn học thuật VNU. (Minh chứng chi tiết tại Ảnh 2)",
-        "8. Đúc kết Bộ nguyên tắc Đạo đức AI: Thiết lập bộ quy chuẩn '7 Chữ Vàng cho Dược sĩ Số tương lai' (Sức khỏe trên hết, Minh bạch nguồn gốc, Kiểm chứng chéo, Bảo mật dữ liệu, Cầm lái tư duy, Cập nhật liên tục, Sử dụng chọn lọc).",
-        "9. Thiết kế ấn phẩm Infographic Dược sĩ Số: Sử dụng Canva tổng hợp phác đồ điều trị AS và bộ nguyên tắc 7 Chữ Vàng đạo đức AI thành một thiết kế trực quan.",
-        "10. Hoàn thiện báo cáo khoa học lâm sàng: Hoàn thiện báo cáo phân tích ca bệnh kèm danh mục trích dẫn chuẩn hóa định dạng PDF."
+        { text: "1. Phân tích ca bệnh lâm sàng phức tạp: Tiếp nhận bệnh án bệnh nhân nữ 38 tuổi chẩn đoán Viêm cột sống dính khớp (AS)." },
+        { text: "2. Tra cứu phác đồ điều trị học thuật bằng AI: Sử dụng Perplexity AI theo kỹ thuật Chain-of-Thought tìm kiếm hướng dẫn điều trị chuẩn từ EULAR 2022 và ACR 2019. (Minh chứng chi tiết tại Ảnh 1)", image: "/images/bt6_1.png" },
+        { text: "3. Đối soát Hướng dẫn Bộ Y tế: Tra cứu và đối soát chéo trực tiếp với Quyết định 361/QĐ-BYT năm 2014 của Bộ Y tế Việt Nam về điều trị bệnh cột sống để bảo đảm tính pháp lý lâm sàng.", image: "/images/bt6_1.png" },
+        { text: "4. Phân tích tính an toàn của thuốc sinh học: Đánh giá độ an toàn của nhóm thuốc ức chế TNF đối với phụ nữ trong độ tuổi sinh sản muốn mang thai.", image: "/images/bt6_1.png" },
+        { text: "5. Phát hiện lỗi ảo giác lâm sàng nguy hiểm của AI: Thực hiện quy trình rà soát chéo thủ công để phát hiện lỗi chèn ký tự ngoại lai tiếng Trung '口服' do AI dịch thuật sai sót trong phác đồ thuốc tiêm sinh học.", image: "/images/bt6_1.png" },
+        { text: "6. Hiệu đính lỗi dịch thuật y khoa: Chỉnh sửa thuật ngữ dịch sai, loại bỏ ảo giác thông tin trên các ấn phẩm y khoa tin học.", image: "/images/bt6_1.png" },
+        { text: "7. Quản lý tài liệu trích dẫn khoa học: Sử dụng phần mềm Mendeley hoặc Zotero để nhập và định dạng nguồn tài liệu tham khảo theo quy chuẩn học thuật VNU. (Minh chứng chi tiết tại Ảnh 2)", image: "/images/bt6_2.png" },
+        { text: "8. Đúc kết Bộ nguyên tắc Đạo đức AI: Thiết lập bộ quy chuẩn '7 Chữ Vàng cho Dược sĩ Số tương lai' (Sức khỏe trên hết, Minh bạch nguồn gốc, Kiểm chứng chéo, Bảo mật dữ liệu, Cầm lái tư duy, Cập nhật liên tục, Sử dụng chọn lọc).", image: "/images/bt6_2.png" },
+        { text: "9. Thiết kế ấn phẩm Infographic Dược sĩ Số: Sử dụng Canva tổng hợp phác đồ điều trị AS và bộ nguyên tắc 7 Chữ Vàng đạo đức AI thành một thiết kế trực quan.", image: "/images/bt6_2.png" },
+        { text: "10. Hoàn thiện báo cáo khoa học lâm sàng: Hoàn thiện báo cáo phân tích ca bệnh kèm danh mục trích dẫn chuẩn hóa định dạng PDF.", image: "/images/bt6_2.png" }
       ]
     ];
 
     return (
-      <div className="space-y-2 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
-        <ol className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
+      <div className="space-y-3 bg-slate-50/70 p-5 border border-slate-100 rounded-2xl">
+        <ol className="space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
           {steps[tabIndex].map((step, idx) => {
-            const isImportant = step.includes("(Minh chứng");
+            const isImportant = step.text.includes("(Minh chứng");
             return (
               <li 
                 key={idx} 
-                className={`p-3 rounded-xl transition-all ${
+                className={`p-3.5 rounded-xl transition-all border shadow-xs space-y-2.5 ${
                   isImportant 
-                    ? 'bg-indigo-50 border border-indigo-100/50 text-indigo-950 font-bold shadow-xs' 
-                    : 'bg-white border border-slate-100 hover:border-slate-200'
+                    ? 'bg-indigo-50/80 border-indigo-150 text-indigo-950 font-bold shadow-xs' 
+                    : 'bg-white border-slate-100 hover:border-slate-200'
                 }`}
               >
-                {step}
+                <div>{step.text}</div>
+                {step.image && (
+                  <div className="pt-1">
+                    <img 
+                      src={step.image} 
+                      alt={`Minh chứng hoạt động bước ${idx + 1}`} 
+                      className="aspect-video w-full max-w-[280px] rounded-lg border border-slate-200/60 shadow-xs cursor-zoom-in hover:opacity-90 hover:shadow-sm transition-all"
+                      onClick={() => setSelectedImage(step.image)}
+                    />
+                  </div>
+                )}
               </li>
             );
           })}
