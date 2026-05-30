@@ -1169,42 +1169,7 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Evidence Screenshots (Hình ảnh minh chứng thực tế) */}
-                    {portfolioProjects[activeTab].images && (
-                      <div className="space-y-3 pt-3">
-                        <h5 className="text-indigo-900 text-xs sm:text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 font-sans">
-                          <span className="w-1.5 h-3 bg-gradient-to-t from-indigo-600 to-teal-500 rounded-full inline-block" />
-                          Hình ảnh minh chứng thực tế (Nhấp để phóng to)
-                        </h5>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          {portfolioProjects[activeTab].images.map((img, imgIdx) => (
-                            <div 
-                              key={imgIdx} 
-                              onClick={() => setSelectedImage(img)}
-                              className="group relative cursor-zoom-in bg-slate-50 border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-indigo-400 transition-all duration-300 hover-lift"
-                            >
-                              <div className="aspect-video w-full overflow-hidden bg-slate-100 relative">
-                                <img 
-                                  src={img} 
-                                  alt={portfolioProjects[activeTab].imageDescriptions?.[imgIdx]} 
-                                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-[#0f172a]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                                  <span className="bg-white/95 text-slate-800 text-xs font-extrabold py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-md backdrop-blur-xs">
-                                    <Eye className="w-4 h-4 text-indigo-600" /> Xem chi tiết
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="p-4 bg-white border-t border-slate-100">
-                                <p className="text-[11px] sm:text-xs text-slate-600 font-semibold leading-relaxed text-justify">
-                                  {portfolioProjects[activeTab].imageDescriptions?.[imgIdx]}
-                                </p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+
                   </div>
 
                   {/* Previous & Next Assignment navigation buttons for enhanced mobile UX (starting from Bài 2) */}
