@@ -36,18 +36,9 @@ function App() {
     let expectedScrollTop = container.scrollTop;
     let animationFrameId: number;
     
-    // Add a polite 1.5s delay before the actual scrolling animation begins moving
-    const startTime = performance.now() + 1500;
-    
     const scrollStep = (time: number) => {
       const delta = time - lastTime;
       lastTime = time;
-      
-      // If we are still in the initial 1.5s delay, just wait and keep updating time
-      if (time < startTime) {
-        animationFrameId = requestAnimationFrame(scrollStep);
-        return;
-      }
       
       // Check if user scrolled externally (e.g. dragged scrollbar, mouse wheel, trackpad, arrow keys)
       // If actual scroll position differs from what our script set by more than 2 pixels, user is scrolling!
@@ -253,7 +244,7 @@ function App() {
   const handleSidebarProjectClick = (index: number) => {
     setActiveTab(index);
     setViewMode('dashboard');
-    setAutoScrollActive(true); // Automatically start autoscrolling on tab change
+    setAutoScrollActive(false); // Reset autoscroll on tab change
     
     // Scroll the details pane back to top
     const pane = document.getElementById('dashboard-detail-pane');
@@ -1039,7 +1030,7 @@ function App() {
                 <button
                   onClick={() => {
                     setViewMode('dashboard');
-                    setAutoScrollActive(true);
+                    setAutoScrollActive(false);
                     setTimeout(() => {
                       const pane = document.getElementById('dashboard-detail-pane');
                       if (pane) pane.scrollTop = 0;
@@ -1113,7 +1104,7 @@ function App() {
                         onClick={() => {
                           setActiveTab(idx);
                           setViewMode('dashboard');
-                          setAutoScrollActive(true); // Automatically start autoscroll!
+                          setAutoScrollActive(false); // Reset autoscroll on entry
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
@@ -1350,7 +1341,7 @@ function App() {
                       <button
                         onClick={() => {
                           setActiveTab(activeTab - 1);
-                          setAutoScrollActive(true); // Automatically autoscroll!
+                          setAutoScrollActive(false); // Reset autoscroll on navigation
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
@@ -1374,7 +1365,7 @@ function App() {
                       <button
                         onClick={() => {
                           setActiveTab(activeTab + 1);
-                          setAutoScrollActive(true); // Automatically autoscroll!
+                          setAutoScrollActive(false); // Reset autoscroll on navigation
                           setTimeout(() => {
                             const pane = document.getElementById('dashboard-detail-pane');
                             if (pane) pane.scrollTop = 0;
