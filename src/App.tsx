@@ -68,6 +68,76 @@ function App() {
     };
   }, [autoScrollActive, autoScrollSpeed]);
 
+  const [scrollAnchor, setScrollAnchor] = useState<{ x: number; y: number } | null>(null);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
+
+  // Stop header autoscroll if middle-click autoscroll is activated
+  useEffect(() => {
+    if (scrollAnchor) {
+      setAutoScrollActive(false);
+    }
+  }, [scrollAnchor]);
+
+  // Global mousemove and click listener to coordinate the middle-click autoscroll emulator
+  useEffect(() => {
+    if (!scrollAnchor) return;
+    
+    const handleGlobalClick = () => {
+      // Any mouse click turns off the autoscroll
+      setScrollAnchor(null);
+      setMousePos(null);
+    };
+    
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousedown', handleGlobalClick);
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousedown', handleGlobalClick);
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+    };
+  }, [scrollAnchor]);
+
+  // Middle-click Drag Autoscroll physics engine
+  useEffect(() => {
+    if (!scrollAnchor || !mousePos) return;
+    
+    const container = document.getElementById('dashboard-detail-pane');
+    if (!container) return;
+    
+    let lastTime = performance.now();
+    let scrollAccumulator = container.scrollTop;
+    let animationFrameId: number;
+    
+    const scrollStep = (time: number) => {
+      const delta = time - lastTime;
+      lastTime = time;
+      
+      const dY = mousePos.y - scrollAnchor.y;
+      
+      // Deadzone of 10px to prevent drift
+      if (Math.abs(dY) > 10) {
+        // Speed is proportional to distance from click center
+        const speed = dY * 0.0035; 
+        scrollAccumulator += delta * speed;
+        
+        // Clamp inside scrollable bounds
+        const maxScroll = container.scrollHeight - container.clientHeight;
+        scrollAccumulator = Math.max(0, Math.min(maxScroll, scrollAccumulator));
+        
+        container.scrollTop = Math.floor(scrollAccumulator);
+      }
+      
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
+    
+    animationFrameId = requestAnimationFrame(scrollStep);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [scrollAnchor, mousePos]);
+
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -230,6 +300,8 @@ function App() {
     setActiveTab(index);
     setViewMode('dashboard');
     setAutoScrollActive(false); // Stop autoscrolling on tab change
+    setScrollAnchor(null);      // Stop middle-click autoscroll on tab change
+    setMousePos(null);
     
     // Scroll the details pane back to top
     const pane = document.getElementById('dashboard-detail-pane');
@@ -240,6 +312,20 @@ function App() {
     const el = document.getElementById('du-an');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Middle click is button 1
+    if (e.button === 1) {
+      e.preventDefault(); // Prevent standard browser autoscroll
+      if (scrollAnchor) {
+        setScrollAnchor(null);
+        setMousePos(null);
+      } else {
+        setScrollAnchor({ x: e.clientX, y: e.clientY });
+        setMousePos({ x: e.clientX, y: e.clientY });
+      }
     }
   };
 
@@ -1140,7 +1226,9 @@ function App() {
                 {/* Right Detail Pane - Max height and scrollable for clean dashboard styling */}
                 <div 
                   id="dashboard-detail-pane"
+                  onMouseDown={handleMouseDown}
                   className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative md:max-h-[720px] overflow-y-auto scroll-smooth custom-scrollbar"
+                  title="Nhấp chuột giữa (nút bánh xe) để kích hoạt cuộn tự động theo hướng kéo chuột"
                 >
                   <div className="space-y-6">
                     {/* Title of exercise & Autoscroll Controller */}
@@ -1469,6 +1557,26 @@ function App() {
                   </div>
                 ) : null;
               })()}
+            </div>
+          </div>
+        )}
+
+        {/* Middle-click Autoscroll Visual Anchor Indicator */}
+        {scrollAnchor && (
+          <div 
+            className="fixed z-50 pointer-events-none rounded-full bg-slate-900/90 text-white flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-xs animate-in zoom-in-50 duration-100"
+            style={{
+              left: scrollAnchor.x - 20,
+              top: scrollAnchor.y - 20,
+              width: 40,
+              height: 40,
+            }}
+          >
+            {/* 4-directional arrow representation */}
+            <div className="relative flex flex-col items-center justify-center text-[10px]">
+              <span className="text-[8px] leading-none mb-0.5 select-none">▲</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 my-0.5 select-none" />
+              <span className="text-[8px] leading-none mt-0.5 select-none">▼</span>
             </div>
           </div>
         )}
