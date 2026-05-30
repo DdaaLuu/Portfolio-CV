@@ -56,8 +56,8 @@ function App() {
         return;
       }
       
-      // Speed multiplier
-      const speedMultiplier = autoScrollSpeed === 1 ? 0.025 : autoScrollSpeed === 2 ? 0.05 : 0.08;
+      // Speed multiplier (e.g. 1x, 1.25x, 1.5x, 2x, 3x)
+      const speedMultiplier = autoScrollSpeed * 0.025;
       scrollAccumulator += delta * speedMultiplier;
       
       const targetScroll = Math.floor(scrollAccumulator);
@@ -1196,39 +1196,82 @@ function App() {
                         </h4>
                       </div>
                       
-                      {/* Autoscroll Toggle Control */}
-                      <div className="shrink-0 flex items-center gap-2 bg-slate-50 border border-slate-200/60 p-1.5 rounded-xl shadow-2xs self-start sm:self-auto">
-                        <button
-                          onClick={() => setAutoScrollActive(!autoScrollActive)}
-                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] sm:text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer active:scale-95 ${
-                            autoScrollActive
-                              ? 'bg-red-500 text-white shadow-xs animate-pulse'
-                              : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80'
-                          }`}
-                          title={autoScrollActive ? "Tạm dừng cuộn tự động" : "Bật cuộn tự động bài tập"}
-                        >
-                          {autoScrollActive ? (
-                            <>
-                              <Pause className="w-3 h-3 fill-current" />
-                              Dừng cuộn
-                            </>
-                          ) : (
-                            <>
-                              <Play className="w-3 h-3 fill-current" />
-                              Cuộn tự động
-                            </>
-                          )}
-                        </button>
-                        
-                        {autoScrollActive && (
+                      {/* Autoscroll Toggle & Speed Control Panel */}
+                      <div className="shrink-0 flex flex-col gap-1.5 bg-slate-50 border border-slate-200/60 p-2 rounded-2xl shadow-2xs self-start sm:self-auto w-full sm:w-[220px]">
+                        {/* Row 1: Play/Pause Button and Current Speed Display */}
+                        <div className="flex items-center justify-between gap-2">
                           <button
-                            onClick={() => setAutoScrollSpeed(autoScrollSpeed === 1 ? 2 : autoScrollSpeed === 2 ? 3 : 1)}
-                            className="bg-white hover:bg-slate-100 text-indigo-700 border border-slate-200/80 px-2.5 py-1.5 rounded-lg text-[9px] font-black uppercase transition-all cursor-pointer active:scale-95"
-                            title="Thay đổi tốc độ cuộn"
+                            onClick={() => setAutoScrollActive(!autoScrollActive)}
+                            className={`flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl text-[9px] sm:text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer active:scale-95 flex-1 ${
+                              autoScrollActive
+                                ? 'bg-red-500 text-white shadow-xs animate-pulse'
+                                : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/80'
+                            }`}
+                            title={autoScrollActive ? "Tạm dừng cuộn tự động" : "Bật cuộn tự động bài tập"}
                           >
-                            Tốc độ: {autoScrollSpeed === 1 ? '1x' : autoScrollSpeed === 2 ? '1.5x' : '2x'}
+                            {autoScrollActive ? (
+                              <>
+                                <Pause className="w-3 h-3 fill-current" />
+                                Dừng cuộn
+                              </>
+                            ) : (
+                              <>
+                                <Play className="w-3 h-3 fill-current" />
+                                Cuộn tự động
+                              </>
+                            )}
                           </button>
-                        )}
+                          <span className="text-[10px] font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-100/50 px-2.5 py-1.5 rounded-xl tracking-wider select-none shrink-0 min-w-[50px] text-center">
+                            {autoScrollSpeed.toFixed(2)}x
+                          </span>
+                        </div>
+
+                        {/* Row 2: Speed Controls - Slider with +/- */}
+                        <div className="flex items-center gap-1.5 pt-1 border-t border-slate-200/40">
+                          <button 
+                            onClick={() => setAutoScrollSpeed(prev => Math.max(1, prev - 0.25))}
+                            className="w-5 h-5 rounded-lg bg-white border border-slate-200/80 hover:bg-slate-100 flex items-center justify-center text-[10px] font-black text-slate-600 transition-all cursor-pointer active:scale-90"
+                            title="Giảm tốc độ"
+                          >
+                            -
+                          </button>
+                          <input 
+                            type="range"
+                            min="1"
+                            max="3"
+                            step="0.25"
+                            value={autoScrollSpeed}
+                            onChange={(e) => setAutoScrollSpeed(parseFloat(e.target.value))}
+                            className="flex-1 h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                            style={{
+                              background: `linear-gradient(to right, #4f46e5 0%, #4f46e5 ${((autoScrollSpeed - 1) / 2) * 100}%, #cbd5e1 ${((autoScrollSpeed - 1) / 2) * 100}%, #cbd5e1 100%)`
+                            }}
+                          />
+                          <button 
+                            onClick={() => setAutoScrollSpeed(prev => Math.min(3, prev + 0.25))}
+                            className="w-5 h-5 rounded-lg bg-white border border-slate-200/80 hover:bg-slate-100 flex items-center justify-center text-[10px] font-black text-slate-600 transition-all cursor-pointer active:scale-90"
+                            title="Tăng tốc độ"
+                          >
+                            +
+                          </button>
+                        </div>
+
+                        {/* Row 3: Quick Speed Pills */}
+                        <div className="flex justify-between items-center gap-1">
+                          {[1, 1.25, 1.5, 2, 3].map((val) => (
+                            <button
+                              key={val}
+                              onClick={() => setAutoScrollSpeed(val)}
+                              className={`px-1 rounded-md py-0.5 text-[8px] font-black transition-all cursor-pointer flex-1 text-center ${
+                                autoScrollSpeed === val
+                                  ? 'bg-indigo-600 text-white shadow-xs'
+                                  : 'bg-white hover:bg-slate-100 text-slate-500 border border-slate-200/50'
+                              }`}
+                            >
+                              {val === 1 ? '1.0' : val === 2 ? '2.0' : val === 3 ? '3.0' : val}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
