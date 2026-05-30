@@ -31,17 +31,38 @@ function App() {
     
     let lastTime = performance.now();
     let scrollAccumulator = container.scrollTop;
+    
+    // Track the expected scroll position to detect external user scroll interventions
+    let expectedScrollTop = container.scrollTop;
     let animationFrameId: number;
+    
+    // Add a polite 1.5s delay before the actual scrolling animation begins moving
+    const startTime = performance.now() + 1500;
     
     const scrollStep = (time: number) => {
       const delta = time - lastTime;
       lastTime = time;
       
+      // If we are still in the initial 1.5s delay, just wait and keep updating time
+      if (time < startTime) {
+        animationFrameId = requestAnimationFrame(scrollStep);
+        return;
+      }
+      
+      // Check if user scrolled externally (e.g. dragged scrollbar, mouse wheel, trackpad, arrow keys)
+      // If actual scroll position differs from what our script set by more than 2 pixels, user is scrolling!
+      if (Math.abs(container.scrollTop - expectedScrollTop) > 2) {
+        setAutoScrollActive(false);
+        return;
+      }
+      
       // Speed multiplier
       const speedMultiplier = autoScrollSpeed === 1 ? 0.025 : autoScrollSpeed === 2 ? 0.05 : 0.08;
       scrollAccumulator += delta * speedMultiplier;
       
-      container.scrollTop = Math.floor(scrollAccumulator);
+      const targetScroll = Math.floor(scrollAccumulator);
+      container.scrollTop = targetScroll;
+      expectedScrollTop = container.scrollTop;
       
       // If we reach the bottom, turn off autoscroll
       if (container.scrollTop + container.clientHeight >= container.scrollHeight - 3) {
@@ -52,91 +73,24 @@ function App() {
       animationFrameId = requestAnimationFrame(scrollStep);
     };
     
-    const handleManualScroll = () => {
-      // Sync accumulator on manual scroll so we don't jump back when scrolling resumes
-      if (Math.abs(container.scrollTop - scrollAccumulator) > 10) {
-        scrollAccumulator = container.scrollTop;
-      }
+    // Interrupt/Pause autoscroll immediately when user tries to scroll or click manually
+    const handleUserInteraction = () => {
+      setAutoScrollActive(false);
     };
     
-    container.addEventListener('scroll', handleManualScroll);
+    container.addEventListener('wheel', handleUserInteraction, { passive: true });
+    container.addEventListener('touchmove', handleUserInteraction, { passive: true });
+    container.addEventListener('mousedown', handleUserInteraction, { passive: true });
+    
     animationFrameId = requestAnimationFrame(scrollStep);
     
     return () => {
       cancelAnimationFrame(animationFrameId);
-      container.removeEventListener('scroll', handleManualScroll);
+      container.removeEventListener('wheel', handleUserInteraction);
+      container.removeEventListener('touchmove', handleUserInteraction);
+      container.removeEventListener('mousedown', handleUserInteraction);
     };
   }, [autoScrollActive, autoScrollSpeed]);
-
-  const [scrollAnchor, setScrollAnchor] = useState<{ x: number; y: number } | null>(null);
-  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
-
-  // Stop header autoscroll if middle-click autoscroll is activated
-  useEffect(() => {
-    if (scrollAnchor) {
-      setAutoScrollActive(false);
-    }
-  }, [scrollAnchor]);
-
-  // Global mousemove and click listener to coordinate the middle-click autoscroll emulator
-  useEffect(() => {
-    if (!scrollAnchor) return;
-    
-    const handleGlobalClick = () => {
-      // Any mouse click turns off the autoscroll
-      setScrollAnchor(null);
-      setMousePos(null);
-    };
-    
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousedown', handleGlobalClick);
-    window.addEventListener('mousemove', handleGlobalMouseMove);
-    
-    return () => {
-      window.removeEventListener('mousedown', handleGlobalClick);
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
-    };
-  }, [scrollAnchor]);
-
-  // Middle-click Drag Autoscroll physics engine
-  useEffect(() => {
-    if (!scrollAnchor || !mousePos) return;
-    
-    const container = document.getElementById('dashboard-detail-pane');
-    if (!container) return;
-    
-    let lastTime = performance.now();
-    let scrollAccumulator = container.scrollTop;
-    let animationFrameId: number;
-    
-    const scrollStep = (time: number) => {
-      const delta = time - lastTime;
-      lastTime = time;
-      
-      const dY = mousePos.y - scrollAnchor.y;
-      
-      // Deadzone of 10px to prevent drift
-      if (Math.abs(dY) > 10) {
-        // Speed is proportional to distance from click center
-        const speed = dY * 0.0035; 
-        scrollAccumulator += delta * speed;
-        
-        // Clamp inside scrollable bounds
-        const maxScroll = container.scrollHeight - container.clientHeight;
-        scrollAccumulator = Math.max(0, Math.min(maxScroll, scrollAccumulator));
-        
-        container.scrollTop = Math.floor(scrollAccumulator);
-      }
-      
-      animationFrameId = requestAnimationFrame(scrollStep);
-    };
-    
-    animationFrameId = requestAnimationFrame(scrollStep);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [scrollAnchor, mousePos]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -299,9 +253,7 @@ function App() {
   const handleSidebarProjectClick = (index: number) => {
     setActiveTab(index);
     setViewMode('dashboard');
-    setAutoScrollActive(false); // Stop autoscrolling on tab change
-    setScrollAnchor(null);      // Stop middle-click autoscroll on tab change
-    setMousePos(null);
+    setAutoScrollActive(true); // Automatically start autoscrolling on tab change
     
     // Scroll the details pane back to top
     const pane = document.getElementById('dashboard-detail-pane');
@@ -312,20 +264,6 @@ function App() {
     const el = document.getElementById('du-an');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Middle click is button 1
-    if (e.button === 1) {
-      e.preventDefault(); // Prevent standard browser autoscroll
-      if (scrollAnchor) {
-        setScrollAnchor(null);
-        setMousePos(null);
-      } else {
-        setScrollAnchor({ x: e.clientX, y: e.clientY });
-        setMousePos({ x: e.clientX, y: e.clientY });
-      }
     }
   };
 
@@ -1099,7 +1037,14 @@ function App() {
                   Chế độ Gallery (Notion)
                 </button>
                 <button
-                  onClick={() => setViewMode('dashboard')}
+                  onClick={() => {
+                    setViewMode('dashboard');
+                    setAutoScrollActive(true);
+                    setTimeout(() => {
+                      const pane = document.getElementById('dashboard-detail-pane');
+                      if (pane) pane.scrollTop = 0;
+                    }, 50);
+                  }}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     viewMode === 'dashboard'
                       ? 'bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-md'
@@ -1166,7 +1111,10 @@ function App() {
                         onClick={() => {
                           setActiveTab(idx);
                           setViewMode('dashboard');
+                          setAutoScrollActive(true); // Automatically start autoscroll!
                           setTimeout(() => {
+                            const pane = document.getElementById('dashboard-detail-pane');
+                            if (pane) pane.scrollTop = 0;
                             document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
                           }, 100);
                         }}
@@ -1226,9 +1174,7 @@ function App() {
                 {/* Right Detail Pane - Max height and scrollable for clean dashboard styling */}
                 <div 
                   id="dashboard-detail-pane"
-                  onMouseDown={handleMouseDown}
-                  className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative md:max-h-[720px] overflow-y-auto scroll-smooth custom-scrollbar"
-                  title="Nhấp chuột giữa (nút bánh xe) để kích hoạt cuộn tự động theo hướng kéo chuột"
+                  className="flex-1 p-6 sm:p-8 md:p-10 flex flex-col justify-between bg-white relative md:max-h-[720px] overflow-y-auto custom-scrollbar"
                 >
                   <div className="space-y-6">
                     {/* Title of exercise & Autoscroll Controller */}
@@ -1358,7 +1304,12 @@ function App() {
                       <button
                         onClick={() => {
                           setActiveTab(activeTab - 1);
-                          document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                          setAutoScrollActive(true); // Automatically autoscroll!
+                          setTimeout(() => {
+                            const pane = document.getElementById('dashboard-detail-pane');
+                            if (pane) pane.scrollTop = 0;
+                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                          }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-all border border-indigo-100/50 shadow-xs cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto"
                       >
@@ -1376,7 +1327,12 @@ function App() {
                       <button
                         onClick={() => {
                           setActiveTab(activeTab + 1);
-                          document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                          setAutoScrollActive(true); // Automatically autoscroll!
+                          setTimeout(() => {
+                            const pane = document.getElementById('dashboard-detail-pane');
+                            if (pane) pane.scrollTop = 0;
+                            document.getElementById('du-an')?.scrollIntoView({ behavior: 'smooth' });
+                          }, 100);
                         }}
                         className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold text-xs transition-all hover:shadow-md hover:shadow-indigo-200/50 cursor-pointer active:scale-95 text-left max-w-full sm:max-w-[48%] w-full sm:w-auto ml-auto"
                       >
@@ -1557,26 +1513,6 @@ function App() {
                   </div>
                 ) : null;
               })()}
-            </div>
-          </div>
-        )}
-
-        {/* Middle-click Autoscroll Visual Anchor Indicator */}
-        {scrollAnchor && (
-          <div 
-            className="fixed z-50 pointer-events-none rounded-full bg-slate-900/90 text-white flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-xs animate-in zoom-in-50 duration-100"
-            style={{
-              left: scrollAnchor.x - 20,
-              top: scrollAnchor.y - 20,
-              width: 40,
-              height: 40,
-            }}
-          >
-            {/* 4-directional arrow representation */}
-            <div className="relative flex flex-col items-center justify-center text-[10px]">
-              <span className="text-[8px] leading-none mb-0.5 select-none">▲</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 my-0.5 select-none" />
-              <span className="text-[8px] leading-none mt-0.5 select-none">▼</span>
             </div>
           </div>
         )}
