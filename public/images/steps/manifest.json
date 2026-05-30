@@ -83,71 +83,54 @@
   ],
   "bt4": [
     null,
+    "/images/steps/bt4/02.png",
+    "/images/steps/bt4/03.png",
+    "/images/steps/bt4/04.png",
     [
-      "/images/steps/bt4/02a.png",
-      "/images/steps/bt4/02b.png",
-      "/images/steps/bt4/02c.png"
+      "/images/steps/bt4/05a.png",
+      "/images/steps/bt4/05b.png"
     ],
+    "/images/steps/bt4/06.png",
+    "/images/steps/bt4/07.png",
+    "/images/steps/bt4/08.png",
     [
-      "/images/steps/bt4/03a.png",
-      "/images/steps/bt4/03b.png",
-      "/images/steps/bt4/03c.png"
-    ],
-    null,
-    "/images/steps/bt4/05.png",
-    [
-      "/images/steps/bt4/06a.png",
-      "/images/steps/bt4/06b.png"
+      "/images/steps/bt4/09a.png",
+      "/images/steps/bt4/09b.png"
     ],
     null,
-    null,
-    "/images/steps/bt4/09.png",
-    null,
-    "/images/steps/bt4/11.png"
+    null
   ],
   "bt5": [
-    null,
-    [
-      "/images/steps/bt5/02a.png",
-      "/images/steps/bt5/02b.png",
-      "/images/steps/bt5/02c.png",
-      "/images/steps/bt5/02d.png",
-      "/images/steps/bt5/02e.png"
-    ],
-    null,
+    "/images/steps/bt5/01.png",
+    "/images/steps/bt5/02.png",
+    "/images/steps/bt5/03.png",
     [
       "/images/steps/bt5/04a.png",
       "/images/steps/bt5/04b.png"
     ],
-    [
-      "/images/steps/bt5/05a.png",
-      "/images/steps/bt5/05b.png",
-      "/images/steps/bt5/05c.png"
-    ],
-    "/images/steps/bt5/06.png",
-    "/images/steps/bt5/07.png",
-    "/images/steps/bt5/08.png",
+    "/images/steps/bt5/05.png",
     null,
+    null,
+    null,
+    "/images/steps/bt5/09.png",
     "/images/steps/bt5/10.png"
   ],
   "bt6": [
     null,
     [
       "/images/steps/bt6/02a.png",
-      "/images/steps/bt6/02b.png",
-      "/images/steps/bt6/02c.png",
-      "/images/steps/bt6/02d.png"
+      "/images/steps/bt6/02b.png"
     ],
+    null,
+    "/images/steps/bt6/04.png",
+    null,
+    null,
     null,
     null,
     [
-      "/images/steps/bt6/05a.jpg",
-      "/images/steps/bt6/05b.jpg"
+      "/images/steps/bt6/09a.jpg",
+      "/images/steps/bt6/09b.jpg"
     ],
-    null,
-    null,
-    null,
-    null,
     null
   ]
 }

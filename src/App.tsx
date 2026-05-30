@@ -334,8 +334,8 @@ function App() {
       // Case 4 (Bài 5)
       [
         { text: "1. Lên ý tưởng chiến dịch truyền thông y học: Xác định chủ đề: 'Sống Xanh trong Kỷ nguyên Số - Dấu chân carbon y học của AI'." },
-        { text: "2. Nghiên cứu số liệu carbon AI: Sử dụng Gemini thu thập số liệu phát thải năng lượng huấn luyện mô hình và nước tiêu hao tạo video y khoa (Sora 2 tiêu thụ 1 kWh & 4 lít nước)." },
-        { text: "3. Đồng sáng tạo nội dung bài Blog 1000 từ: Phối hợp cùng AI Gemini soạn thảo bài viết chuyên sâu về lượng rác thải điện tử e-waste tại Việt Nam (250.000 tấn vào năm 2025) và các quy định EPR mới." },
+        { text: "2. Kiểm chứng dấu chân carbon AI với Gemini: Đối chiếu số liệu phát thải (0,24 Wh/truy vấn AI, mức phát thải trung tâm dữ liệu toàn cầu) và chi phí ẩn khi tạo video y khoa bằng AI — Sora 2 tiêu thụ khoảng 1 kWh điện và 4 lít nước làm mát cho mỗi clip." },
+        { text: "3. Đồng sáng tạo bài Blog 1000 từ trên Gemini: Soạn thảo trên giao diện hội thoại, mở rộng mục quản lý rác thải điện tử e-waste tại Việt Nam (250.000 tấn/năm 2025) và quy định EPR; ghi chú Top 5 ứng dụng xanh hỗ trợ lối sống bền vững." },
         { text: "4. Tạo hình ảnh mỹ thuật minh họa bằng AI: Nhập mô tả trên công cụ Nano Banana để thiết kế bức họa mỹ thuật 'Futuristic workspace giao thoa thiên nhiên'." },
         { text: "5. Thiết kế Infographic truyền thông trên Canva: Khởi tạo tệp thiết kế Infographic có bố cục dọc tối ưu trên nền tảng Canva." },
         { text: "6. Áp dụng quy tắc màu sắc (Color Scheme): Thiết lập bảng màu xanh lá đậm - trắng làm màu chủ đạo để thể hiện rõ nét ý thức bảo vệ môi trường bền vững." },

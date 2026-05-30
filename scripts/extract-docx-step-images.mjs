@@ -90,8 +90,11 @@ function headline(text) {
 function loadStepTextsFromApp() {
   const app = fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8');
   const start = app.indexOf('const steps = [');
-  const end = app.indexOf('];\n\n    return (', start);
-  const block = app.slice(start, end + 2);
+  const endMatch = app
+    .slice(start)
+    .match(/\];\s*\r?\n\s*\r?\n\s*return\s*\(/);
+  const end = endMatch ? start + endMatch.index : -1;
+  const block = end >= 0 ? app.slice(start, end + 2) : '';
   const byBt = { bt1: [], bt2: [], bt3: [], bt4: [], bt5: [], bt6: [] };
   const caseRe = /\/\/ Case (\d+) \(Bài (\d+)\)/g;
   const textRe = /\{\s*text:\s*"((?:\\.|[^"\\])*)"/g;
@@ -186,8 +189,7 @@ function matchHeadlineToStep(blockText, stepTexts) {
 }
 
 /** Headline-based mapping (BT1 practical walkthrough) */
-function mapByHeadline(blocks, stepTexts) {
-  const stepCount = stepTexts.length;
+function mapByHeadline(blocks, stepTexts, stepCount) {
   const stepMedia = Array.from({ length: stepCount }, () => []);
 
   let currentStep = -1;
@@ -255,7 +257,7 @@ async function exportLesson(btId, { docx, stepCount }, stepTexts) {
 
   const stepMedia =
     config.mode === 'headline'
-      ? mapByHeadline(blocks, texts)
+      ? mapByHeadline(blocks, texts, stepCount)
       : mapByConfig(orderedImages, config, stepCount);
 
   const outDir = path.join(root, 'public/images/steps', btId);
@@ -269,7 +271,7 @@ async function exportLesson(btId, { docx, stepCount }, stepTexts) {
   const evidence = [];
 
   for (let i = 0; i < stepCount; i++) {
-    const mediaList = stepMedia[i];
+    const mediaList = stepMedia[i] ?? [];
     if (mediaList.length === 0) {
       evidence.push(null);
       continue;
