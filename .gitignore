@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Intermediate PDF extraction output (final images live in public/images/steps/)
+public/images/extracted/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

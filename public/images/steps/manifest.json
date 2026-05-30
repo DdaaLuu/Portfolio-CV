@@ -1,0 +1,78 @@
+{
+  "bt1": [
+    "/images/steps/bt1/01.png",
+    "/images/steps/bt1/02.png",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "bt2": [
+    "/images/steps/bt2/01.png",
+    "/images/steps/bt2/02.png",
+    "/images/steps/bt2/03.png",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "bt3": [
+    "/images/steps/bt3/01.png",
+    "/images/steps/bt3/02.png",
+    "/images/steps/bt3/03.png",
+    "/images/steps/bt3/04.png",
+    "/images/steps/bt3/05.png",
+    "/images/steps/bt3/06.png",
+    "/images/steps/bt3/07.png",
+    "/images/steps/bt3/08.png",
+    null,
+    null
+  ],
+  "bt4": [
+    "/images/steps/bt4/01.png",
+    "/images/steps/bt4/02.png",
+    "/images/steps/bt4/03.png",
+    "/images/steps/bt4/04.png",
+    "/images/steps/bt4/05.png",
+    "/images/steps/bt4/06.png",
+    "/images/steps/bt4/07.png",
+    "/images/steps/bt4/08.png",
+    null,
+    null,
+    null
+  ],
+  "bt5": [
+    "/images/steps/bt5/01.png",
+    "/images/steps/bt5/02.png",
+    "/images/steps/bt5/03.png",
+    "/images/steps/bt5/04.png",
+    "/images/steps/bt5/05.png",
+    "/images/steps/bt5/06.png",
+    "/images/steps/bt5/07.png",
+    "/images/steps/bt5/08.png",
+    "/images/steps/bt5/09.png",
+    "/images/steps/bt5/10.png"
+  ],
+  "bt6": [
+    "/images/steps/bt6/01.png",
+    "/images/steps/bt6/02.png",
+    "/images/steps/bt6/03.png",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
